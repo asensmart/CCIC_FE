@@ -5,17 +5,11 @@ import Link from "next/link";
 import { Icons } from "@/assets/icons/icons";
 import logo from "@/assets/images/logo.png";
 import Image from "next/image";
+import NavMailHead from "./navHead/navMailHead";
+import autoprefixer from "autoprefixer";
 
-const NavbarManus = () => {
+const NavbarManus = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:8000/api/v1/get/brands")
-      .then((res) => res.json())
-      .then((res) => setData(res.data))
-      .catch((err) => console.log(err));
-  }, []);
 
   return (
     <div className="px-2 py-3 flex">
@@ -38,7 +32,7 @@ const NavbarManus = () => {
               {item.mName} <Icons.dropDownIcon size={24} />
             </div>
             <div
-              className={`absolute bg-white border w-36 ${
+              className={`absolute bg-white border shadow-lg w-36 ${
                 isOpen ? "block" : "hidden"
               } hover:transition-all hover:duration-300 hover:ease-in-out rounded-md`}
             >
@@ -58,22 +52,6 @@ const NavbarManus = () => {
                   No Datas!
                 </div>
               )}
-              {/* {item.subMenus.length > 0 ? (
-                item.subMenus.map((subMenu) => (
-                  <Link key={subMenu?.id} href={`${subMenu.path}`}>
-                    <div
-                      role="button"
-                      className="p-2 hover:bg-slate-300 hover:transition-all hover:duration-700 hover:ease-out"
-                    >
-                      {subMenu.mName}
-                    </div>
-                  </Link>
-                ))
-              ) : (
-                <div role="button" className="p-2 ">
-                  No Datas!
-                </div>
-              )} */}
             </div>
           </div>
         );
@@ -82,53 +60,22 @@ const NavbarManus = () => {
   );
 };
 
-const Navbar = () => {
-  const iconData = [
-    {
-      id: 1,
-      icon: <Icons.facebook size={18} color="black" />,
-      link: "https://www.facebook.com",
-    },
-    {
-      id: 2,
-      icon: <Icons.instagram size={18} color="black" />,
-      link: "https://www.insta.com",
-    },
-    {
-      id: 3,
-      icon: <Icons.twitter size={18} color="black" />,
-      link: "https://www.insta.com",
-    },
-    {
-      id: 4,
-      icon: <Icons.google size={18} color="black" />,
-      link: "https://www.insta.com",
-    },
-  ];
+const Navbar = ({ data }) => {
   return (
     <>
-      <div className="flex p-2 justify-between bg-mailHead">
-        <Link
-          href={`mailto:customercareinchennai@gmail.com`}
-          className="flex items-center justify-evenly text-black"
-        >
-          <Icons.mailIcon className="mr-2" size={24} />{" "}
-          customercareinchennai@gmail.com
-        </Link>
-        <div className="grid grid-cols-4 gap-3 items-center">
-          {iconData.map((icon) => (
-            <Link href={icon.link} key={icon.id}>
-              {icon.icon}
-            </Link>
-          ))}
-        </div>
-      </div>
-      <div className="grid grid-cols-[2fr_3fr_1.5fr] p-2 items-center bg-white text-navText font-semibold">
+      <NavMailHead />
+
+      <div className="shadow-lg z-50 sticky grid grid-cols-[2fr_3fr_1.5fr] p-2 items-center bg-white text-navText font-semibold">
         <div className="w-[70%] items-center">
-          <Image src={logo} alt="logo" />
+          <Image
+            src={logo}
+            alt="logo"
+            width={autoprefixer}
+            height={autoprefixer}
+          />
         </div>
         <div className="">
-          <NavbarManus />
+          <NavbarManus data={data} />
         </div>
         <div className="flex items-center gap-4 mx-auto">
           <Link

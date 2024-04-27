@@ -10,13 +10,14 @@
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
-    "keen-slider": "^6.8.6",
+    "@smastrom/react-rating": "^1.5.0",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-modern-drawer": "^1.2.2",
     "react-slick": "^0.30.2",
     "sharp": "^0.33.3",
-    "swiper": "^11.0.7"
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

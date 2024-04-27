@@ -8,6 +8,10 @@ import { FaPhoneAlt } from "@react-icons/all-files/fa/FaPhoneAlt";
 import { FaUser } from "@react-icons/all-files/fa/FaUser";
 import { IoMdSettings } from "@react-icons/all-files/io/IoMdSettings";
 import { RiNavigationFill } from "@react-icons/all-files/ri/RiNavigationFill";
+import { RiWhatsappFill } from "@react-icons/all-files/ri/RiWhatsappFill";
+import { FaStar } from "@react-icons/all-files/fa/FaStar";
+import { IoMdArrowDropdownCircle } from "@react-icons/all-files/io/IoMdArrowDropdownCircle";
+import { MdMenu } from "@react-icons/all-files/md/MdMenu";
 export const Icons = {
   dropDownIcon: RiArrowDropDownLine,
   mailIcon: MdMailOutline,
@@ -19,4 +23,8 @@ export const Icons = {
   userIcon: FaUser,
   settings: IoMdSettings,
   navigation: RiNavigationFill,
+  whatsApp: RiWhatsappFill,
+  star: FaStar,
+  dropdown: IoMdArrowDropdownCircle,
+  menuDrawer: MdMenu,
 };

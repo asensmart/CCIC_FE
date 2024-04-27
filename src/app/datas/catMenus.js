@@ -19,23 +19,22 @@ export const CatagoryMenus = [
 export const menus = [
   {
     id: 1,
-    mName: "Home",
-    path: "/",
+    name: "Home",
+    slug: "/",
   },
   {
     id: 2,
-    mName: "About Us",
-    path: "/aboutus",
+    name: "About Us",
+    slug: "/aboutus",
   },
   {
     id: 3,
-    mName: "Catagory",
-    path: "#",
-    subMenus: CatagoryMenus,
+    name: "Catagory",
+    slug: "#",
   },
   {
     id: 4,
-    mName: "Contact Us",
-    path: "/contactus",
+    name: "Contact Us",
+    slug: "/contactus",
   },
 ];
