@@ -10,7 +10,7 @@ module.exports = {
         protocol: "http",
         hostname: "api.customercareinchennai.com",
         port: "",
-        pathname: "/uploads/brands/*",
+        pathname: "/uploads/**",
       },
       {
         protocol: "https",

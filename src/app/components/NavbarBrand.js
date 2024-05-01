@@ -1,20 +1,18 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { menus } from "../datas/catMenus";
 import Link from "next/link";
 import { RiArrowDropDownLine } from "@react-icons/all-files/ri/RiArrowDropDownLine";
 import { Icons } from "@/assets/icons/icons";
 import NavMailHead from "./navHead/navMailHead";
 import Image from "next/image";
-import logo from "@/assets/images/logo.png";
-import autoprefixer from "autoprefixer";
 
 const NavbarMenus = ({ brandName, category }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="p-2 flex">
       {menus.map((item) => {
-        return item?.name !== "Catagory" ? (
+        return item?.name !== "Category" ? (
           <Link
             href={
               brandName && item?.name === "Home"
@@ -79,7 +77,13 @@ const NavbarBrand = ({ brandName, category, brand }) => {
       <div className="grid grid-cols-[2fr_3fr_1.5fr] p-2 items-center bg-white text-navText font-semibold">
         <div className="w-[70%] items-center">
           <Link href={`/${brandName?.brand}`}>
-            <Image src={brand?.brandLogo} alt="logo" width={100} height={0} />
+            <Image
+              src={brand?.brandLogo}
+              alt={`${brandName?.brand} logo`}
+              title={`${brandName?.brand} logo`}
+              width={100}
+              height={0}
+            />
           </Link>
         </div>
         <div className="">
@@ -87,14 +91,15 @@ const NavbarBrand = ({ brandName, category, brand }) => {
         </div>
         <div className="flex items-center gap-4 mx-auto">
           <Link
-            href={`tel:7550052019`}
+            href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUM}`}
             className="flex items-center py-2 px-3 bg-blue-600 text-white rounded-2xl"
           >
             <Icons.phone className="mr-2" /> {brand?.contactNumber}
           </Link>
 
           <Link
-            href={`https://wa.me/${brand?.contactNumber}`}
+            href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUM}`}
+            // href={`https://wa.me/${brand?.contactNumber}`}
             className="flex items-center py-2 px-3 bg-green-600 text-white rounded-2xl"
           >
             <Icons.whatsApp size={24} className="mr-2" /> WhatsApp

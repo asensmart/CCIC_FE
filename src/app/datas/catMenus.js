@@ -1,4 +1,4 @@
-export const CatagoryMenus = [
+export const CategoryMenus = [
   {
     id: 11,
     mName: "tv",
@@ -29,7 +29,7 @@ export const menus = [
   },
   {
     id: 3,
-    name: "Catagory",
+    name: "Category",
     slug: "#",
   },
   {

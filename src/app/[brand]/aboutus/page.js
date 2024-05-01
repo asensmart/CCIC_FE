@@ -1,9 +1,13 @@
+import AboutContent from '@/app/components/about';
 import React from 'react'
 
-const BrandAboutUs = () => {
+const BrandAboutUs = ({params}) => {
+  console.log(params)
   return (
-    <div>BrandAboutUs</div>
-  )
+    <div>
+      <AboutContent name={params?.brand} isHome={true} />
+    </div>
+  );
 }
 
 export default BrandAboutUs

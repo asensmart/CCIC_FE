@@ -36,12 +36,13 @@ const MainMobNav = ({ menus, data, brandName }) => {
             >
               {brandName ? (
                 <h1 className="font-bold text-3xl">
-                  {brandName.brand.toUpperCase()}
+                  {brandName?.brand?.toUpperCase()}
                 </h1>
               ) : (
                 <Image
                   src={logo}
-                  alt="logo"
+                  alt={`${brandName?.brand} logo`}
+                  title={`${brandName?.brand} logo`}
                   width={autoprefixer}
                   height={autoprefixer}
                   className="w-[80%] ms-4"
@@ -69,16 +70,16 @@ const MainMobNav = ({ menus, data, brandName }) => {
           {menus?.map((menu) =>
             menu?.name === "Brands" ? (
               <MobileLinkNav key={menu?.id} menu={menu} data={data} />
-            ) : menu?.name === "Catagory" ? (
+            ) : menu?.name === "Category" ? (
               <MobileLinkNav key={menu?.id} menu={menu} data={data} />
             ) : (
               <Link
                 key={menu?.id}
                 href={
                   brandName && menu?.name === "Home"
-                    ? `/${brandName.brand}`
+                    ? `/${brandName?.brand}`
                     : brandName
-                    ? `/${brandName.brand}${menu?.slug}`
+                    ? `/${brandName?.brand}${menu?.slug}`
                     : menu?.slug
                 }
                 // href={
@@ -111,7 +112,7 @@ const MobileLinkNav = ({ menu, data }) => {
       >
         <div className="cursor-pointer ">
           <div className="flex items-center justify-between text-xl hover:text-white hover:bg-orangeText p-2">
-            <div>{menu?.name !== "Catagory" ? "Brands" : "Catagory"}</div>
+            <div>{menu?.name !== "Category" ? "Brands" : "Category"}</div>
             <div>
               <Icons.dropDownIcon
                 size={24}
@@ -129,7 +130,7 @@ const MobileLinkNav = ({ menu, data }) => {
                 className="hover:text-orangeText"
               >
                 <div className="font-bold text-xl">
-                  {menu?.name !== "Catagory"
+                  {menu?.name !== "Category"
                     ? link?.brandName?.toUpperCase()
                     : link?.categoryName?.toUpperCase()}
                 </div>

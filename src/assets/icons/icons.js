@@ -12,6 +12,8 @@ import { RiWhatsappFill } from "@react-icons/all-files/ri/RiWhatsappFill";
 import { FaStar } from "@react-icons/all-files/fa/FaStar";
 import { IoMdArrowDropdownCircle } from "@react-icons/all-files/io/IoMdArrowDropdownCircle";
 import { MdMenu } from "@react-icons/all-files/md/MdMenu";
+import { MdLocationOn } from "@react-icons/all-files/md/MdLocationOn";
+import { IoMdHome } from "@react-icons/all-files/io/IoMdHome";
 export const Icons = {
   dropDownIcon: RiArrowDropDownLine,
   mailIcon: MdMailOutline,
@@ -27,4 +29,6 @@ export const Icons = {
   star: FaStar,
   dropdown: IoMdArrowDropdownCircle,
   menuDrawer: MdMenu,
+  location: MdLocationOn,
+  home: IoMdHome,
 };

@@ -42,10 +42,7 @@ const OurServices = ({ brand }) => {
       <h1 className="text-center text-4xl text-orangeText font-bold">
         <span className="text-black">Our</span> Services
       </h1>
-      <Slider
-        {...settings}
-        className="text-orangeText pe-8 h-[700px]"
-      >
+      <Slider {...settings} className="text-orangeText pe-8 h-[700px]">
         {brand.map((item) => (
           <div
             key={item?._id}
@@ -81,9 +78,11 @@ const OurServices = ({ brand }) => {
                   ></p>
                 </div>
                 <div className="flex justify-between items-end mt-3 px-3">
-                  <button className="py-2 px-3 text-orangeText rounded-2xl border border-orangeText hover:bg-orangeText hover:text-white hover:transition-all hover:ease-in hover:duration-200">
-                    Read More...
-                  </button>
+                  <Link href={item?.slug}>
+                    <button className="py-2 px-3 text-orangeText rounded-2xl border border-orangeText hover:bg-orangeText hover:text-white hover:transition-all hover:ease-in hover:duration-200">
+                      Read More...
+                    </button>
+                  </Link>
                   <Link href={`https://wa.me/${item?.contactNumber}`}>
                     <div className="flex flex-col justify-center items-center text-whatsapp hover:text-green-500">
                       <div>

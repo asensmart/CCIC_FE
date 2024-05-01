@@ -39,15 +39,49 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #2563EB; 
+  background: #2563eb;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
+}
+
+.textAreaBox {
+  resize: none;
+  outline: 0;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style for the textAreaBox when it is in focus */
+.textAreaBox:focus {
+  border-bottom: 1px solid rgb(30, 30, 30); /* Change to your desired color */
+}
+
+.align_me {
+  text-align: center;
+}
+
+.align_me h2 {
+  font-weight: bolder;
+  /* color: var(--secondary); */
+  font-size: 40px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  font-family: font-bold;
+}
+.align_me span {
+  /* color: var(--primary); */
+}
+
+.align_me h6 {
+  font-family: font-regular;
+  font-size: 18px;
+  text-align: left;
 }

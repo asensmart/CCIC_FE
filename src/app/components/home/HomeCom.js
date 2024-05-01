@@ -1,13 +1,12 @@
 "use client";
 import { Icons } from "@/assets/icons/icons";
 import React, { useEffect, useState } from "react";
-import MainMobNav from "./mainMobilePage.js/index.js";
-import Navbar from "../Navbar.js";
 import Image from "next/image";
 import HomeAbout from "./HomeAbout.js";
 import OurServices from "./ourServices/index.js";
 import Link from "next/link";
 import homeBanner from "@/assets/images/homebanner.webp";
+import MainNavbar from "../shared/Nav/Navbar.js";
 
 const HomeCom = ({ brandData }) => {
 
@@ -39,38 +38,9 @@ const HomeCom = ({ brandData }) => {
     setData(brandData);
   }, [brandData]);
 
-  const menus = [
-    {
-      id: 1,
-      name: "Home",
-      slug: "/",
-    },
-    {
-      id: 2,
-      name: "About Us",
-      slug: "/aboutus",
-    },
-    {
-      id: 3,
-      name: "Brands",
-      subNav: [{ id: 1, subcatName: "Sample 1", path: "/kitchen " }],
-    },
-    {
-      id: 4,
-      name: "Contact Us",
-      slug: "/contactus",
-    },
-  ];
-
   return (
     <div className="bg-white">
-      {/* Mobile Nav */}
-      <MainMobNav menus={menus} data={data} />
-
-      {/* Desktop Nav */}
-      <div className="lg:block hidden">
-        <Navbar data={data} />
-      </div>
+      <MainNavbar brandData={data} />
 
       {/* Home Banner */}
       <Image
