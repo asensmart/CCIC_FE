@@ -1,65 +1,54 @@
-"use client";
-import Image from "next/image";
-import Navbar from "./components/Navbar";
-import homeBanner from "@/assets/images/homebanner.webp";
-import HomeAbout from "./components/home/HomeAbout";
-import OurServices from "./components/home/ourServices";
-import { Icons } from "@/assets/icons/icons";
-// // Import css files
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
+import Script from "next/script";
+import HomeCom from "./components/home/HomeCom";
 
-export default function Home() {
-  const titleData = [
-    {
-      id: 1,
-      title: "Expert Technicians",
-      description: "Our engineers are skilled to repair and Service",
-      icon: <Icons.userIcon size={48} color="#F86E4E" />,
-    },
-    {
-      id: 2,
-      title: "Fast Problem Solving",
-      description: "Carry same day visit you will find Technical Support 24/7",
-      icon: <Icons.settings size={48} color="#F86E4E" />,
-    },
-    {
-      id: 3,
-      title: "Innovative Products",
-      description:
-        'We Create innovative products and back them with "customer care Chennai',
-      icon: <Icons.navigation size={48} color="#F86E4E" />,
-    },
-  ];
+export const metadata = {
+  applicationName: "AM Service",
+  title: "AM Service Solution - customer care in Chennai",
+  description:
+    "Welcome to customercareinchennai.com, your one-stop shop for 24/7 online repair services.",
+  keywords: [
+    "customer care in chennai",
+    "samsung service centre",
+    "lg service centre",
+    "TV service center",
+  ],
+  alternates: {
+    canonical: `https://customercareinchennai.com/`,
+  },
+};
+
+export default async function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org/",
+    "@type": "Organization",
+    url: "https://customercareinchennai.com",
+    logo: "https://customercareinchennai.com/static/media/logo2.a837981714d81b444b02.png",
+    name: "AM Service Solution",
+    description:
+      "Customer care in chennai service center exclusive brand products led tv smart tv 4k tv. home appliances washing machine refrigerator microwave oven service @ home visit same day.",
+    address:
+      "No. 142, Govindan St, Shanthi Nagar, Arundati Nagar, Jamalia, Chennai, Tamil Nadu 600012",
+    telephone: "+91 7550052019",
+    areaServed: "chennai, porur, tamilnadu",
+    location:
+      "No. 142, Govindan St, Shanthi Nagar, Arundati Nagar, Jamalia, Chennai, Tamil Nadu 600012",
+  };
+
+  const brandData = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/get/brands`)
+    .then((res) => res.json())
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => console.log(err));
 
   return (
     <>
-      <Navbar />
-
-      {/* Home Banner */}
-      <Image
-        src={homeBanner}
-        alt="banner"
-        // className="dark:invert"
-        width={"100%"}
-        // height={24}
-        priority
+      <Script
+        id="1"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="grid grid-cols-3 py-16 px-2 bg-white text-black">
-        {titleData.map((data) => (
-          <div key={data.id} className="flex items-center justify-center gap-3">
-            <div className="p-3 rounded bg-mailHead">{data.icon}</div>
-            <div className="">
-              <div className="font-bold text-xl">{data.title}</div>
-              <div>{data.description}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-      {/* About Us */}
-      <HomeAbout />
-      {/* Our Services */}
-      <OurServices />
+      <HomeCom brandData={brandData} />
     </>
   );
 }

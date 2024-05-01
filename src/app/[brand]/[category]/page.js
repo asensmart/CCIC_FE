@@ -1,16 +1,11 @@
+import { Category } from "@/app/components/brand/category/category";
+import axios from "axios";
 import { notFound } from "next/navigation";
-import { Brand } from "../components/brand/brand";
 import Script from "next/script";
 
 export async function generateMetadata({ params }) {
-  // export async function generateMetadata({ params, searchParams }, parent) {
-  // read route params
-  // const id = params.id;
-
-  // fetch data
-  // const product = await fetch(`https://.../${id}`).then((res) => res.json());
-  const brand = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/brand?slug=/${params?.brand}`
+  const category = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/get/category?slug=/${params?.brand}/${params?.category}`
   )
     .then((res) => res.json())
     .then((res) => {
@@ -19,15 +14,11 @@ export async function generateMetadata({ params }) {
     .catch((err) => {
       console.log(err);
     });
-  // const product = "Home Page";
-
-  // optionally access and extend (rather than replace) parent metadata
-  // const previousImages = parent.openGraph?.images || [];
 
   return {
-    title: brand?.metaTitle,
-    description: brand?.metaDescription,
-    keywords: [brand?.metaKeywords],
+    title: category?.metaTitle,
+    description: category?.metaDescription,
+    keywords: [category?.metaKeywords],
     metadataBase: new URL(process.env.NEXT_PUBLIC_HYPER_TXT),
     appLinks: {
       web: {
@@ -36,15 +27,15 @@ export async function generateMetadata({ params }) {
       },
     },
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_HYPER_TXT}/${params?.brand}`,
+      canonical: `${process.env.NEXT_PUBLIC_HYPER_TXT}/${params?.brand}/${params?.category}`,
     },
     openGraph: {
-      images: [brand?.titleBackgroundImage],
+      images: [category?.titleBackgroundImage],
     },
   };
 }
 
-const Brands = async ({ params }) => {
+const CategoryPage = async ({ params }) => {
   const getBrand = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/get/brand?slug=/${params?.brand}`
   )
@@ -56,8 +47,8 @@ const Brands = async ({ params }) => {
       console.log(err);
     });
 
-  const getAreasByBrand = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/areaNamesByBrandName?brandName=${params?.brand}`
+  const getAreasByCategory = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/get/areaNamesByCategoryName?categoryName=${params?.brand}`
   )
     .then((res) => res.json())
     .then((res) => {
@@ -67,29 +58,32 @@ const Brands = async ({ params }) => {
       console.log(err);
     });
 
-  if (!getBrand) {
-    notFound();
-  }
+  const getCatDataByBrand = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/get/category?slug=/${params?.brand}/${params?.category}`
+  );
+
+  if (!getBrand || !getCatDataByBrand?.data?.data) notFound();
 
   const data = {
     getBrand: getBrand,
-    getAreasByBrand: getAreasByBrand,
+    getAreasByCategory: getAreasByCategory,
+    getCategory: getCatDataByBrand?.data?.data,
   };
 
   const jsonLd = {
     "@context": "https://schema.org/",
     "@type": "Product",
-    name: getBrand?.brandName,
-    description: getBrand?.metaDescription,
+    name: data?.getCategory?.brandName,
+    description: data?.getCategory?.metaDescription,
     brand: {
       "@type": "Brand",
-      name: getBrand?.brandName,
+      name: data?.getCategory?.brandName,
     },
     review: {
       "@type": "Review",
       reviewRating: {
         "@type": "Rating",
-        ratingValue: getBrand?.overallRating,
+        ratingValue: data?.getCategory?.overallRating,
         bestRating: 5,
       },
       author: {
@@ -118,13 +112,19 @@ const Brands = async ({ params }) => {
         name: params?.brand,
         position: "2",
       },
+      {
+        item: `${process.env.NEXT_PUBLIC_HYPER_TXT}/${params?.brand}/${params?.category}`,
+        "@type": "ListItem",
+        name: params?.category,
+        position: "3",
+      },
     ],
     "@type": "BreadcrumbList",
     "@context": "http://schema.org",
   };
 
   const FaqldJson = {
-    mainEntity: getBrand?.faqs,
+    mainEntity: data?.getCategory?.faqs,
     "@type": "FAQPage",
     "@context": "http://schema.org",
   };
@@ -132,10 +132,10 @@ const Brands = async ({ params }) => {
   const OrganizationldJson = {
     "@context": "http://schema.org",
     "@type": "Organization",
-    url: `${process.env.NEXT_PUBLIC_HYPER_TXT}/${params.brand}`,
+    url: `${process.env.NEXT_PUBLIC_HYPER_TXT}/${params.brand}/${params.category}`,
     name: `${process.env.NEXT_PUBLIC_HYPER_TXT}`,
-    description: `${getBrand?.description}`,
-    logo: `${getBrand?.brandLogo}`,
+    description: `${data?.getCategory?.description}`,
+    logo: `${data?.getCategory?.categoryLogo}`,
     sameAs: [],
     contactPoint: [
       {
@@ -168,9 +168,9 @@ const Brands = async ({ params }) => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(OrganizationldJson) }}
       />
-      <Brand data={data} />
+      <Category data={data} />
     </>
   );
 };
 
-export default Brands;
+export default CategoryPage;

@@ -3,16 +3,27 @@ import React, { useState } from "react";
 import { menus } from "../datas/catMenus";
 import Link from "next/link";
 import { RiArrowDropDownLine } from "@react-icons/all-files/ri/RiArrowDropDownLine";
+import { Icons } from "@/assets/icons/icons";
+import NavMailHead from "./navHead/navMailHead";
+import Image from "next/image";
 
-const NavbarMenus = ({ brandName }) => {
-  // console.log("props --->", brandName);
+const NavbarMenus = ({ brandName, category }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="p-2 flex">
       {menus.map((item) => {
-        return item.mName !== "Catagory" ? (
-          <Link href={item.path} key={item?.id}>
-            <p className="m-1">{item.mName}</p>
+        return item?.name !== "Category" ? (
+          <Link
+            href={
+              brandName && item?.name === "Home"
+                ? `/${brandName}`
+                : brandName
+                ? `/${brandName}${item?.slug}`
+                : item?.slug
+            }
+            key={item?.id}
+          >
+            <p className="m-1">{item?.name}</p>
           </Link>
         ) : (
           <div
@@ -25,21 +36,24 @@ const NavbarMenus = ({ brandName }) => {
               className="m-1 flex items-center"
               onMouseOver={() => setIsOpen(true)}
             >
-              {item.mName} <RiArrowDropDownLine size={24} />
+              {item?.name} <RiArrowDropDownLine size={24} />
             </div>
             <div
-              className={`absolute bg-red-300 w-32 ${
+              className={`absolute bg-white border shadow-lg w-36 ${
                 isOpen ? "block" : "hidden"
               } hover:transition-all hover:duration-300 hover:ease-in-out rounded-md`}
             >
-              {item.subMenus.length > 0 ? (
-                item.subMenus.map((subMenu) => (
-                  <Link key={subMenu?.id} href={`/${brandName}${subMenu.path}`}>
+              {category?.length > 0 ? (
+                category?.map((catItem) => (
+                  <Link
+                    key={catItem?._id}
+                    href={`${process.env.NEXT_PUBLIC_HYPER_TXT}${catItem.slug}`}
+                  >
                     <div
                       role="button"
                       className="p-2 hover:bg-slate-300 hover:transition-all hover:duration-700 hover:ease-out"
                     >
-                      {subMenu.mName}
+                      {catItem?.categoryName}
                     </div>
                   </Link>
                 ))
@@ -56,24 +70,40 @@ const NavbarMenus = ({ brandName }) => {
   );
 };
 
-const NavbarBrand = ({ brandName }) => {
-  // console.log("brandName 111 --->", brandName);
+const NavbarBrand = ({ brandName, category, brand }) => {
   return (
     <>
-      <div className="flex p-2 justify-between">
-        <div>mail</div>
-        <div>icons</div>
-      </div>
-      <div className="grid grid-cols-[2fr_3fr_1.5fr] p-2 items-center">
-        <div>
-          <Link href={`/${brandName.brand}`}>Logo</Link>
+      <NavMailHead />
+      <div className="grid grid-cols-[2fr_3fr_1.5fr] p-2 items-center bg-white text-navText font-semibold">
+        <div className="w-[70%] items-center">
+          <Link href={`/${brandName?.brand}`}>
+            <Image
+              src={brand?.brandLogo}
+              alt={`${brandName?.brand} logo`}
+              title={`${brandName?.brand} logo`}
+              width={100}
+              height={0}
+            />
+          </Link>
         </div>
         <div className="">
-          <NavbarMenus brandName={brandName.brand} />
+          <NavbarMenus category={category} brandName={brandName.brand} />
         </div>
         <div className="flex items-center gap-4 mx-auto">
-          <div>Call Number</div>
-          <div>Whatsapp Number</div>
+          <Link
+            href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUM}`}
+            className="flex items-center py-2 px-3 bg-blue-600 text-white rounded-2xl"
+          >
+            <Icons.phone className="mr-2" /> {brand?.contactNumber}
+          </Link>
+
+          <Link
+            href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUM}`}
+            // href={`https://wa.me/${brand?.contactNumber}`}
+            className="flex items-center py-2 px-3 bg-green-600 text-white rounded-2xl"
+          >
+            <Icons.whatsApp size={24} className="mr-2" /> WhatsApp
+          </Link>
         </div>
       </div>
     </>

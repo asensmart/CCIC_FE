@@ -19,23 +19,22 @@ export const brandMenus = [
 export const menus = [
   {
     id: 1,
-    mName: "Home",
-    path: "/",
+    name: "Home",
+    slug: "/",
   },
   {
     id: 2,
-    mName: "About Us",
-    path: "/aboutus",
+    name: "About Us",
+    slug: "/aboutus",
   },
   {
     id: 3,
-    mName: "Brands",
-    path: "#",
-    subMenus: brandMenus,
+    name: "Brands",
+    // subNav: [{ id: 1, subcatName: "Sample 1", path: "/kitchen " }],
   },
   {
     id: 4,
-    mName: "Contact Us",
-    path: "/contactus",
+    name: "Contact Us",
+    slug: "/contactus",
   },
 ];
