@@ -52,17 +52,13 @@ const ContactUsPage = () => {
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] ">
           <div className="flex justify-center">
-            <Image
-              src={contactImg}
-              alt="about image"
-              width={500}
-            />
+            <Image src={contactImg} alt="about image" width={500} />
           </div>
           <div className="text-black p-4">
             <form
               ref={form}
               onSubmit={sendEmail}
-              className="relative mx-28 lg:mx:3 mt-3 rounded-lg p-6"
+              className="relative lg:mx-28 md:mx-3 mx-1 mt-3 rounded-lg p-6"
             >
               <div className="flex flex-col">
                 <label>Name</label>
