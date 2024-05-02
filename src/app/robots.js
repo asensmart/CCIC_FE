@@ -2,9 +2,9 @@ export default function robots() {
   return {
     rules: {
       userAgent: "*",
-    //   allow: "/",
-      disallow: "/",
+      allow: "/",
+      // disallow: "/",
     },
-    sitemap: "https://acme.com/sitemap.xml",
+    sitemap: "https://customercareinchennai.com/sitemap.xml",
   };
 }
