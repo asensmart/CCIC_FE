@@ -14,6 +14,12 @@ export const viewport = {
   // interactiveWidget: 'resizes-visual',
 };
 
+export const metadata = {
+  verification: {
+    google: "LXdjzy7NmnEeWL0rO9LPAr4WgAJWMoTHrGZ13c5dgbY",
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
