@@ -48,7 +48,8 @@ const OurServices = ({ brand }) => {
             key={item?._id}
             className="h-[100%] pe-5 ms-5 my-5 text-black flex flex-col transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-700 hover:-translate-y-4"
           >
-            <div className="relative shadow-lg hover:shadow-[0_5px_5px_0px] hover:shadow-orangeText border border-borderClr mx-1 rounded-2xl">
+            <div className="relative shadow-lg  hover:shadow-gray-400 border border-borderClr mx-1 rounded-2xl">
+            {/* <div className="relative shadow-lg hover:shadow-[0_5px_5px_0px] hover:shadow-orangeText border border-borderClr mx-1 rounded-2xl"> */}
               <div className="relative border-b border-borderClr w-[100%]">
                 <Image
                   src={item?.sideThumbnail}
@@ -94,7 +95,7 @@ const OurServices = ({ brand }) => {
                 </div>
               </div>
               <p className="absolute bottom-0 right-0 bg-orangeText rounded-br-2xl text-white p-1 flex items-center">
-                <span className="mr-1">4.3</span>{" "}
+                <span className="mr-1">{item?.overallRating}</span>{" "}
                 <Icons.star color="#ffff00" size={15} />
               </p>
             </div>

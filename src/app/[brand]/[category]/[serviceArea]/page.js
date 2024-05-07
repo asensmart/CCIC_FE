@@ -83,7 +83,7 @@ const ServiceArea = async ({ params }) => {
       "@type": "Review",
       reviewRating: {
         "@type": "Rating",
-        ratingValue: data?.getServices?.overallRating,
+        ratingValue: getBrand?.overallRating,
         bestRating: 5,
       },
       author: {
@@ -94,7 +94,7 @@ const ServiceArea = async ({ params }) => {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: getBrand?.overallRating,
-      reviewCount: 89,
+      reviewCount: getBrand?.ratingCount,
     },
   };
 

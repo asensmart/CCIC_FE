@@ -100,7 +100,7 @@ const Brands = async ({ params }) => {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: getBrand?.overallRating,
-      reviewCount: 89,
+      reviewCount: getBrand?.ratingCount,
     },
   };
 

@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import aboutBanner from "@/assets/images/aboutbanner.jpg";
+import aboutBannerMob from "@/assets/images/aboutbannerMob.jpg";
 import contactImg from "@/assets/images/contactSideImg.jpg";
 
 const ContactUsPage = () => {
@@ -33,11 +34,11 @@ const ContactUsPage = () => {
           setEmail("");
           setName("");
           setmessage("");
-          console.log("result --->", result?.data?.message);
+          // console.log("result --->", result?.data?.message);
           alert("Message Sent Successfully!");
         },
         (error) => {
-          console.log("error.text --->", error.text);
+          // console.log("error.text --->", error.text);
           alert("Message Not Sent!");
         }
       );
@@ -45,7 +46,17 @@ const ContactUsPage = () => {
 
   return (
     <div className="bg-white">
-      <Image alt="about banner image" src={aboutBanner} />
+      <Image
+        alt="about banner image"
+        className="object-cover hidden lg:block"
+        src={aboutBanner}
+      />
+
+      <Image
+        alt="about banner image"
+        className="object-cover block lg:hidden w-[100%]"
+        src={aboutBannerMob}
+      />
       <div className="mt-4">
         <h1 className="text-orangeText text-4xl font-bold text-center">
           HAVE SOME QUESTION?

@@ -83,7 +83,7 @@ const CategoryPage = async ({ params }) => {
       "@type": "Review",
       reviewRating: {
         "@type": "Rating",
-        ratingValue: data?.getCategory?.overallRating,
+        ratingValue: getBrand?.overallRating,
         bestRating: 5,
       },
       author: {
@@ -94,7 +94,7 @@ const CategoryPage = async ({ params }) => {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: getBrand?.overallRating,
-      reviewCount: 89,
+      reviewCount: getBrand?.ratingCount,
     },
   };
 

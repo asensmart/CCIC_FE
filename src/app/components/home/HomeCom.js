@@ -47,7 +47,7 @@ const HomeCom = ({ brandData }) => {
         src={homeBanner}
         alt="banner"
         // className="dark:invert"
-        className="object-cover h-32 md:h-[100%] w-[100%]"
+        className="object-center h-32 md:h-[100%] w-[100%]"
         width={0}
         height={0}
         priority
