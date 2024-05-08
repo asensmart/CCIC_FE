@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "./components/Footer";
 import "react-modern-drawer/dist/index.css";
 import "@smastrom/react-rating/style.css";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,10 @@ export const viewport = {
 
 export const metadata = {
   verification: {
-    google: "LXdjzy7NmnEeWL0rO9LPAr4WgAJWMoTHrGZ13c5dgbY",
+    google: [
+      "LXdjzy7NmnEeWL0rO9LPAr4WgAJWMoTHrGZ13c5dgbY",
+      "Cp9k-SZRJ9sGaLQarLt41jXCiP07Z1KKy8MBF5nqnwc",
+    ],
   },
 };
 
@@ -46,6 +50,20 @@ export default function RootLayout({ children }) {
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
         />
+            {/* <!-- Google tag (gtag.js) --> */}
+    <Script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-57Z57MML6X"
+    ></Script>
+    <Script id="google-analytics">
+      {`window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-57Z57MML6X");`}
+    </Script>
       </head>
       <body className={`${inter.className}`}>
         {children}
