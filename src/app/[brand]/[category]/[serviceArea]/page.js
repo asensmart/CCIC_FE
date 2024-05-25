@@ -62,7 +62,7 @@ const ServiceArea = async ({ params }) => {
     `${process.env.NEXT_PUBLIC_API_URL}/get/areaName?brandName=${params?.brand}&categoryName=${params?.category}&slug=/${params?.serviceArea}`
   );
 
-  if (!getBrand || getServices?.data?.data.length === 0) notFound();
+  if (getBrand.length === 0 || getServices?.data?.data.length === 0) notFound();
 
   const data = {
     getBrand: getBrand,

@@ -94,7 +94,7 @@ const NavbarBrand = ({ brandName, category, brand }) => {
             href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUM}`}
             className="flex items-center py-2 px-3 bg-blue-600 text-white rounded-2xl"
           >
-            <Icons.phone className="mr-2" /> {brand?.contactNumber}
+            <Icons.phone className="mr-2" /> {process.env.NEXT_PUBLIC_PHONE_NUM}
           </Link>
 
           <Link

@@ -62,7 +62,7 @@ const CategoryPage = async ({ params }) => {
     `${process.env.NEXT_PUBLIC_API_URL}/get/category?slug=/${params?.brand}/${params?.category}`
   );
 
-  if (!getBrand || !getCatDataByBrand?.data?.data) notFound();
+  if (getBrand.length === 0 || !getCatDataByBrand?.data?.data) notFound();
 
   const data = {
     getBrand: getBrand,

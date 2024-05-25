@@ -8,8 +8,6 @@ import BookService from "../../shared/BookService";
 import BrandContent from "../content";
 
 export const Category = ({ data }) => {
-  // console.log("data getBrand --->", data.getBrand);
-  // console.log("data getAreasByBrand --->", data.getAreasByBrand);
 
   return (
     <div className="relative bg-white text-black">

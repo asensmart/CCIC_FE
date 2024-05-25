@@ -3,12 +3,6 @@ import { Brand } from "../components/brand/brand";
 import Script from "next/script";
 
 export async function generateMetadata({ params }) {
-  // export async function generateMetadata({ params, searchParams }, parent) {
-  // read route params
-  // const id = params.id;
-
-  // fetch data
-  // const product = await fetch(`https://.../${id}`).then((res) => res.json());
   const brand = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/get/brand?slug=/${params?.brand}`
   )
@@ -19,10 +13,6 @@ export async function generateMetadata({ params }) {
     .catch((err) => {
       console.log(err);
     });
-  // const product = "Home Page";
-
-  // optionally access and extend (rather than replace) parent metadata
-  // const previousImages = parent.openGraph?.images || [];
 
   return {
     title: brand?.metaTitle,
@@ -67,9 +57,7 @@ const Brands = async ({ params }) => {
       console.log(err);
     });
 
-  if (!getBrand) {
-    notFound();
-  }
+  if (getBrand.length == 0) notFound();
 
   const data = {
     getBrand: getBrand,
