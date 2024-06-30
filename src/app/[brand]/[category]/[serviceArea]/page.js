@@ -4,16 +4,16 @@ import { notFound } from "next/navigation";
 import Script from "next/script";
 
 export async function generateMetadata({ params }) {
-  const serviceArea = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/areaName?brandName=${params?.brand}&categoryName=${params?.category}&slug=/${params?.serviceArea}`
-  )
-    .then((res) => res.json())
-    .then((res) => {
-      return res?.data;
+  const serviceArea = await axios
+    .post(`${process.env.NEXT_PUBLIC_BASE_URL}/serviceArea`, {
+      brand: params?.brand,
+      category: params?.category,
+      serviceArea: params?.serviceArea,
     })
-    .catch((err) => {
-      console.log(err);
-    });
+    .then((res) => res?.data?.data)
+    .catch((err) => console.log(err));
+
+  // console.log("serviceArea --->", serviceArea);
 
   return {
     title: serviceArea[0]?.metaTitle,
