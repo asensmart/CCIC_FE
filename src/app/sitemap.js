@@ -3,7 +3,7 @@ import axios from "axios";
 export default async function sitemap() {
   var mapData = [];
   const areas = await axios.get(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/sitemap`
+    `${process.env.NEXT_PUBLIC_API_URL}/get/sitemapData`
   );
 
   const defaultData = [

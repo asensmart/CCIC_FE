@@ -35,12 +35,15 @@ export default async function Home() {
       "No. 142, Govindan St, Shanthi Nagar, Arundati Nagar, Jamalia, Chennai, Tamil Nadu 600012",
   };
 
-  const brandData = await axios
-    .get(`${process.env.NEXT_PUBLIC_BASE_URL}/brands`)
-    .then((res) => {
-      return res?.data;
-    })
-    .catch((err) => console.log(err));
+  // const brandData = await axios
+  //   // .get(`${process.env.NEXT_PUBLIC_API_URL}/get/brands`)
+  //   .get(`${process.env.NEXT_PUBLIC_BASE_URL}/brands`)
+  //   .then((res) => {
+  //     return res?.data;
+  //   })
+  //   .catch((err) => console.log(err));
+
+  // console.log("brandData --->", brandData?.data?.length);
 
   return (
     <>
@@ -49,7 +52,8 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <HomeCom brandData={brandData} />
+      <HomeCom />
+      {/* <HomeCom brandData={brandData} /> */}
     </>
   );
 }

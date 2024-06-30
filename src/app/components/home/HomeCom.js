@@ -7,8 +7,9 @@ import OurServices from "./ourServices/index.js";
 import Link from "next/link";
 import homeBanner from "@/assets/images/homebanner.webp";
 import MainNavbar from "../shared/Nav/Navbar.js";
+import axios from "axios";
 
-const HomeCom = ({ brandData }) => {
+const HomeCom = () => {
   const titleData = [
     {
       id: 1,
@@ -33,9 +34,29 @@ const HomeCom = ({ brandData }) => {
 
   const [data, setData] = useState([]);
 
+  // const brandData = await axios
+  //   .get(`${process.env.NEXT_PUBLIC_API_URL}/get/brands`)
+  //   // .get(`${process.env.NEXT_PUBLIC_BASE_URL}/brands`)
+  //   .then((res) => {
+  //     return res?.data;
+  //   })
+  //   .catch((err) => console.log(err));
+
+  // console.log("brandData --->", brandData?.data?.length);
+
   useEffect(() => {
-    setData(brandData);
-  }, [brandData]);
+    axios
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/get/brands`)
+      // .get(`${process.env.NEXT_PUBLIC_BASE_URL}/brands`)
+      .then((res) => {
+        console.log("res ddd -->", res?.data?.data);
+        setData(res?.data?.data);
+        // return res?.data;
+      })
+      .catch((err) => console.log(err));
+
+    // console.log("brandData --->", brandData?.data);
+  }, []);
 
   return (
     <div className="bg-white">
