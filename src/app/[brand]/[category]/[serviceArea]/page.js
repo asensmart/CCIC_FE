@@ -36,38 +36,43 @@ export async function generateMetadata({ params }) {
 }
 
 const ServiceArea = async ({ params }) => {
-  const getBrand = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/brand?slug=/${params?.brand}`
-  )
-    .then((res) => res.json())
+  const getBrand = await axios
+    .post(`${process.env.NEXT_PUBLIC_BASE_URL}/brand`, {
+      brandName: params?.brand,
+    })
     .then((res) => {
-      return res?.data;
+      return res?.data?.data;
     })
     .catch((err) => {
       console.log(err);
     });
 
-  const getAreasByBrand = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/areaNamesByBrandName?brandName=${params?.brand}`
-  )
-    .then((res) => res.json())
+  const getAreasByBrand = await axios
+    .post(`${process.env.NEXT_PUBLIC_BASE_URL}/brandArea`, {
+      brandName: params?.brand,
+    })
     .then((res) => {
-      return res?.data;
+      return res?.data?.data;
     })
     .catch((err) => {
       console.log(err);
     });
 
-  const getServices = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/areaName?brandName=${params?.brand}&categoryName=${params?.category}&slug=/${params?.serviceArea}`
-  );
+  const getServices = await axios
+    .post(`${process.env.NEXT_PUBLIC_BASE_URL}/serviceArea`, {
+      brand: params?.brand,
+      category: params?.category,
+      serviceArea: params?.serviceArea,
+    })
+    .then((res) => res?.data)
+    .catch((err) => console.log(err));
 
   if (getBrand.length === 0 || getServices?.data?.data.length === 0) notFound();
 
   const data = {
     getBrand: getBrand,
     getAreasByBrand: getAreasByBrand,
-    getServices: getServices?.data?.data[0],
+    getServices: getServices?.data[0],
   };
 
   const jsonLd = {

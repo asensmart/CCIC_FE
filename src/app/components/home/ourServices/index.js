@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
 import { Icons } from "@/assets/icons/icons";
-import { useId } from "react";
 
 const OurServices = ({ brand }) => {
   var settings = {
@@ -43,7 +42,7 @@ const OurServices = ({ brand }) => {
         <span className="text-black">Our</span> Services
       </h1>
       <Slider {...settings} className="text-orangeText pe-8 h-[700px]">
-        {brand.map((item) => (
+        {brand?.map((item) => (
           <div
             key={item?._id}
             className="h-[100%] pe-5 ms-5 my-5 text-black flex flex-col transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-700 hover:-translate-y-4"

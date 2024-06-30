@@ -1,14 +1,15 @@
 import { notFound } from "next/navigation";
 import { Brand } from "../components/brand/brand";
 import Script from "next/script";
+import axios from "axios";
 
 export async function generateMetadata({ params }) {
-  const brand = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/brand?slug=/${params?.brand}`
-  )
-    .then((res) => res.json())
+  const brand = await axios
+    .post(`${process.env.NEXT_PUBLIC_BASE_URL}/brand`, {
+      brandName: params?.brand,
+    })
     .then((res) => {
-      return res?.data;
+      return res?.data?.data;
     })
     .catch((err) => {
       console.log(err);
@@ -35,29 +36,29 @@ export async function generateMetadata({ params }) {
 }
 
 const Brands = async ({ params }) => {
-  const getBrand = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/brand?slug=/${params?.brand}`
-  )
-    .then((res) => res.json())
+  const getBrand = await axios
+    .post(`${process.env.NEXT_PUBLIC_BASE_URL}/brand`, {
+      brandName: params?.brand,
+    })
     .then((res) => {
-      return res?.data;
+      return res?.data?.data;
     })
     .catch((err) => {
       console.log(err);
     });
 
-  const getAreasByBrand = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/areaNamesByBrandName?brandName=${params?.brand}`
-  )
-    .then((res) => res.json())
+  const getAreasByBrand = await axios
+    .post(`${process.env.NEXT_PUBLIC_BASE_URL}/brandArea`, {
+      brandName: params?.brand,
+    })
     .then((res) => {
-      return res?.data;
+      return res?.data?.data;
     })
     .catch((err) => {
       console.log(err);
     });
 
-  if (getBrand.length == 0) notFound();
+  if (getBrand?.length == 0) notFound();
 
   const data = {
     getBrand: getBrand,

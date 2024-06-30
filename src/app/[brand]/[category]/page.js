@@ -4,12 +4,13 @@ import { notFound } from "next/navigation";
 import Script from "next/script";
 
 export async function generateMetadata({ params }) {
-  const category = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/category?slug=/${params?.brand}/${params?.category}`
-  )
-    .then((res) => res.json())
+  const category = await axios
+    .post(`${process.env.NEXT_PUBLIC_BASE_URL}/category`, {
+      brand: params.brand,
+      category: params.category,
+    })
     .then((res) => {
-      return res?.data;
+      return res?.data?.data;
     })
     .catch((err) => {
       console.log(err);
@@ -36,10 +37,34 @@ export async function generateMetadata({ params }) {
 }
 
 const CategoryPage = async ({ params }) => {
-  const getBrand = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/brand?slug=/${params?.brand}`
-  )
-    .then((res) => res.json())
+  const getBrand = await axios
+    .post(`${process.env.NEXT_PUBLIC_BASE_URL}/brand`, {
+      brandName: params?.brand,
+    })
+    .then((res) => {
+      return res?.data?.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  const getAreasByCategory = await axios
+    .post(`${process.env.NEXT_PUBLIC_BASE_URL}/category/areas`, {
+      brand: params.brand,
+    })
+    .then((res) => {
+      return res?.data?.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  const getCatDataByBrand = await axios
+    .post(`${process.env.NEXT_PUBLIC_BASE_URL}/category`, {
+      brand: params.brand,
+      category: params.category,
+    })
+
     .then((res) => {
       return res?.data;
     })
@@ -47,27 +72,12 @@ const CategoryPage = async ({ params }) => {
       console.log(err);
     });
 
-  const getAreasByCategory = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/areaNamesByCategoryName?categoryName=${params?.brand}`
-  )
-    .then((res) => res.json())
-    .then((res) => {
-      return res?.data;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  const getCatDataByBrand = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/category?slug=/${params?.brand}/${params?.category}`
-  );
-
-  if (getBrand.length === 0 || !getCatDataByBrand?.data?.data) notFound();
+  if (!getBrand || !getCatDataByBrand?.data) notFound();
 
   const data = {
     getBrand: getBrand,
     getAreasByCategory: getAreasByCategory,
-    getCategory: getCatDataByBrand?.data?.data,
+    getCategory: getCatDataByBrand?.data,
   };
 
   const jsonLd = {

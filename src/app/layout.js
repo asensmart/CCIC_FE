@@ -4,6 +4,9 @@ import Footer from "./components/Footer";
 import "react-modern-drawer/dist/index.css";
 import "@smastrom/react-rating/style.css";
 import Script from "next/script";
+import axios from "axios";
+
+// axios.defaults.baseURL = process?.env?.NEXT_PUBLIC_BASE_URL;
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -50,20 +53,20 @@ export default function RootLayout({ children }) {
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
         />
-            {/* <!-- Google tag (gtag.js) --> */}
-    <Script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-57Z57MML6X"
-    ></Script>
-    <Script id="google-analytics">
-      {`window.dataLayer = window.dataLayer || [];
+        {/* <!-- Google tag (gtag.js) --> */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-57Z57MML6X"
+        ></Script>
+        <Script id="google-analytics">
+          {`window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
 
       gtag("config", "G-57Z57MML6X");`}
-    </Script>
+        </Script>
       </head>
       <body className={`${inter.className}`}>
         {children}

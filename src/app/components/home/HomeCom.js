@@ -9,7 +9,6 @@ import homeBanner from "@/assets/images/homebanner.webp";
 import MainNavbar from "../shared/Nav/Navbar.js";
 
 const HomeCom = ({ brandData }) => {
-
   const titleData = [
     {
       id: 1,
@@ -58,10 +57,10 @@ const HomeCom = ({ brandData }) => {
             key={data?.id}
             className="flex items-center justify-start lg:mb-0 sm:mb-4 gap-3"
           >
-            <div className="p-3 rounded bg-mailHead">{data.icon}</div>
+            <div className="p-3 rounded bg-mailHead">{data?.icon}</div>
             <div className="">
-              <div className="font-bold text-xl">{data.title}</div>
-              <div>{data.description}</div>
+              <div className="font-bold text-xl">{data?.title}</div>
+              <div>{data?.description}</div>
             </div>
           </div>
         ))}

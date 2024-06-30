@@ -1,5 +1,6 @@
 import Script from "next/script";
 import HomeCom from "./components/home/HomeCom";
+import axios from "axios";
 
 export const metadata = {
   applicationName: "AM Service",
@@ -34,10 +35,10 @@ export default async function Home() {
       "No. 142, Govindan St, Shanthi Nagar, Arundati Nagar, Jamalia, Chennai, Tamil Nadu 600012",
   };
 
-  const brandData = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/get/brands`)
-    .then((res) => res.json())
+  const brandData = await axios
+    .get(`${process.env.NEXT_PUBLIC_BASE_URL}/brands`)
     .then((res) => {
-      return res.data;
+      return res?.data;
     })
     .catch((err) => console.log(err));
 
