@@ -13,8 +13,6 @@ export async function generateMetadata({ params }) {
     .then((res) => res?.data?.data)
     .catch((err) => console.log(err));
 
-  // console.log("serviceArea --->", serviceArea);
-
   return {
     title: serviceArea[0]?.metaTitle,
     description: serviceArea[0]?.metaDescription,

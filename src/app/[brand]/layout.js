@@ -7,37 +7,37 @@ import React from "react";
 import { notFound } from "next/navigation";
 
 export default async function RootLayout({ children, params }) {
-  const getCatByBrand = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/categoriesByBrand?brandName=${params?.brand}`
-  )
-    .then((res) => res.json())
-    .then((res) => {
-      return res?.data;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    const getCatByBrand = await axios
+      .post(`${process.env.NEXT_PUBLIC_BASE_URL}/category/brand`, {
+        brandName: params?.brand,
+      })
+      .then((res) => {
+        return res?.data?.data;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
-  const getBrand = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/get/brand?slug=/${params?.brand}`
-  )
-    .then((res) => res.json())
-    .then((res) => {
-      return res?.data;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    const getBrand = await axios
+      .post(`${process.env.NEXT_PUBLIC_BASE_URL}/brand`, {
+        brandName: params?.brand,
+      })
+      .then((res) => {
+        return res?.data?.data;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
     if(!getBrand) notFound()
 
   return (
     <>
-      <BrandMobileNav menus={menus} data={getCatByBrand} brandName={params} />
+      <BrandMobileNav menus={menus} data={getCatByBrand?.data} brandName={params} />
       <div className="sticky top-0 shadow-lg bg-white z-50 lg:block hidden">
         <NavbarBrand
           brand={getBrand}
-          category={getCatByBrand}
+          category={getCatByBrand?.data}
           brandName={params}
         />
       </div>
