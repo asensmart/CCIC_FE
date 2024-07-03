@@ -5,6 +5,7 @@ import { menus } from "../datas/catMenus";
 import { Icons } from "@/assets/icons/icons";
 import React from "react";
 import { notFound } from "next/navigation";
+import axios from "axios";
 
 export default async function RootLayout({ children, params }) {
     const getCatByBrand = await axios
