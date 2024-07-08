@@ -65,7 +65,7 @@ const ServiceArea = async ({ params }) => {
     .then((res) => res?.data)
     .catch((err) => console.log(err));
 
-  if (!getBrand || getServices?.data?.data?.length === 0) notFound();
+  if (getBrand.length == 0 || getServices?.data?.length === 0) notFound();
 
   const data = {
     getBrand: getBrand,
