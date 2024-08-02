@@ -25,7 +25,7 @@ export const ServiceAreaPage = ({ data }) => {
       <ContactForm />
 
       {/* Content */}
-      <BrandContent data={data?.getServices} />
+      <BrandContent data={data?.getServices} serviceArea={true} />
 
       {/* Rating */}
       <RatingCom data={data?.getBrand} />
