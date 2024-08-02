@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 const BrandContent = ({ data }) => {
+  console.log("data --->", data);
   return (
     <div className="lg:mt-16 mt-4">
       <h2 className="hidden lg:block text-center text-4xl font-bold text-[#F86E4E]">
@@ -13,10 +14,18 @@ const BrandContent = ({ data }) => {
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] py-5 px-2 bg-white">
         <div className="sm:mb-11 sm:flex sm:justify-center">
-          <Image
+          {/* <Image
             src={data?.sideThumbnail}
             alt={data?.sideImageAltName}
             title={data?.sideImageAltName}
+            width={500}
+            height={0}
+            priority
+          /> */}
+          <Image
+            src={data?.serviceAreaLogo}
+            alt={data?.logoAltName}
+            title={data?.logoAltName}
             width={500}
             height={0}
             priority
