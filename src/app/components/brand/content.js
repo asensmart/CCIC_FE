@@ -12,7 +12,10 @@ const BrandContent = ({ data, serviceArea }) => {
         </span>{" "}
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] py-5 px-2 bg-white">
-        <div className="sm:mb-11 sm:flex sm:justify-center">
+        <div
+          className="sm:mb-11 sm:flex sm:justify-center"
+          style={{ height: "fit-content" }}
+        >
           {serviceArea ? (
             <Image
               src={data?.serviceAreaLogo}
@@ -30,6 +33,7 @@ const BrandContent = ({ data, serviceArea }) => {
               width={500}
               height={0}
               priority
+              className="h-[30%]"
             />
           )}
         </div>
