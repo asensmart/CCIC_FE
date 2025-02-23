@@ -3,6 +3,8 @@ import { Rating } from "@smastrom/react-rating";
 import { format } from "date-fns";
 import React, { useEffect, useState } from "react";
 import axios, * as others from "axios";
+import Ratings from "./rating/Ratings";
+import Link from "next/link";
 
 const RatingCom = ({ data }) => {
   // console.log("rating data ==>", data);
@@ -83,7 +85,7 @@ const RatingCom = ({ data }) => {
       </section>
       <section>
         <div className="">
-          {ratData?.map((item, index) => (
+          {ratData?.slice(0, 3)?.map((item, index) => (
             <div className="p-2 border-b" key={index}>
               <p className="flex items-center">
                 <Rating
@@ -98,6 +100,18 @@ const RatingCom = ({ data }) => {
               <p>{item?.comment}</p>
             </div>
           ))}
+
+          <Link
+            href={`${process.env.NEXT_PUBLIC_HYPER_TXT}/${data?.brandName}/ratings`}
+            className="flex justify-center m-3"
+          >
+            <button
+              type="button"
+              className="py-3 px-10 bg-blue-500 hover:bg-blue-600 text-white rounded-xl"
+            >
+              See All Review
+            </button>
+          </Link>
         </div>
       </section>
     </div>

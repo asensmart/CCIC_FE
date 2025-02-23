@@ -32,7 +32,7 @@ export const Category = ({ data }) => {
       <RatingCom data={data?.getBrand} />
 
       {/* Service Area */}
-      <ServiceAreas data={data?.getAreasByCategory} />
+      {/* <ServiceAreas data={data?.getAreasByCategory} /> */}
 
       {/* Book A service Today */}
       <BookService whatsAppNum={data?.getBrand?.contactNumber} />

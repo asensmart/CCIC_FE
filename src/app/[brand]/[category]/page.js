@@ -48,16 +48,16 @@ const CategoryPage = async ({ params }) => {
       console.log(err);
     });
 
-  const getAreasByCategory = await axios
-    .post(`${process.env.NEXT_PUBLIC_BASE_URL}/category/areas`, {
-      brand: params.brand,
-    })
-    .then((res) => {
-      return res?.data?.data;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  // const getAreasByCategory = await axios
+  //   .post(`${process.env.NEXT_PUBLIC_BASE_URL}/category/areas`, {
+  //     brand: params.brand,
+  //   })
+  //   .then((res) => {
+  //     return res?.data?.data;
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
 
   const getCatDataByBrand = await axios
     .post(`${process.env.NEXT_PUBLIC_BASE_URL}/category`, {
@@ -76,7 +76,7 @@ const CategoryPage = async ({ params }) => {
 
   const data = {
     getBrand: getBrand,
-    getAreasByCategory: getAreasByCategory,
+    // getAreasByCategory: getAreasByCategory,
     getCategory: getCatDataByBrand?.data,
   };
 
