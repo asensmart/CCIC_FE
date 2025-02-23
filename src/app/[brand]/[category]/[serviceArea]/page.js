@@ -45,16 +45,16 @@ const ServiceArea = async ({ params }) => {
       console.log(err);
     });
 
-  const getAreasByBrand = await axios
-    .post(`${process.env.NEXT_PUBLIC_BASE_URL}/brandArea`, {
-      brandName: params?.brand,
-    })
-    .then((res) => {
-      return res?.data?.data;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  // const getAreasByBrand = await axios
+  //   .post(`${process.env.NEXT_PUBLIC_BASE_URL}/brandArea`, {
+  //     brandName: params?.brand,
+  //   })
+  //   .then((res) => {
+  //     return res?.data?.data;
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
 
   const getServices = await axios
     .post(`${process.env.NEXT_PUBLIC_BASE_URL}/serviceArea`, {
@@ -69,7 +69,7 @@ const ServiceArea = async ({ params }) => {
 
   const data = {
     getBrand: getBrand,
-    getAreasByBrand: getAreasByBrand,
+    // getAreasByBrand: getAreasByBrand,
     getServices: getServices?.data[0],
   };
 
