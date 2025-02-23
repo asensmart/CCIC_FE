@@ -104,6 +104,9 @@ const RatingCom = ({ data }) => {
           <Link
             href={`${process.env.NEXT_PUBLIC_HYPER_TXT}/${data?.brandName}/ratings`}
             className="flex justify-center m-3"
+            style={{
+              visibility: ratData?.length < 3 ? "hidden" : "visible",
+            }}
           >
             <button
               type="button"
