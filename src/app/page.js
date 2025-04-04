@@ -4,9 +4,12 @@ import axios from "axios";
 
 export const metadata = {
   applicationName: "AM Service",
-  title: "AM Service Solution - customer care in Chennai",
+  title:
+    "TV Repair and Service in Chennai | 24/7 Expert Technicians | Doorstep fix",
+  // title: "AM Service Solution - customer care in Chennai",
   description:
-    "Welcome to customercareinchennai.com, your one-stop shop for 24/7 online repair services.",
+    "Need a TV repair service in Chennai? We provide expert doorstep repairs for LED, LCD & Smart TVs. Same-day visits. Call now for quick service.",
+  // "Welcome to customercareinchennai.com, your one-stop shop for 24/7 online repair services.",
   keywords: [
     "customer care in chennai",
     "samsung service centre",
