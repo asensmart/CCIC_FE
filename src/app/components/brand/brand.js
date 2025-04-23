@@ -33,7 +33,7 @@ export const Brand = ({ data }) => {
       <RatingCom data={data?.getBrand} />
 
       {/* Service Area */}
-      {/* <ServiceAreas data={data?.getAreasByBrand} /> */}
+      <ServiceAreas data={data?.getAreasByBrand} />
 
       {/* Book A service Today */}
       <BookService whatsAppNum={data?.getBrand?.contactNumber} />

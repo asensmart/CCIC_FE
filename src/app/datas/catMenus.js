@@ -32,8 +32,13 @@ export const menus = [
     name: "Category",
     slug: "#",
   },
+  // {
+  //   id: 4,
+  //   name: "Blog",
+  //   slug: "/blog",
+  // },
   {
-    id: 4,
+    id: 5,
     name: "Contact Us",
     slug: "/contactus",
   },
