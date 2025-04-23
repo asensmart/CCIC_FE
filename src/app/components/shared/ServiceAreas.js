@@ -6,7 +6,7 @@ const ServiceAreas = ({ data }) => {
   return (
     <div className={"px-2 pb-3 align_me"}>
       <h2 className="text-center">
-        Service <span>Area</span>{" "}
+        Service <span>Area</span>
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2]">
         {data?.map((value, i) => (

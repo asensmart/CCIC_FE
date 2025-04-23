@@ -47,22 +47,22 @@ const Brands = async ({ params }) => {
       console.log(err);
     });
 
-  // const getAreasByBrand = await axios
-  //   .post(`${process.env.NEXT_PUBLIC_BASE_URL}/brandArea`, {
-  //     brandName: params?.brand,
-  //   })
-  //   .then((res) => {
-  //     return res?.data?.data;
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+  const getAreasByBrand = await axios
+    .post(`${process.env.NEXT_PUBLIC_BASE_URL}/brandArea`, {
+      brandName: params?.brand,
+    })
+    .then((res) => {
+      return res?.data?.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
   if (getBrand?.length == 0) notFound();
 
   const data = {
     getBrand: getBrand,
-    // getAreasByBrand: getAreasByBrand,
+    getAreasByBrand: getAreasByBrand,
   };
 
   const jsonLd = {
