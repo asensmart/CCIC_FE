@@ -4,25 +4,25 @@ import React from "react";
 
 const NavMailHead = () => {
   const iconData = [
-    {
-      id: 1,
-      icon: <Icons.facebook size={18} color="black" />,
-      link: "https://www.facebook.com",
-    },
+    // {
+    //   id: 1,
+    //   icon: <Icons.facebook size={18} color="black" />,
+    //   link: "https://www.facebook.com",
+    // },
     {
       id: 2,
       icon: <Icons.instagram size={18} color="black" />,
-      link: "https://www.instagram.com",
+      link: "https://www.instagram.com/am_service24x7?igsh=bmt6OGwwdDFkNjZt",
     },
-    {
-      id: 3,
-      icon: <Icons.twitter size={18} color="black" />,
-      link: "https://www.twitter.com",
-    },
+    // {
+    //   id: 3,
+    //   icon: <Icons.twitter size={18} color="black" />,
+    //   link: "https://www.twitter.com",
+    // },
     {
       id: 4,
       icon: <Icons.google size={18} color="black" />,
-      link: "https://www.google.com",
+      link: "https://customercareinchennai.com/",
     },
   ];
   return (
@@ -36,7 +36,7 @@ const NavMailHead = () => {
       </Link>
       <div className="grid grid-cols-4 gap-3 items-center">
         {iconData.map((icon) => (
-          <Link href={icon.link} key={icon.id}>
+          <Link href={icon.link} key={icon.id} target="_blank">
             {icon.icon}
           </Link>
         ))}

@@ -32,11 +32,11 @@ export const menus = [
     name: "Brands",
     // subNav: [{ id: 1, subcatName: "Sample 1", path: "/kitchen " }],
   },
-  // {
-  //   id: 4,
-  //   name: "Blog",
-  //   slug: "/blog",
-  // },
+  {
+    id: 4,
+    name: "Blog",
+    slug: "/blog",
+  },
   {
     id: 5,
     name: "Contact Us",

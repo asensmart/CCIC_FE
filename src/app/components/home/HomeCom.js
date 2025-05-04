@@ -34,28 +34,15 @@ const HomeCom = () => {
 
   const [data, setData] = useState([]);
 
-  // const brandData = await axios
-  //   .get(`${process.env.NEXT_PUBLIC_API_URL}/get/brands`)
-  //   // .get(`${process.env.NEXT_PUBLIC_BASE_URL}/brands`)
-  //   .then((res) => {
-  //     return res?.data;
-  //   })
-  //   .catch((err) => console.log(err));
-
-  // console.log("brandData --->", brandData?.data?.length);
-
   useEffect(() => {
     axios
       .get(`${process.env.NEXT_PUBLIC_API_URL}/get/brands`)
-      // .get(`${process.env.NEXT_PUBLIC_BASE_URL}/brands`)
       .then((res) => {
-        console.log("res ddd -->", res?.data?.data);
         setData(res?.data?.data);
         // return res?.data;
       })
       .catch((err) => console.log(err));
 
-    // console.log("brandData --->", brandData?.data);
   }, []);
 
   return (

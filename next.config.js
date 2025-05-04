@@ -4,6 +4,7 @@ module.exports = {
     styledComponents: true,
   },
   images: {
+    // domains: ["localhost"],
     remotePatterns: [
       // http://api.customercareinchennai.com/uploads/brands/sideImage-1706550987346-104259939.png
       {
@@ -18,6 +19,12 @@ module.exports = {
         port: "",
         pathname: "/*",
       },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "8000",
+        pathname: "/uploads/**",
+      }
     ],
   },
 };

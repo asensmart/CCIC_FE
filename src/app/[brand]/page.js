@@ -3,7 +3,7 @@ import { Brand } from "../components/brand/brand";
 import Script from "next/script";
 import axios from "axios";
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }) {  
   const brand = await axios
     .post(`${process.env.NEXT_PUBLIC_BASE_URL}/brand`, {
       brandName: params?.brand,

@@ -1,49 +1,61 @@
-'use client';
-import { useState } from "react";
+"use client";
+import axios from "axios";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+// import img from "../../../assets/img1.png";
+import Link from "next/link";
 
-const BlogPage = () => {
-    const [selectedBlog, setSelectedBlog] = useState(null);
-    // const [first, setfirst] = useState(second)
+const BlogsPage = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-    const blogs = [
-      { id: 1, name: "Blog 1", content: "This is the content of Blog 1" },
-      { id: 2, name: "Blog 2", content: "This is the content of Blog 2" },
-      { id: 3, name: "Blog 3", content: "This is the content of Blog 3" },
-    ];
+  useEffect(() => {
+    function fetchBlogs() {
+      axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs`).then((res) => {
+        console.log(res?.data);
+        setLoading(true);
+        setData(res?.data?.data);
+        setLoading(false);
+      });
+    }
+    fetchBlogs();
+  }, []);
 
-    return (
-        <div className=" bg-white text-black p-2 grid grid-cols-3 gap-4">
-            {/* Left side: Blog list */}
-            <div className="col-span-1 border-r border-gray-300 p-2">
-                <h2 className="font-bold mb-2">Blog List</h2>
-                <ul>
-                    {blogs.map((blog) => (
-                        <li
-                            key={blog.id}
-                            className={`cursor-pointer p-2 ${
-                                selectedBlog?.id === blog.id ? "bg-gray-200" : ""
-                            }`}
-                            onClick={() => setSelectedBlog(blog)}
-                        >
-                            {blog.name}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-
-            {/* Right side: Blog content */}
-            <div className="col-span-2 p-2">
-                {selectedBlog ? (
-                    <div>
-                        <h2 className="font-bold text-xl mb-2">{selectedBlog.name}</h2>
-                        <p>{selectedBlog.content}</p>
-                    </div>
-                ) : (
-                    <p>Select a blog to view its content</p>
-                )}
-            </div>
+  return (
+    <div className="bg-gray-100 p-4 min-h-screen">
+      <h1 className="text-2xl font-bold mb-4 text-center text-black">Blogs</h1>
+      {!loading && (
+        <div className="text-black grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          {data?.map((blog) => (
+            <Link
+              key={blog?._id}
+              href={`/blog/${blog?._id}?${Date.now()}`}
+              className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
+            >
+              <Image
+                src={blog?.thumbnail}
+                // src={img}
+                alt={"thumbnail"}
+                width={0}
+                height={0}
+                className="w-[100%] h-[60%] object-cover"
+              />
+              <div className="p-4">
+                <h2 className="text-lg font-bold mb-2 text-black">
+                  {blog.name}
+                </h2>
+                <div
+                  className="text-gray-600 text-sm line-clamdiv-3"
+                >
+                  {blog?.shortDescription}
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
-export default BlogPage;
+export default BlogsPage;
