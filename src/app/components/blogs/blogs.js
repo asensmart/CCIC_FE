@@ -10,9 +10,8 @@ const BlogsPage = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    
     function fetchBlogs() {
-      axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs`).then((res) => {
+      axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs`).then((res) => {
         setLoading(true);
         setData(res?.data?.data);
         setLoading(false);

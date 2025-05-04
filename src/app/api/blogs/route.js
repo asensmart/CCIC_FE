@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function GET(req) {
+export async function POST(req) {
   // const data = await req.json();
 
   const blogAPI = await axios
