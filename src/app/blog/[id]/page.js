@@ -1,6 +1,7 @@
 import axios from "axios";
 import BlogPage from "@/app/components/blogs/blog";
 import MainNavbar from "@/app/components/shared/Nav/Navbar";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
   const blog = await axios
@@ -53,7 +54,9 @@ const BlogIndex = async ({ params }) => {
       console.log(err);
     });
 
-  return (
+  return !getBlog ? (
+    notFound()
+  ) : (
     <>
       <MainNavbar brandData={brandData} />
       <BlogPage data={getBlog} />
