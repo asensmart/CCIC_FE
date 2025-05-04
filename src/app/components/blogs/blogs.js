@@ -10,9 +10,9 @@ const BlogsPage = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    
     function fetchBlogs() {
       axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs`).then((res) => {
-        console.log(res?.data);
         setLoading(true);
         setData(res?.data?.data);
         setLoading(false);
@@ -36,17 +36,15 @@ const BlogsPage = () => {
                 src={blog?.thumbnail}
                 // src={img}
                 alt={"thumbnail"}
-                width={0}
-                height={0}
+                width={100}
+                height={100}
                 className="w-[100%] h-[60%] object-cover"
               />
               <div className="p-4">
                 <h2 className="text-lg font-bold mb-2 text-black">
                   {blog.name}
                 </h2>
-                <div
-                  className="text-gray-600 text-sm line-clamdiv-3"
-                >
+                <div className="text-gray-600 text-sm line-clamdiv-3">
                   {blog?.shortDescription}
                 </div>
               </div>

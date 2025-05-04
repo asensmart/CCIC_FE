@@ -9,8 +9,8 @@ const BlogPage = ({ data }) => {
         // src={img}
         src={data?.banner}
         alt={data?.blogTitle}
-        width={0}
-        height={0}
+        width={1000}
+        height={1000}
         className="w-full h-80 object-cover rounded-lg mb-4"
       />
       <h1 className="text-center text-4xl font-bold underline mt-10">
