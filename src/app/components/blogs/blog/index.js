@@ -11,7 +11,8 @@ const BlogPage = ({ data }) => {
         alt={data?.blogTitle}
         width={1000}
         height={1000}
-        className="w-full h-80 object-cover rounded-lg mb-4"
+        className="w-full h-full rounded-lg mb-4"
+        // className="w-full h-full object-cover rounded-lg mb-4"
       />
       <h1 className="text-center text-4xl font-bold underline mt-10">
         {data?.blogTitle}

@@ -7,7 +7,7 @@ import { Icons } from "@/assets/icons/icons";
 const OurServices = ({ brand }) => {
   var settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -25,12 +25,14 @@ const OurServices = ({ brand }) => {
         breakpoint: 769,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
       {
         breakpoint: 620,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
@@ -48,7 +50,7 @@ const OurServices = ({ brand }) => {
             className="h-[100%] pe-5 ms-5 my-5 text-black flex flex-col transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-700 hover:-translate-y-4"
           >
             <div className="relative shadow-lg  hover:shadow-gray-400 border border-borderClr mx-1 rounded-2xl">
-            {/* <div className="relative shadow-lg hover:shadow-[0_5px_5px_0px] hover:shadow-orangeText border border-borderClr mx-1 rounded-2xl"> */}
+              {/* <div className="relative shadow-lg hover:shadow-[0_5px_5px_0px] hover:shadow-orangeText border border-borderClr mx-1 rounded-2xl"> */}
               <div className="relative border-b border-borderClr w-[100%]">
                 <Image
                   src={item?.sideThumbnail}

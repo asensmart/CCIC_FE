@@ -37,7 +37,7 @@ const BlogsPage = () => {
                 alt={"thumbnail"}
                 width={100}
                 height={100}
-                className="w-[100%] h-[60%] object-cover"
+                className="w-[100%] h-[50%] object-contain"
               />
               <div className="p-4">
                 <h2 className="text-lg font-bold mb-2 text-black">
