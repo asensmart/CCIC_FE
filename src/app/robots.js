@@ -3,7 +3,8 @@ export default function robots() {
     rules: {
       userAgent: "*",
       allow: "/",
-      // disallow: "/",
+      disallow: "",
+      disallow: "/cgi-bin/",
     },
     sitemap: "https://customercareinchennai.com/sitemap.xml",
   };
