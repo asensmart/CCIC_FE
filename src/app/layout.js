@@ -29,8 +29,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
+        <link
+          rel="alternate"
+          href="https://customercareinchennai.com/"
+          hreflang="en-IN"
+        />
         <link
           rel="stylesheet"
           type="text/css"
