@@ -5,7 +5,7 @@ import Image from "next/image";
 import HomeAbout from "./HomeAbout.js";
 import OurServices from "./ourServices/index.js";
 import Link from "next/link";
-import homeBanner from "@/assets/images/homebanner.webp";
+import homeBanner from "@/assets/images/homebanner.png";
 import MainNavbar from "../shared/Nav/Navbar.js";
 import axios from "axios";
 
