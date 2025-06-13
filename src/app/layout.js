@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
         <link
           rel="alternate"
           href="https://customercareinchennai.com/"
-          hreflang="en-IN"
+          hrefLang="en-IN"
         />
         <link
           rel="stylesheet"

@@ -20,36 +20,53 @@ const BlogsPage = () => {
     fetchBlogs();
   }, []);
 
+  // useEffect(() => {
+  //   function fetchBlogs() {
+  //     axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs`).then((res) => {
+  //       setLoading(true);
+  //       setData(res?.data?.data);
+  //       setLoading(false);
+  //     });
+  //   }
+  //   fetchBlogs();
+  // }, []);
+
+  console.log("data --->" + data);
+
   return (
-    <div className="bg-gray-100 p-4 min-h-screen">
+    <div className="bg-gray-100 p-4 min-h-screen ">
       <h1 className="text-2xl font-bold mb-4 text-center text-black">Blogs</h1>
+      <h2>The Data is --- {JSON.stringify(data)}</h2>
       {!loading && (
-        <div className="text-black grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {data?.map((blog) => (
-            <Link
-              key={blog?._id}
-              href={`/blog/${blog?._id}?${Date.now()}`}
-              className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
-            >
-              <Image
-                src={blog?.thumbnail}
-                // src={img}
-                alt={"thumbnail"}
-                width={100}
-                height={100}
-                className="w-[100%] h-[50%] object-contain"
-              />
-              <div className="p-4">
-                <h2 className="text-lg font-bold mb-2 text-black">
-                  {blog.name}
-                </h2>
-                <div className="text-gray-600 text-sm line-clamdiv-3">
-                  {blog?.shortDescription}
+        <>
+          <h1>test</h1>
+          <div className="text-black grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {data?.map((blog) => (
+              <Link
+                key={blog?._id}
+                href={`/blog/${blog?._id}?${Date.now()}`}
+                className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              >
+                <Image
+                  src={blog?.thumbnail}
+                  // src={img}
+                  alt={"thumbnail"}
+                  width={100}
+                  height={100}
+                  className="w-[100%] h-[50%] object-contain"
+                />
+                <div className="p-4">
+                  <h2 className="text-lg font-bold mb-2 text-black">
+                    {blog.name}
+                  </h2>
+                  <div className="text-gray-600 text-sm line-clamdiv-3">
+                    {blog?.shortDescription}
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+              </Link>
+            ))}
+          </div>
+        </>
       )}
     </div>
   );

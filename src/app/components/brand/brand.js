@@ -17,8 +17,8 @@ export const Brand = ({ data }) => {
         alt={data?.getBrand?.titleImageAltName}
         title={data?.getBrand?.titleImageAltName}
         // className="dark:invert"
-        className="object-cover h-32 md:h-[100%] w-[100%]"
-        width={900}
+        className="object-fill h-32 md:h-[100%] w-[100%]"
+        width={1000}
         height={0}
         priority
       />
