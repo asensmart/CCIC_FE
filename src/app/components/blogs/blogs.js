@@ -11,11 +11,13 @@ const BlogsPage = () => {
 
   useEffect(() => {
     function fetchBlogs() {
-      axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs`).then((res) => {
-        setLoading(true);
-        setData(res?.data?.data);
-        setLoading(false);
-      });
+      axios
+        .post(`https://api.customercareinchennai.com/api/v1/get/getAllBlogs`)
+        .then((res) => {
+          setLoading(true);
+          setData(res?.data?.data);
+          setLoading(false);
+        });
     }
     fetchBlogs();
   }, []);
