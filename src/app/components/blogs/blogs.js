@@ -9,10 +9,23 @@ const BlogsPage = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // useEffect(() => {
+  //   function fetchBlogs() {
+  //     axios
+  //       .get(`https://api.customercareinchennai.com/api/v1/get/getAllBlogs`)
+  //       .then((res) => {
+  //         setLoading(true);
+  //         setData(res?.data?.data);
+  //         setLoading(false);
+  //       });
+  //   }
+  //   fetchBlogs();
+  // }, []);
+
   useEffect(() => {
     function fetchBlogs() {
       axios
-        .get(`https://api.customercareinchennai.com/api/v1/get/getAllBlogs`)
+        .post(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs`, { name: "getBlogs" })
         .then((res) => {
           setLoading(true);
           setData(res?.data?.data);
@@ -22,23 +35,9 @@ const BlogsPage = () => {
     fetchBlogs();
   }, []);
 
-  // useEffect(() => {
-  //   function fetchBlogs() {
-  //     axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs`).then((res) => {
-  //       setLoading(true);
-  //       setData(res?.data?.data);
-  //       setLoading(false);
-  //     });
-  //   }
-  //   fetchBlogs();
-  // }, []);
-
-  console.log("data --->" + data);
-
   return (
     <div className="bg-gray-100 p-4 min-h-screen ">
       <h1 className="text-2xl font-bold mb-4 text-center text-black">Blogs</h1>
-      <h2>The Data is --- {JSON.stringify(data)}</h2>
       {!loading && (
         <>
           <h1>test</h1>

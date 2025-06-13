@@ -1,7 +1,10 @@
 import axios from "axios";
 
 export async function POST(req) {
-  // const data = await req.json();
+  const data = await req.json();
+  data = data.name;
+
+  console.log("data API--->", data);
 
   const blogAPI = await axios
     .get(
@@ -10,7 +13,6 @@ export async function POST(req) {
       `
     )
     .then((res) => {
-      console.log("data --->", res?.data?.data);
       return res?.data?.data;
       // return [
       //   {
