@@ -40,7 +40,6 @@ const BlogsPage = () => {
       <h1 className="text-2xl font-bold mb-4 text-center text-black">Blogs</h1>
       {!loading && (
         <>
-          <h1>test</h1>
           <div className="text-black grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {data?.map((blog) => (
               <Link
