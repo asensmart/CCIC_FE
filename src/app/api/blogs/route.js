@@ -2,7 +2,6 @@ import axios from "axios";
 
 export async function POST(req) {
   const data = await req.json();
-  data = data.name;
 
   console.log("data API--->", data);
 
