@@ -1,5 +1,6 @@
 import Ratings from "@/app/components/shared/rating/Ratings";
 import axios from "axios";
+import { notFound } from "next/navigation";
 import React from "react";
 
 const page = async ({ params }) => {

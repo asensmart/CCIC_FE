@@ -26,14 +26,14 @@ const Ratings = ({ data }) => {
   return (
     <div className="pt-5">
       <Link
-        href={`${process.env.NEXT_PUBLIC_HYPER_TXT}/${data?.getBrand?.brandName}`}
+        href={`${process.env.NEXT_PUBLIC_HYPER_TXT}/${data?.getBrand?.slug}`}
         className="flex justify-start ms-4"
       >
         <button
           type="button"
           className="py-3 ps-5 pe-10 bg-blue-500 hover:bg-blue-600 text-white rounded-xl"
         >
-          &#x25c0; Back
+          &larr; Back
         </button>
       </Link>
       {ratData?.map((item, index) => (

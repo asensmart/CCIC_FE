@@ -7,7 +7,7 @@ import Ratings from "./rating/Ratings";
 import Link from "next/link";
 
 const RatingCom = ({ data }) => {
-  // console.log("rating data ==>", data);
+  console.log("rating data ==>", data);
 
   const [rating, setRating] = useState(5); // Initial value
   const [comment, setComment] = useState(""); // Initial value
@@ -102,7 +102,7 @@ const RatingCom = ({ data }) => {
           ))}
 
           <Link
-            href={`${process.env.NEXT_PUBLIC_HYPER_TXT}/${data?.brandName}/ratings`}
+            href={`${process.env.NEXT_PUBLIC_HYPER_TXT}/${data?.slug}/ratings`}
             className="flex justify-center m-3"
             style={{
               visibility: ratData?.length < 3 ? "hidden" : "visible",
