@@ -7,7 +7,8 @@ import { Icons } from "@/assets/icons/icons";
 import NavMailHead from "./navHead/navMailHead";
 import Image from "next/image";
 
-const NavbarMenus = ({ brandName, category }) => {
+const NavbarMenus = ({ brand, category, brandName }) => {
+
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="p-2 flex">
@@ -15,10 +16,10 @@ const NavbarMenus = ({ brandName, category }) => {
         return item?.name !== "Category" ? (
           <Link
             href={
-              brandName && item?.name === "Home"
-                ? `/${brandName}`
+              brand?.brandName && item?.name === "Home"
+                ? `${brandName}`
                 : brandName
-                ? `/${brandName}${item?.slug}`
+                ? `${brandName}${item?.slug}`
                 : item?.slug
             }
             key={item?.id}
@@ -47,7 +48,7 @@ const NavbarMenus = ({ brandName, category }) => {
                 category?.map((catItem) => (
                   <Link
                     key={catItem?._id}
-                    href={`${process.env.NEXT_PUBLIC_HYPER_TXT}${catItem.slug}`}
+                    href={`${process.env.NEXT_PUBLIC_HYPER_TXT}${brandName}${catItem.slug}`}
                   >
                     <div
                       role="button"
@@ -70,24 +71,28 @@ const NavbarMenus = ({ brandName, category }) => {
   );
 };
 
-const NavbarBrand = ({ brandName, category, brand }) => {
+const NavbarBrand = ({ brand, category, brandName }) => {
   return (
     <>
       <NavMailHead />
       <div className="grid grid-cols-[2fr_3fr_1.5fr] p-2 items-center bg-white text-navText font-semibold">
         <div className="w-[70%] items-center">
-          <Link href={`/${brandName?.brand}`}>
+          <Link href={`/${brandName?.slice(1)}`}>
             <Image
               src={brand?.brandLogo}
-              alt={`${brandName?.brand} logo`}
-              title={`${brandName?.brand} logo`}
+              alt={`${brand?.brandName} logo`}
+              title={`${brand?.brandName} logo`}
               width={100}
               height={0}
             />
           </Link>
         </div>
         <div className="">
-          <NavbarMenus category={category} brandName={brandName.brand} />
+          <NavbarMenus
+            brand={brand}
+            category={category}
+            brandName={brandName}
+          />
         </div>
         <div className="flex items-center gap-4 mx-auto">
           <Link

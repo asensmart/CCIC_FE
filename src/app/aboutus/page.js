@@ -1,11 +1,12 @@
+import axios from "axios";
 import AboutContent from "../components/about";
 import MainNavbar from "../components/shared/Nav/Navbar";
 
 const AboutUs = async () => {
-  const brandData = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/get/brands`)
-    .then((res) => res.json())
+  const brandData = await axios
+    .get(`${process.env.NEXT_PUBLIC_API_URL}/get/brands`)
     .then((res) => {
-      return res.data;
+      return res?.data?.data;
     })
     .catch((err) => console.log(err));
 

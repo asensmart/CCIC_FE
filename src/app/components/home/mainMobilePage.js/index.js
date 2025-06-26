@@ -9,6 +9,7 @@ import autoprefixer from "autoprefixer";
 import { useRouter } from "next/navigation";
 
 const MainMobNav = ({ menus, data, brandName }) => {
+
   const router = useRouter();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -29,20 +30,20 @@ const MainMobNav = ({ menus, data, brandName }) => {
           <div className="text-black flex justify-center me-12 items-center py-2">
             <div
               onClick={() =>
-                brandName
-                  ? router.push(`/${brandName?.brand}`)
+                data[0]
+                  ? router.push(`/${brandName?.slice(1)}`)
                   : router.push("/")
               }
             >
-              {brandName ? (
+              {brandName != undefined ? (
                 <h1 className="font-bold text-3xl">
-                  {brandName?.brand?.toUpperCase()}
+                  {data[0]?.brandName?.toUpperCase()}
                 </h1>
               ) : (
                 <Image
                   src={logo}
-                  alt={`${brandName?.brand} logo`}
-                  title={`${brandName?.brand} logo`}
+                  alt={`${data[0]?.brandName} logo`}
+                  title={`${data[0]?.brandName} logo`}
                   width={autoprefixer}
                   height={autoprefixer}
                   className="w-[80%] ms-4"
@@ -71,15 +72,20 @@ const MainMobNav = ({ menus, data, brandName }) => {
             menu?.name === "Brands" ? (
               <MobileLinkNav key={menu?.id} menu={menu} data={data} />
             ) : menu?.name === "Category" ? (
-              <MobileLinkNav key={menu?.id} menu={menu} data={data} />
+              <MobileLinkNav
+                key={menu?.id}
+                menu={menu}
+                data={data}
+                brandName={brandName}
+              />
             ) : (
               <Link
                 key={menu?.id}
                 href={
-                  brandName && menu?.name === "Home"
-                    ? `/${brandName?.brand}`
-                    : brandName
-                    ? `/${brandName?.brand}${menu?.slug}`
+                  data[0] && menu?.name === "Home"
+                    ? `/${data[0]?.brandName}`
+                    : data[0]
+                    ? `/${data[0]?.brandName}${menu?.slug}`
                     : menu?.slug
                 }
                 // href={
@@ -103,7 +109,7 @@ const MainMobNav = ({ menus, data, brandName }) => {
   );
 };
 
-const MobileLinkNav = ({ menu, data }) => {
+const MobileLinkNav = ({ menu, data, brandName }) => {
   return (
     <div className="space-y-2 ">
       <div
@@ -126,7 +132,12 @@ const MobileLinkNav = ({ menu, data }) => {
             data?.map((link) => (
               <Link
                 key={link?._id}
-                href={`${process.env.NEXT_PUBLIC_HYPER_TXT}${link?.slug}`}
+                // href={`${process.env.NEXT_PUBLIC_HYPER_TXT}${link?.slug}`}
+                href={
+                  menu?.name !== "Category"
+                    ? `${process.env.NEXT_PUBLIC_HYPER_TXT}${link?.slug}`
+                    : `${process.env.NEXT_PUBLIC_HYPER_TXT}${brandName}${link?.slug}`
+                }
                 className="hover:text-orangeText"
               >
                 <div className="font-bold text-xl">

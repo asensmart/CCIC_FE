@@ -5,10 +5,10 @@ export async function POST(req) {
 
   const catAPI = await axios
     .get(
-      `${process.env.NEXT_PUBLIC_API_URL}/get/areaNamesByCategoryName?categoryName=${data?.brand}`
+      `${process.env.NEXT_PUBLIC_API_URL}/get/areaNamesByCategoryName?categoryName=${data?.category}`
     )
     .then((res) => {
-      return res?.data?.data;
+      return res?.data;
     })
     .catch((err) => console.log(err));
 

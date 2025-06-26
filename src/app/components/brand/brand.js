@@ -7,7 +7,7 @@ import RatingCom from "../shared/RatingCom";
 import ContactForm from "../shared/ContactForm";
 import BrandContent from "./content";
 
-export const Brand = ({ data }) => {
+export const Brand = ({ data, paramData }) => {
 
   return (
     <div className="relative bg-white text-black">
@@ -33,7 +33,7 @@ export const Brand = ({ data }) => {
       <RatingCom data={data?.getBrand} />
 
       {/* Service Area */}
-      <ServiceAreas data={data?.getAreasByBrand} />
+      <ServiceAreas data={data?.getAreasByBrand} paramData={paramData} />
 
       {/* Book A service Today */}
       <BookService whatsAppNum={data?.getBrand?.contactNumber} />

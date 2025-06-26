@@ -50,10 +50,10 @@ const CategoryPage = async ({ params }) => {
 
   const getAreasByCategory = await axios
     .post(`${process.env.NEXT_PUBLIC_BASE_URL}/category/areas`, {
-      brand: params.brand,
+      category: params?.category,
     })
     .then((res) => {
-      return res?.data?.data;
+      return res?.data?.data?.data;
     })
     .catch((err) => {
       console.log(err);
@@ -72,7 +72,7 @@ const CategoryPage = async ({ params }) => {
       console.log(err);
     });
 
-  if (!getBrand || !getCatDataByBrand?.data) notFound();
+  if (getBrand.length == 0 || !getCatDataByBrand?.data) notFound();
 
   const data = {
     getBrand: getBrand,
@@ -178,7 +178,7 @@ const CategoryPage = async ({ params }) => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(OrganizationldJson) }}
       />
-      <Category data={data} />
+      <Category data={data} paramData={params} />
     </>
   );
 };

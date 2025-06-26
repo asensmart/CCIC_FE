@@ -38,11 +38,10 @@ const HomeCom = () => {
     axios
       .get(`${process.env.NEXT_PUBLIC_API_URL}/get/brands`)
       .then((res) => {
+        // console.log("brandData --->", res?.data?.data);
         setData(res?.data?.data);
-        // return res?.data;
       })
       .catch((err) => console.log(err));
-
   }, []);
 
   return (

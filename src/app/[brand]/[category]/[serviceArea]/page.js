@@ -177,7 +177,7 @@ const ServiceArea = async ({ params }) => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(OrganizationldJson) }}
       />
-      <ServiceAreaPage data={data} />
+      <ServiceAreaPage data={data} paramData={params} />
     </>
   );
 };

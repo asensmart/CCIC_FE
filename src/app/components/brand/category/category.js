@@ -7,8 +7,7 @@ import ServiceAreas from "../../shared/ServiceAreas";
 import BookService from "../../shared/BookService";
 import BrandContent from "../content";
 
-export const Category = ({ data }) => {
-
+export const Category = ({ data, paramData }) => {
   return (
     <div className="relative bg-white text-black">
       {/* Home Banner */}
@@ -26,13 +25,13 @@ export const Category = ({ data }) => {
       <ContactForm />
 
       {/* Content */}
-      <BrandContent data={data?.getBrand} />
+      <BrandContent data={data?.getCategory} />
 
       {/* Rating */}
       <RatingCom data={data?.getBrand} />
 
       {/* Service Area */}
-      <ServiceAreas data={data?.getAreasByCategory} />
+      <ServiceAreas data={data?.getAreasByCategory} paramData={paramData} />
 
       {/* Book A service Today */}
       <BookService whatsAppNum={data?.getBrand?.contactNumber} />
