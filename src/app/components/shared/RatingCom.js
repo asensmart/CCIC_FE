@@ -7,7 +7,6 @@ import Ratings from "./rating/Ratings";
 import Link from "next/link";
 
 const RatingCom = ({ data }) => {
-  console.log("rating data ==>", data);
 
   const [rating, setRating] = useState(5); // Initial value
   const [comment, setComment] = useState(""); // Initial value

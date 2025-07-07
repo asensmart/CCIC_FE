@@ -10,22 +10,22 @@ export default async function sitemap() {
     {
       url: "https://customercareinchennai.com/",
       lastModified: new Date(),
-      priority: 0.8,
+      priority: 0.5,
     },
     {
       url: "https://customercareinchennai.com/aboutus",
       lastModified: new Date(),
-      priority: 0.8,
+      priority: 0.5,
     },
     {
       url: "https://customercareinchennai.com/contactus",
       lastModified: new Date(),
-      priority: 0.8,
+      priority: 0.5,
     },
     {
       url: "https://customercareinchennai.com/blog",
       lastModified: new Date(),
-      priority: 0.8,
+      priority: 0.5,
     },
   ];
 
