@@ -12,13 +12,22 @@ const Footer = () => {
   return (
     <>
       <div className="py-4 bg-gradient-to-r from-orange-500 to-orange-600">
-        <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-2 py-4 px-6">
-          <div>
+        <div className="grid gap-5 lg:grid-cols-3 md:grid-cols-2 py-4 px-6">
+          {/* <div>
             Customer care in chennai service center exclusive brand products led
             tv smart tv 4k tv. home appliances washing machine refrigerator
             microwave oven service @ home visit same day.
+          </div> */}
+          <div className="flex justify-center items-center">
+            <section>
+              <b>Authorized Service Center in Chennai</b> – Customer Care for
+              Exclusive Brand Products We provide expert service for LED TVs,
+              Smart TVs, and 4K TVs, as well as home appliances including
+              washing machines, refrigerators, and microwave ovens. Same-day
+              home visits available.
+            </section>
           </div>
-          <div>
+          <div className="mx-auto">
             <h3 className="font-bold text-xl">QUICK LINKS</h3>
             <ul className="list-disc ms-5">
               {QLinks.map((link) => (
@@ -31,11 +40,6 @@ const Footer = () => {
                 </Link>
               ))}
             </ul>
-          </div>
-          <div>
-            Customer care in chennai service center exclusive brand products led
-            tv smart tv 4k tv. home appliances washing machine refrigerator
-            microwave oven service @ home visit same day.
           </div>
           <div>
             <h3 className="font-bold text-xl">CONTACT US</h3>
