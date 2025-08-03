@@ -67,19 +67,23 @@ const Footer = () => {
               customercareinchennai@gmail.com
             </a>
             <div className="flex items-center py-1 space-x-3">
-              <a href="instagram.com">
+              <a href="instagram.com" target="_blank">
                 <Icons.instagram size={24} />
               </a>
-              <a href="facebook.com">
+              <a href="facebook.com" target="_blank">
                 <Icons.facebook size={24} />
               </a>
-              <a href="x.com" className="font-bold text-[24px] bg-slate-500 px-2 rounded">
+              <a
+                href="x.com"
+                target="_blank"
+                className="font-bold text-[24px] bg-slate-500 px-2 rounded"
+              >
                 X
               </a>
-              <a href="linkedin.com">
+              <a href="linkedin.com" target="_blank">
                 <Icons.linkedin size={24} />
               </a>
-              <a href="youtube.com">
+              <a href="youtube.com" target="_blank">
                 <Icons.youtube size={24} />
               </a>
             </div>
