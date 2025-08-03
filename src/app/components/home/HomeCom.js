@@ -77,6 +77,79 @@ const HomeCom = () => {
       {/* Our Services */}
       <OurServices brand={data} />
 
+      <div className="text-black px-4">
+        <h2 className="font-bold text-xl">
+          Why Choose CustomerCareInChennai.com for TV Repair?
+        </h2>
+        <section>
+          <ul className="list-disc pl-5">
+            <li>Verified Technicians – Trusted TV specialists only</li>
+            <li>Doorstep TV Service – Quick and safe home visits</li>
+            <li>Affordable Prices – No hidden charges</li>
+            <li>Same-Day Repairs Available</li>
+          </ul>
+        </section>
+        <br />
+        <br />
+        <h2 className="font-bold text-xl">
+          Contact Us for Immediate TV Repair Support
+        </h2>
+        <section>
+          <p>
+            Need quick help with your TV? Call us or use the online form to book
+            a service request. We’ll connect you with the best TV service expert
+            near you in Chennai.
+          </p>
+        </section>
+      </div>
+      <br />
+      <br />
+      <div className="px-4 mb-4">
+        <h2 className="text-center text-4xl text-orangeText font-bold">FAQs</h2>
+        <section>
+          <ul class="list-decimal list-inside space-y-4 text-gray-800">
+            <li>
+              <strong>Do you provide TV repair at home in Chennai?</strong>
+              <br />
+              Yes, we send trusted technicians right to your doorstep for quick
+              and safe TV repairs.
+            </li>
+
+            <li>
+              <strong>What brands of TVs do you repair?</strong>
+              <br />
+              We repair all major brands like LG, TCL, Samsung, Panasonic, MI,
+              Vu, Sony, Toshiba, Hisense, OnePlus, Haier, BPL, Onida, Redmi.
+            </li>
+
+            <li>
+              <strong>How do I book a service?</strong>
+              <br />
+              Booking is simple! Just call us or fill out the form on our
+              website — our expert technician will arrive at your doorstep on
+              time for a hassle-free service.
+            </li>
+
+            <li>
+              <strong>Is the repair cost affordable?</strong>
+              <br />
+              Yes, we offer clear pricing with no hidden charges — quality
+              service at fair rates.
+            </li>
+
+            <li>
+              <strong>
+                Do you provide TV wall mounting or installation services?
+              </strong>
+              <br />
+              Yes, we offer TV wall mounting, installation, and uninstallation
+              services all across Chennai. Our experts ensure safe setup for
+              LED, LCD, and Smart TVs of all sizes at your preferred time.
+            </li>
+          </ul>
+        </section>
+      </div>
+
       {/* Google map */}
       <div className="px-8 pb-8">
         <iframe

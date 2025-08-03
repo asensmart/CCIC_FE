@@ -10,10 +10,13 @@ import { IoMdSettings } from "@react-icons/all-files/io/IoMdSettings";
 import { RiNavigationFill } from "@react-icons/all-files/ri/RiNavigationFill";
 import { RiWhatsappFill } from "@react-icons/all-files/ri/RiWhatsappFill";
 import { FaStar } from "@react-icons/all-files/fa/FaStar";
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube";
 import { IoMdArrowDropdownCircle } from "@react-icons/all-files/io/IoMdArrowDropdownCircle";
 import { MdMenu } from "@react-icons/all-files/md/MdMenu";
 import { MdLocationOn } from "@react-icons/all-files/md/MdLocationOn";
 import { IoMdHome } from "@react-icons/all-files/io/IoMdHome";
+
 export const Icons = {
   dropDownIcon: RiArrowDropDownLine,
   mailIcon: MdMailOutline,
@@ -31,4 +34,7 @@ export const Icons = {
   menuDrawer: MdMenu,
   location: MdLocationOn,
   home: IoMdHome,
+  linkedin: FaLinkedin,
+  youtube: FaYoutube,
+  // twitterX: BsTwitterX,
 };

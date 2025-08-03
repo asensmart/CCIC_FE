@@ -34,12 +34,32 @@ const NavMailHead = () => {
         <Icons.mailIcon className="mr-2" size={24} />{" "}
         customercareinchennai@gmail.com
       </Link>
-      <div className="grid grid-cols-4 gap-3 items-center">
+      {/* <div className="grid grid-cols-4 gap-3 items-center">
         {iconData.map((icon) => (
           <Link href={icon.link} key={icon.id} target="_blank">
             {icon.icon}
           </Link>
         ))}
+      </div> */}
+      <div className="flex items-center py-1 space-x-3">
+        <a href="instagram.com" className="text-black">
+          <Icons.instagram size={18} />
+        </a>
+        <a href="facebook.com" className="text-black">
+          <Icons.facebook size={18} />
+        </a>
+        <a
+          href="x.com"
+          className="font-bold text-[18px] bg-slate-200 px-2 rounded text-black"
+        >
+          X
+        </a>
+        <a href="linkedin.com" className="text-black">
+          <Icons.linkedin size={18} />
+        </a>
+        <a href="youtube.com" className="text-black">
+          <Icons.youtube size={18} />
+        </a>
       </div>
     </div>
   );
