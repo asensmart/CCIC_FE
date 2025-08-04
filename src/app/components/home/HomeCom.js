@@ -107,7 +107,7 @@ const HomeCom = () => {
       <div className="px-4 mb-4">
         <h2 className="text-center text-4xl text-orangeText font-bold">FAQs</h2>
         <section>
-          <ul class="list-decimal list-inside space-y-4 text-gray-800">
+          <ul className="list-decimal list-inside space-y-4 text-gray-800">
             <li>
               <strong>Do you provide TV repair at home in Chennai?</strong>
               <br />

@@ -42,23 +42,27 @@ const NavMailHead = () => {
         ))}
       </div> */}
       <div className="flex items-center py-1 space-x-3">
-        <a href="instagram.com" target="_blank" className="text-black">
+        <a
+          href="https://www.instagram.com/am_service24x7/?igsh=bmt6OGwwdDFkNjZt#/"
+          target="_blank"
+          className="text-black"
+        >
           <Icons.instagram size={18} />
         </a>
-        <a href="facebook.com" target="_blank" className="text-black">
+        <a href="https://facebook.com" target="_blank" className="text-black">
           <Icons.facebook size={18} />
         </a>
         <a
-          href="x.com"
+          href="https://x.com"
           target="_blank"
           className="font-bold text-[18px] bg-slate-200 px-2 rounded text-black"
         >
           X
         </a>
-        <a href="linkedin.com" target="_blank" className="text-black">
+        <a href="https://linkedin.com" target="_blank" className="text-black">
           <Icons.linkedin size={18} />
         </a>
-        <a href="youtube.com" target="_blank" className="text-black">
+        <a href="https://youtube.com" target="_blank" className="text-black">
           <Icons.youtube size={18} />
         </a>
       </div>
