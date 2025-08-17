@@ -12,10 +12,11 @@ const Footer = () => {
   ];
   return (
     <>
-      <div className="py-4 bg-gradient-to-r from-slate-600 to-slate-600 text-white">
+      <div className="py-4 bg-[#475569] text-[#ffffff]">
+        {/* <div className="py-4 bg-gradient-to-r from-slate-600 to-slate-600 text-white"> */}
         <div className="grid gap-5 lg:grid-cols-3 md:grid-cols-2 py-4 px-6">
           <div className="flex justify-start items-center">
-            <section>
+            <section className="bg-[#475569] text-[#ffffff]">
               <b>Authorized Service Center in Chennai</b> – Customer Care for
               Exclusive Brand Products We provide expert service for LED TVs,
               Smart TVs, and 4K TVs, as well as home appliances including
