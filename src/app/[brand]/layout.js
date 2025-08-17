@@ -55,7 +55,7 @@ export default async function RootLayout({ children, params }) {
           </div>
         </Link>
         <Link href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUM}`}>
-          <div className="fixed bottom-4 right-3 text-green-400 p-4 bg-sky-800 rounded-full">
+          <div className="fixed bottom-4 right-3 text-white p-4 bg-green-600 rounded-full">
             <Icons.whatsApp size={28} />
           </div>
         </Link>
