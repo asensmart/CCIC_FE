@@ -12,7 +12,7 @@ const Footer = () => {
   ];
   return (
     <>
-      <div className="py-4 bg-gradient-to-r from-slate-600 to-slate-600">
+      <div className="py-4 bg-gradient-to-r from-slate-600 to-slate-600 text-white">
         <div className="grid gap-5 lg:grid-cols-3 md:grid-cols-2 py-4 px-6">
           <div className="flex justify-start items-center">
             <section>
