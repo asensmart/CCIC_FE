@@ -30,14 +30,14 @@ export const ServiceAreaPage = ({ data, paramData }) => {
       {/* Rating */}
       <RatingCom data={data?.getBrand} />
 
-      {/* Service Area */}
-      <ServiceAreas data={data?.getAreasByBrand} paramData={paramData} />
+      {/* FAQ */}
+      <Accordian accData={data?.getServices?.faqs} />
 
       {/* Book A service Today */}
       <BookService whatsAppNum={data?.getServices?.contactNumber} />
 
-      {/* FAQ */}
-      <Accordian accData={data?.getServices?.faqs} />
+      {/* Service Area */}
+      <ServiceAreas data={data?.getAreasByBrand} paramData={paramData} />
     </div>
   );
 };

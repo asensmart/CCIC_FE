@@ -8,7 +8,6 @@ import ContactForm from "../shared/ContactForm";
 import BrandContent from "./content";
 
 export const Brand = ({ data, paramData }) => {
-
   return (
     <div className="relative bg-white text-black">
       {/* Home Banner */}
@@ -32,14 +31,14 @@ export const Brand = ({ data, paramData }) => {
       {/* Rating */}
       <RatingCom data={data?.getBrand} />
 
-      {/* Service Area */}
-      <ServiceAreas data={data?.getAreasByBrand} paramData={paramData} />
+      {/* FAQ */}
+      <Accordian accData={data?.getBrand?.faqs} />
 
       {/* Book A service Today */}
       <BookService whatsAppNum={data?.getBrand?.contactNumber} />
 
-      {/* FAQ */}
-      <Accordian accData={data?.getBrand?.faqs} />
+      {/* Service Area */}
+      <ServiceAreas data={data?.getAreasByBrand} paramData={paramData} />
     </div>
   );
 };

@@ -12,7 +12,7 @@ const Footer = () => {
   ];
   return (
     <>
-      <div className="py-4 bg-gradient-to-r from-orange-500 to-orange-600">
+      <div className="py-4 bg-gradient-to-r from-slate-600 to-slate-600">
         <div className="grid gap-5 lg:grid-cols-3 md:grid-cols-2 py-4 px-6">
           <div className="flex justify-start items-center">
             <section>
@@ -30,7 +30,7 @@ const Footer = () => {
                 <Link
                   key={link.id}
                   href={link.link}
-                  className="hover:text-black transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
+                  className="hover:text-blue-500 transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
                 >
                   <li>{link.name}</li>
                 </Link>
@@ -41,7 +41,7 @@ const Footer = () => {
             <h3 className="font-bold text-xl">CONTACT US</h3>
             <a
               href="https://maps.app.goo.gl/EZ25fEBQjzQypbJy6"
-              className="flex items-center justify-start py-1"
+              className="flex items-center justify-start py-1 hover:text-blue-500 transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
             >
               <span className="mr-2">
                 <Icons.location size={28} />
@@ -50,7 +50,7 @@ const Footer = () => {
             </a>
             <a
               href="tel:+917550052019"
-              className="flex items-center justify-start py-1"
+              className="flex items-center justify-start py-1 hover:text-blue-500 transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
             >
               <span className="mr-2">
                 <Icons.phone size={24} />
@@ -59,7 +59,7 @@ const Footer = () => {
             </a>
             <a
               href="mailto:customercareinchennai@gmail.com"
-              className="flex items-center justify-start py-1"
+              className="flex items-center justify-start py-1 hover:text-blue-500 transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
             >
               <span className="mr-2">
                 <Icons.mailIcon size={24} />
@@ -70,23 +70,36 @@ const Footer = () => {
               <a
                 href="https://www.instagram.com/am_service24x7/?igsh=bmt6OGwwdDFkNjZt#/"
                 target="_blank"
+                className="hover:text-blue-500 transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
               >
                 <Icons.instagram size={24} />
               </a>
-              <a href="https://facebook.com" target="_blank">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                className="hover:text-blue-500 transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
+              >
                 <Icons.facebook size={24} />
               </a>
               <a
                 href="https://x.com"
                 target="_blank"
-                className="font-bold text-[24px] bg-slate-500 px-2 rounded"
+                className="font-bold text-[24px] bg-slate-500 px-2 rounded hover:text-blue-500 transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
               >
                 X
               </a>
-              <a href="https://linkedin.com" target="_blank">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                className="hover:text-blue-500 transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
+              >
                 <Icons.linkedin size={24} />
               </a>
-              <a href="https://youtube.com" target="_blank">
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                className="hover:text-blue-500 transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
+              >
                 <Icons.youtube size={24} />
               </a>
             </div>

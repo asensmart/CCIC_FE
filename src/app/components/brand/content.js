@@ -11,8 +11,9 @@ const BrandContent = ({ data, serviceArea }) => {
           {/* {data?.getServices?.brandName.toUpperCase()} */}{" "}
         </span>{" "}
       </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] py-5 px-2 bg-white">
-        <div
+      <div className="grid grid-cols-1 py-5 px-2 bg-white">
+      {/* <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] py-5 px-2 bg-white"> */}
+        {/* <div
           className="sm:mb-11 sm:flex sm:justify-center"
           style={{ height: "fit-content" }}
         >
@@ -36,7 +37,7 @@ const BrandContent = ({ data, serviceArea }) => {
               className="h-[30%]"
             />
           )}
-        </div>
+        </div> */}
         <div className="text-black p-2">
           <div
             dangerouslySetInnerHTML={{ __html: data?.moreInfo }}

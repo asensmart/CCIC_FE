@@ -30,14 +30,14 @@ export const Category = ({ data, paramData }) => {
       {/* Rating */}
       <RatingCom data={data?.getBrand} />
 
-      {/* Service Area */}
-      <ServiceAreas data={data?.getAreasByCategory} paramData={paramData} />
+      {/* FAQ */}
+      <Accordian accData={data?.getCategory?.faqs} />
 
       {/* Book A service Today */}
       <BookService whatsAppNum={data?.getBrand?.contactNumber} />
 
-      {/* FAQ */}
-      <Accordian accData={data?.getCategory?.faqs} />
+      {/* Service Area */}
+      <ServiceAreas data={data?.getAreasByCategory} paramData={paramData} />
     </div>
   );
 };
