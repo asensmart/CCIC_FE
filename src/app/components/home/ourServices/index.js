@@ -14,7 +14,7 @@ const OurServices = ({ brand }) => {
     initialSlide: 0,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 1000,
     responsive: [
       {
         breakpoint: 1025,
