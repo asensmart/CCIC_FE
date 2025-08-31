@@ -43,8 +43,8 @@ const OurServices = ({ brand }) => {
 
   return (
     <div className="bg-white">
-      <h1 className="text-center text-4xl text-orangeText font-bold">
-        <span className="text-black">Our</span> Services
+      <h1 className="text-center text-2xl text-blue-600 font-bold">
+        <span className="text-black">Brand </span>Service
       </h1>
       <Slider {...settings} className="text-orangeText pe-8 h-[700px]">
         {brand?.map((item) => (
@@ -77,14 +77,14 @@ const OurServices = ({ brand }) => {
               <div className="text-center py-8 px-3">
                 <div className="h-[155px] overflow-hidden mt-2">
                   <h3 className="font-bold text-2xl">{item?.brandName}</h3>
-                  <p
-                    className="text-base"
-                    dangerouslySetInnerHTML={{ __html: item?.moreInfo }}
-                  ></p>
+                  <div
+                    className="more-info text-xl"
+                    dangerouslySetInnerHTML={{ __html: item?.metaTitle }}
+                  />
                 </div>
                 <div className="flex justify-between items-end mt-3 px-3">
                   <Link href={item?.slug}>
-                    <button className="py-2 px-3 text-orangeText rounded-2xl border border-orangeText hover:bg-orangeText hover:text-white hover:transition-all hover:ease-in hover:duration-200">
+                    <button className="py-2 px-3 text-blue-600 rounded-2xl border border-blue-600 hover:bg-blue-600 hover:text-white hover:transition-all hover:ease-in hover:duration-200">
                       <b>Book Now</b>
                     </button>
                   </Link>
@@ -93,12 +93,12 @@ const OurServices = ({ brand }) => {
                       <div>
                         <Icons.whatsApp size={35} />
                       </div>
-                      <div className="text-orangeText">Contact Us</div>
+                      <div className="text-blue-600">Contact Us</div>
                     </div>
                   </Link>
                 </div>
               </div>
-              <p className="absolute bottom-0 right-0 bg-orangeText rounded-br-2xl text-white p-1 flex items-center">
+              <p className="absolute bottom-0 right-0 bg-blue-600 rounded-br-2xl text-white p-1 flex items-center">
                 <span className="mr-1">{item?.overallRating}</span>{" "}
                 <Icons.star color="#ffff00" size={15} />
               </p>

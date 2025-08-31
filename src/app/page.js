@@ -1,6 +1,5 @@
 import Script from "next/script";
 import HomeCom from "./components/home/HomeCom";
-import axios from "axios";
 
 export const metadata = {
   applicationName: "AM Service",

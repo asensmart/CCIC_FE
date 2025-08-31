@@ -13,15 +13,21 @@ const Footer = () => {
   return (
     <>
       <div className="py-4 bg-slate-600 text-slate-100">
-      {/* <div className="py-4 bg-gradient-to-r from-slate-600 to-slate-600 text-white"> */}
+        {/* <div className="py-4 bg-gradient-to-r from-slate-600 to-slate-600 text-white"> */}
         <div className="grid gap-5 lg:grid-cols-3 md:grid-cols-2 py-4 px-6">
           <div className="flex justify-start items-center">
             <section>
-              <b>Authorized Service Center in Chennai</b> – Customer Care for
-              Exclusive Brand Products We provide expert service for LED TVs,
-              Smart TVs, and 4K TVs, as well as home appliances including
-              washing machines, refrigerators, and microwave ovens. Same-day
-              home visits available.
+              <p>
+                <b>
+                  Authorized Customer Care Service Center Chennai – All Home
+                  Appliances
+                </b>
+              </p>
+              We provide expert repair and service in Chennai for LED TVs, Smart
+              TVs, 4K TVs, Washing Machines, Refrigerators, and Microwave Ovens.
+              Our technicians offer same-day doorstep service, genuine spare
+              parts, and complete customer care support to keep your appliances
+              running smoothly.
             </section>
           </div>
           <div className="mx-0">

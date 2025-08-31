@@ -1,13 +1,32 @@
 import Image from "next/image";
-import aboutImg from "@/assets/images/aboutimg.jpg";
+import aboutImg from "@/assets/images/HomeAbuotImg.jpg";
 import Link from "next/link";
 import autoprefixer from "autoprefixer";
 
 const HomeAbout = () => {
+  const aboutData = [
+    {
+      title: "Expert Technicians in Chennai",
+      description:
+        "Our certified and experienced technicians in Chennai specialize in repairing Samsung, LG, Panasonic, Mi, VU, TCL, Sony, Toshiba, Hisense, OnePlus, Haier, BPL, Onida, and Redmi TVs and appliances, ensuring accurate diagnosis and reliable service.",
+    },
+    {
+      title: "Same-Day Doorstep Service",
+      description:
+        "We provide same-day doorstep repair in Chennai for TVs, washing machines, refrigerators, and AC, delivering quick and hassle-free solutions.",
+    },
+    {
+      title: "Genuine Spare Parts & Reliable Service",
+      description:
+        "We use 100% original spare parts for all brands to guarantee long-lasting performance, quality service, and customer satisfaction.",
+    },
+  ];
+
   return (
     <>
-      <h1 className="text-center text-4xl font-bold text-black">
-        Trusted LED, LCD & Smart TV Repair Services in Chennai
+      <h1 className="text-center text-2xl font-bold text-black">
+        Chennai Home Appliance Service -TV, AC, Washing Machine & Refrigerator
+        Repair
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] py-5 px-2 bg-white">
         <div className="sm:mb-11 sm:flex sm:justify-center">
@@ -21,23 +40,31 @@ const HomeAbout = () => {
           />
         </div>
         <div className="text-black text-xl p-2">
-          <section>
+          {/* <section>
             Is your TV not turning on, showing a blank screen, or having
             audio-video issues? You are at the right place! At
             customercareinchennai.com, we help you find verified TV service
             centre’s in Chennai for LED TVs, LCD TVs, UHD TVs and Smart TVs–
             fast, affordable, and reliable.
-          </section>
-          <br />
+          </section> */}
+          <div>
+            {aboutData.map((data, index) => (
+              <section key={index} className="mb-2">
+                <h3 className="font-bold text-xl">{data.title}</h3>
+                <p className="text-base">{data.description}</p>
+              </section>
+            ))}
+          </div>
+          {/* <br />
           <br />
           <Link href={"/aboutus"}>
-            <span className="px-4 py-2 bg-[#F86E4E] rounded-3xl text-white">
+            <span className="px-4 py-2 bg-blue-600 rounded-3xl text-white">
               Read More
             </span>
-          </Link>
+          </Link> */}
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 text-black">
+      {/* <div className="grid grid-cols-1 lg:grid-cols-2 text-black">
         <section>
           <h2 className="text-center font-bold text-xl">
             Expert TV Repair Services for All Leading Brands
@@ -100,7 +127,7 @@ const HomeAbout = () => {
             </p>
           </section>
         </section>
-      </div>
+      </div> */}
     </>
   );
 };
