@@ -5,7 +5,7 @@ import Image from "next/image";
 import HomeAbout from "./HomeAbout.js";
 import OurServices from "./ourServices/index.js";
 import Link from "next/link";
-import homeBanner from "./../../../assets/images/Homebanner.png";
+import homeBanner from "./../../../assets/images/Homebanner.jpg";
 import MainNavbar from "../shared/Nav/Navbar.js";
 import axios from "axios";
 
@@ -38,7 +38,6 @@ const HomeCom = () => {
     axios
       .get(`${process.env.NEXT_PUBLIC_API_URL}/get/brands`)
       .then((res) => {
-        // console.log("brandData --->", res?.data?.data);
         setData(res?.data?.data);
       })
       .catch((err) => console.log(err));
@@ -47,17 +46,111 @@ const HomeCom = () => {
   return (
     <div className="bg-white">
       <MainNavbar brandData={data} />
+      <div
+        className="relative w-full h-auto "
+        style={{
+          backgroundImage: `url(${homeBanner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* <Image
+          src={homeBanner}
+          alt="banner"
+          fill
+          priority
+          className="object-cover w-full h-full"
+          sizes="(max-width: 768px) 100vw, 1200px"
+          style={{ zIndex: 1 }}
+        /> */}
 
-      {/* Home Banner */}
-      <Image
-        src={homeBanner}
-        alt="banner"
-        // className="dark:invert"
-        className="object-center h-32 md:h-[100%] w-[100%]"
-        width={0}
-        height={0}
-        priority
-      />
+        {/* Content */}
+        <div className="text-black text-center pt-8 px-4">
+          <h1 className="text-2xl font-bold">
+            Home Appliance Repair Service in Chennai
+          </h1>
+          <p>
+            TV, AC, Washing Machine & Refrigerator Repair - Same Day Doorstep
+            Service
+          </p>
+        </div>
+
+        {/* Overlay Form */}
+        <div className="flex items-center justify-center">
+          <form className="bg-white bg-opacity-10 rounded-lg shadow-lg p-6 w-full max-w-md mx-4">
+            <h2 className="text-2xl font-bold mb-4 text-center text-blue-600">
+              Book a Service
+            </h2>
+            <div className="mb-3">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orangeText focus:ring-orangeText"
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orangeText focus:ring-orangeText"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orangeText focus:ring-orangeText"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-orange-600 transition"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+
+        {/* Appoinment Booking */}
+        <div className="pt-4">
+          <p className="text-xl text-center text-black font-bold">
+            <b>To Book Your Appointment</b>
+          </p>
+          <Link href={`tel:7550052019`}>
+            <div className="flex items-center gap-2 justify-center cursor-pointer animate-bounce text-xl">
+              <span className="text-black">Call</span>{" "}
+              <Icons.phone size={20} color="#0000FF" />
+              <span className="text-blue-600 font-bold">7550052019</span>
+            </div>
+          </Link>
+        </div>
+      </div>
+
       <div className="grid lg:grid-cols-3 md:grid-cols-1 gap-1 py-12 px-2 bg-white text-black">
         {titleData.map((data) => (
           <div
@@ -72,11 +165,12 @@ const HomeCom = () => {
           </div>
         ))}
       </div>
+
       {/* About Us */}
       <HomeAbout />
+
       {/* Our Services */}
       <OurServices brand={data} />
-
       <div className="text-black px-4">
         <h2 className="font-bold text-xl">
           Why Choose CustomerCareInChennai.com for TV Repair?
@@ -149,7 +243,6 @@ const HomeCom = () => {
           </ul>
         </section>
       </div>
-
       {/* Google map */}
       <div className="px-8 pb-8">
         <iframe
@@ -162,7 +255,6 @@ const HomeCom = () => {
           referrerPolicy="no-referrer-when-downgrade"
         />
       </div>
-
       {/* Whatsapp icon for mobile */}
       <div className="lg:hidden block">
         <Link href={`tel:7550052019`}>

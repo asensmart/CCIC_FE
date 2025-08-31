@@ -15,6 +15,7 @@ const OurServices = ({ brand }) => {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 1000,
+    pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1025,
@@ -84,7 +85,7 @@ const OurServices = ({ brand }) => {
                 <div className="flex justify-between items-end mt-3 px-3">
                   <Link href={item?.slug}>
                     <button className="py-2 px-3 text-orangeText rounded-2xl border border-orangeText hover:bg-orangeText hover:text-white hover:transition-all hover:ease-in hover:duration-200">
-                      Read More...
+                      <b>Book Now</b>
                     </button>
                   </Link>
                   <Link href={`https://wa.me/${item?.contactNumber}`}>
