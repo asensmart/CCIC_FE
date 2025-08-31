@@ -1,6 +1,6 @@
 import Image from "next/image";
 import aboutBanner from "@/assets/images/aboutbanner.jpg";
-import aboutImg from "@/assets/images/homeAboutImg.jpg";
+import aboutImg from "../../../assets/images/HomeAbuotImg.jpg";
 
 const AboutContent = ({ name, isHome }) => {
   return (
@@ -12,7 +12,7 @@ const AboutContent = ({ name, isHome }) => {
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr]">
           <div className="flex justify-center">
-            <Image src={aboutImg} alt="about image" width={500}  />
+            <Image src={aboutImg} alt="about image" width={500} />
           </div>
           <div className="text-black p-4">
             {isHome ? (
