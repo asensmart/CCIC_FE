@@ -1,6 +1,6 @@
 import Image from "next/image";
 import aboutBanner from "@/assets/images/aboutbanner.jpg";
-import aboutImg from "../../../assets/images/HomeAbuotImg.jpg";
+import aboutImg from "@/assets/images/HomeAbuotImg.jpg";
 
 const AboutContent = ({ name, isHome }) => {
   return (

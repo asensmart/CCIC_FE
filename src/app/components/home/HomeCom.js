@@ -74,6 +74,13 @@ const HomeCom = () => {
 
   const [data, setData] = useState([]);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // This runs only on the client
+    setIsMobile(window.outerWidth <= 769);
+  }, []);
+
   useEffect(() => {
     axios
       .get(`${process.env.NEXT_PUBLIC_API_URL}/get/brands`)
@@ -96,7 +103,7 @@ const HomeCom = () => {
         // }}
       >
         <Image
-          src={window.outerWidth <= 769 ? homeBannerMobile : homeBanner}
+          src={isMobile ? homeBannerMobile : homeBanner}
           alt="banner"
           fill
           priority
@@ -207,7 +214,7 @@ const HomeCom = () => {
 
       {/* About Us */}
       <HomeAbout />
-      
+
       <h1 className="text-center text-4xl text-blue-600 font-bold">
         <span className="text-black text-center">Our</span> Services
       </h1>
