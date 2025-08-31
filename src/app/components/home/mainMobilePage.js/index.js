@@ -9,7 +9,6 @@ import autoprefixer from "autoprefixer";
 import { useRouter } from "next/navigation";
 
 const MainMobNav = ({ menus, data, brandName }) => {
-
   const router = useRouter();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -36,9 +35,9 @@ const MainMobNav = ({ menus, data, brandName }) => {
               }
             >
               {brandName != undefined ? (
-                <h1 className="font-bold text-3xl">
+                <p className="font-bold text-3xl">
                   {data[0]?.brandName?.toUpperCase()}
-                </h1>
+                </p>
               ) : (
                 <Image
                   src={logo}

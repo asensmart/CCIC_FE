@@ -5,14 +5,16 @@ import Slider from "react-slick";
 import { Icons } from "@/assets/icons/icons";
 
 const OurServices = ({ brand }) => {
-  var settings = {
+  const settings = {
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    initialSlide: 1,
+    initialSlide: 0,
     arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1025,

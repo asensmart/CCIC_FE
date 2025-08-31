@@ -12,8 +12,24 @@ const BrandContent = ({ data, serviceArea }) => {
         </span>{" "}
       </h2>
       <div className="grid grid-cols-1 py-5 px-2 bg-white">
-      {/* <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] py-5 px-2 bg-white"> */}
-        {/* <div
+        {/* <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] py-5 px-2 bg-white"> */}
+
+        <div className="text-black p-2">
+          <div
+            dangerouslySetInnerHTML={{ __html: data?.moreInfo }}
+            className="mt-3"
+          ></div>
+          <Link href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUM}`}>
+            <button
+              className={`flex items-center bg-green-600 text-white hover:bg-green-400 p-3 rounded-3xl`}
+            >
+              <Icons.whatsApp size={30} />
+              <span className="ms-2 text-base font-bold">WhatsApp with Us</span>
+            </button>
+          </Link>
+        </div>
+
+        <div
           className="sm:mb-11 sm:flex sm:justify-center"
           style={{ height: "fit-content" }}
         >
@@ -37,20 +53,6 @@ const BrandContent = ({ data, serviceArea }) => {
               className="h-[30%]"
             />
           )}
-        </div> */}
-        <div className="text-black p-2">
-          <div
-            dangerouslySetInnerHTML={{ __html: data?.moreInfo }}
-            className="mt-3"
-          ></div>
-          <Link href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUM}`}>
-            <button
-              className={`flex items-center bg-green-600 text-white hover:bg-green-400 p-3 rounded-3xl`}
-            >
-              <Icons.whatsApp size={30} />
-              <span className="ms-2 text-base font-bold">WhatsApp with Us</span>
-            </button>
-          </Link>
         </div>
       </div>
     </div>
