@@ -55,7 +55,6 @@ export const ServiceAreaPage = ({ data, paramData }) => {
         const gMap = data?.getServices?.gMap;
         const match = gMap?.match(/src="([^"]+)"/);
         const srcValue = match ? match[1] : null;
-        console.log("srcValue --->" + srcValue);
         if (!srcValue) return null;
         return (
           <div className="px-8 pb-8">

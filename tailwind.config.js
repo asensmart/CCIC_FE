@@ -17,8 +17,8 @@ module.exports = {
         navText: "#6F6F6F",
         orangeText: "#F86E4E",
         borderClr: "#ddd",
-        whatsapp: "#00ff00",
-        whatsappHover: "#00ff00",
+        whatsapp: "#16a34a",
+        whatsappHover: "#15803d",
       },
     },
     fontSize: {

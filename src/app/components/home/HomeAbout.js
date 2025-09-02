@@ -24,12 +24,12 @@ const HomeAbout = () => {
 
   return (
     <>
-      <h1 className="text-center text-2xl font-bold text-black">
+      <h1 className="mt-4 text-center md:text-2xl text-xl font-bold text-black">
         Chennai Home Appliance Service -TV, AC, Washing Machine & Refrigerator
         Repair
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] py-5 px-2 bg-white">
-        <div className="sm:mb-11 sm:flex sm:justify-center">
+        <div className="sm:mb-11 sm:flex sm:justify-center flex items-center">
           <Image
             src={aboutImg}
             alt="about Image"
@@ -39,7 +39,7 @@ const HomeAbout = () => {
             priority
           />
         </div>
-        <div className="text-black text-xl p-2">
+        <div className="text-black text-xl p-2 flex items-center">
           {/* <section>
             Is your TV not turning on, showing a blank screen, or having
             audio-video issues? You are at the right place! At
