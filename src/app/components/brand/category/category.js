@@ -12,7 +12,7 @@ export const Category = ({ data, paramData }) => {
     <div className="relative bg-white text-black">
       {/* Home Banner */}
       <Image
-        src={data?.getBrand?.titleBackgroundImage}
+        src={data?.getCategory?.titleBackgroundImage}
         alt="banner"
         // className="dark:invert"
         className="object-cover h-32 md:h-[100%] w-[100%]"
