@@ -13,6 +13,7 @@ import BookService from "./bookService/index.js";
 import WhyChooseUs from "./whyChooseUs/index.js";
 import BookCallService from "../shared/BookService.js";
 import BrandContent from "./brandContent/index.js";
+import ServiceAreaBrand from "./homeServiceBrand/index.js";
 
 const HomeCom = () => {
   const titleData = [
@@ -92,6 +93,9 @@ const HomeCom = () => {
 
       {/* Book Call Service */}
       <BookCallService />
+
+      {/* Brand Service Area */}
+      <ServiceAreaBrand />
 
       <div className="px-8 pb-8">
         <iframe
