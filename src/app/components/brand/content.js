@@ -34,13 +34,22 @@ const BrandContent = ({ data, serviceArea }) => {
           style={{ height: "fit-content" }}
         >
           {serviceArea ? (
+            // <Image
+            //   src={data?.serviceAreaLogo}
+            //   alt={data?.logoAltName}
+            //   title={data?.logoAltName}
+            //   width={500}
+            //   height={0}
+            //   priority
+            // />
             <Image
-              src={data?.serviceAreaLogo}
-              alt={data?.logoAltName}
-              title={data?.logoAltName}
+              src={data?.sideThumbnail}
+              alt={data?.sideImageAltName}
+              title={data?.sideImageAltName}
               width={500}
               height={0}
               priority
+              className="h-[30%]"
             />
           ) : (
             <Image

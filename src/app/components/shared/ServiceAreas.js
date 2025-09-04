@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const ServiceAreas = ({ data, paramData }) => {
+  // console.log("data --->" + data);
 
   return (
     <div className={"px-2 pb-3 align_me"}>
