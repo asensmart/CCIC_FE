@@ -28,8 +28,8 @@ const HomeAbout = () => {
         Chennai Home Appliance Service -TV, AC, Washing Machine & Refrigerator
         Repair
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] py-5 px-2 bg-white">
-        <div className="sm:mb-11 sm:flex sm:justify-center flex items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] px-2 bg-white">
+        <div className="sm:flex sm:justify-center flex items-center">
           <Image
             src={aboutImg}
             alt="about Image"

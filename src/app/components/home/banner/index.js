@@ -1,13 +1,50 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import homeBanner from "@/assets/images/Homebanner.jpg";
 import homeBannerMobile from "@/assets/images/HomebannerMobile.jpg";
 import { Icons } from "@/assets/icons/icons";
+import axios from "axios";
 
 const BannerContent = () => {
+  const form = useRef();
   const [isMobile, setIsMobile] = useState(false);
+  const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setmessage] = useState("");
+
+  const checkInput = (e) => {
+    const onlyDigits = e.target.value.replace(/\D/g, "");
+    setNumber(onlyDigits);
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    axios
+      .post(`${process.env.NEXT_PUBLIC_API_URL}/post/smtp/sendmail`, {
+        name: name,
+        email: email,
+        number: number,
+        message: message,
+      })
+      .then(
+        (result) => {
+          setNumber("");
+          setEmail("");
+          setName("");
+          setmessage("");
+          console.log("result --->", result?.data?.message);
+          alert("Message Sent Successfully!");
+        },
+        (error) => {
+          console.log("error.text --->", error.text);
+          alert("Message Not Sent!");
+        }
+      );
+  };
 
   useEffect(() => {
     // This runs only on the client
@@ -56,7 +93,11 @@ const BannerContent = () => {
 
         {/* Overlay Form */}
         <div className="flex items-center justify-center z-30">
-          <form className="shadow-lg px-6 py-4 w-full max-w-md mx-4">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="shadow-lg px-6 py-4 w-full max-w-md mx-4"
+          >
             <h2 className="text-2xl font-bold mb-4 text-center text-white">
               Book a Service
             </h2>
@@ -72,6 +113,8 @@ const BannerContent = () => {
                 id="name"
                 name="name"
                 placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="mt-1 p-2 block w-full rounded-md text-black border-gray-300 shadow-sm focus:border-blue-600 focus:ring-blue-600"
                 required
               />
@@ -82,6 +125,8 @@ const BannerContent = () => {
                 id="email"
                 name="email"
                 placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="mt-1 p-2 block w-full rounded-md text-black border-gray-300 shadow-sm focus:border-blue-600 focus:ring-blue-600"
                 required
               />
@@ -90,8 +135,12 @@ const BannerContent = () => {
               <input
                 type="tel"
                 id="phone"
+                title="Please enter exactly 10 digits"
                 name="phone"
                 placeholder="Phone"
+                maxLength="10"
+                value={number}
+                onChange={(e) => checkInput(e)}
                 className="mt-1 p-2 block w-full rounded-md text-black border-gray-300 shadow-sm focus:border-blue-600 focus:ring-blue-600"
                 required
               />
@@ -102,7 +151,11 @@ const BannerContent = () => {
                 rows="3"
                 id="message"
                 name="message"
-                placeholder="Message"
+                placeholder="Enter Message*"
+                onChange={(e) => {
+                  setmessage(e.target.value);
+                }}
+                value={message}
                 className="mt-1 p-2 block w-full rounded-md text-black border-gray-300 shadow-sm focus:border-blue-600 focus:ring-blue-600"
                 required
               ></textarea>

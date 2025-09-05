@@ -16,9 +16,9 @@ const ServiceAreaBrand = ({ brand }) => {
             <Link href={`${item?.slug}`}>
               <h3 className={"flex"}>
                 <span className="flex items-start md:items-center pt-1 md:pt-0">
-                  <Icons.location className="text-[14px] md:text-[18px] text-blue-600" />
+                  <Icons.location className=" text-blue-600" />
                 </span>
-                <span className="text-[14px] sm:text-[18px] text-left text-black">
+                <span className="text-left text-black">
                   {item?.brandName?.toUpperCase()} Service Centre
                 </span>
               </h3>
