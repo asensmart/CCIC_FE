@@ -36,7 +36,7 @@ const WhyChooseUs = () => {
     <section className="px-4 pb-4 bg-white">
       <div className="mb-3">
         <h2 className="text-center text-3xl font-bold text-blue-600">
-          Why Choose Us
+          <span className="text-black">Why</span> Choose Us
         </h2>
         <p className="text-black text-center text-xl">
           Trusted Multi-Brand Home Appliance Repair in Chennai

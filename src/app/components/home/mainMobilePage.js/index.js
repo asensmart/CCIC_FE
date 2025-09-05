@@ -8,7 +8,7 @@ import logo from "@/assets/images/logo.png";
 import autoprefixer from "autoprefixer";
 import { useRouter } from "next/navigation";
 
-const MainMobNav = ({ menus, data, brandName }) => {
+const MainMobNav = ({ menus, data, brandName, isMainHome }) => {
   const router = useRouter();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +29,7 @@ const MainMobNav = ({ menus, data, brandName }) => {
           <div className="text-black flex justify-center me-12 items-center py-2">
             <div
               onClick={() =>
-                data[0]
+                !isMainHome
                   ? router.push(`/${brandName?.slice(1)}`)
                   : router.push("/")
               }
@@ -81,7 +81,9 @@ const MainMobNav = ({ menus, data, brandName }) => {
               <Link
                 key={menu?.id}
                 href={
-                  data[0] && menu?.name === "Home"
+                  isMainHome
+                    ? menu?.slug
+                    : data[0] && menu?.name === "Home"
                     ? `/${data[0]?.brandName}`
                     : data[0]
                     ? `/${data[0]?.brandName}${menu?.slug}`
@@ -95,7 +97,7 @@ const MainMobNav = ({ menus, data, brandName }) => {
               >
                 <div
                   href={menu?.slug}
-                  className="px-2 py-2 text-xl hover:bg-orangeText hover:text-white transition-all hover:transition-all ease-in-out hover:ease-in-out duration-200 hover:duration-200"
+                  className="px-2 py-2 text-xl hover:bg-blue-600 hover:text-white transition-all hover:transition-all ease-in-out hover:ease-in-out duration-200 hover:duration-200"
                 >
                   {menu?.name}
                 </div>
@@ -116,7 +118,7 @@ const MobileLinkNav = ({ menu, data, brandName }) => {
         tabIndex="1"
       >
         <div className="cursor-pointer ">
-          <div className="flex items-center justify-between text-xl hover:text-white hover:bg-orangeText p-2">
+          <div className="flex items-center justify-between text-xl hover:text-white hover:bg-blue-600 p-2">
             <div>{menu?.name !== "Category" ? "Brands" : "Category"}</div>
             <div>
               <Icons.dropDownIcon
@@ -137,7 +139,7 @@ const MobileLinkNav = ({ menu, data, brandName }) => {
                     ? `${process.env.NEXT_PUBLIC_HYPER_TXT}${link?.slug}`
                     : `${process.env.NEXT_PUBLIC_HYPER_TXT}${brandName}${link?.slug}`
                 }
-                className="hover:text-orangeText"
+                className="hover:text-blue-600"
               >
                 <div className="font-bold text-xl">
                   {menu?.name !== "Category"

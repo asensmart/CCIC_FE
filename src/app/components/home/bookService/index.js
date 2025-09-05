@@ -58,12 +58,14 @@ const steps = [
 
 const BookService = () => {
   return (
-    <div className="bg-white rounded-lg px-8 pt-2 pb-4 mx-3 md:mx-8 shadow-lg mb-4">
-      <h2 className="text-3xl font-bold text-blue-700 mb-2 text-center flex items-center justify-center gap-2">
+    <div className="bg-white rounded-lg px-8 pt-2 pb-4 mx-3 md:mx-8 shadow-lg my-4">
+      <h2 className="text-3xl font-bold text-blue-700 mb-2 text-center flex lg:items-center items-start justify-center gap-2">
         <div>
-          <FaTools className="text-blue-600" />
+          <FaTools className="text-blue-600 mt-2" />
         </div>{" "}
-        <div>How to Book Our Service</div>
+        <div>
+          <span className="text-black"> How to Book </span>Our Service
+        </div>
       </h2>
       <p className="text-gray-700 mb-6 text-lg text-center">
         Booking your home appliance repair service in Chennai is quick and
@@ -81,7 +83,7 @@ const BookService = () => {
             <div>
               <div className="font-semibold text-blue-800 text-lg mb-1 items-center gap-2">
                 <p className="text-blue-600 font-bold">Step {idx + 1}:</p>
-                {step.title}
+                <b>{step.title}</b>
               </div>
               <div className="text-gray-800 text-base">{step.description}</div>
             </div>

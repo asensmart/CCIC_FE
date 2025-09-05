@@ -6,6 +6,7 @@ import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram";
 import { FaGoogle } from "@react-icons/all-files/fa/FaGoogle";
 import { FaPhoneAlt } from "@react-icons/all-files/fa/FaPhoneAlt";
 import { FaUser } from "@react-icons/all-files/fa/FaUser";
+import { FaTimes } from "@react-icons/all-files/fa/FaTimes";
 import { IoMdSettings } from "@react-icons/all-files/io/IoMdSettings";
 import { RiNavigationFill } from "@react-icons/all-files/ri/RiNavigationFill";
 import { RiWhatsappFill } from "@react-icons/all-files/ri/RiWhatsappFill";
@@ -26,6 +27,7 @@ export const Icons = {
   google: FaGoogle,
   phone: FaPhoneAlt,
   userIcon: FaUser,
+  closeIcon: FaTimes,
   settings: IoMdSettings,
   navigation: RiNavigationFill,
   whatsApp: RiWhatsappFill,

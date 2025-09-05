@@ -51,7 +51,7 @@ const HomeCom = () => {
 
   return (
     <div className="bg-white">
-      <MainNavbar brandData={data} />
+      <MainNavbar brandData={data} isMainHome={true} />
       {/* Banner Section */}
       <BannerContent />
 
@@ -191,7 +191,7 @@ function AccordionFAQ() {
               <div
                 className={`overflow-hidden transition-all duration-300 ${
                   openIndex === idx
-                    ? "max-h-40 opacity-100 mt-2"
+                    ? "max-h-full opacity-100 mt-2"
                     : "max-h-0 opacity-0"
                 } text-gray-700`}
                 style={{
