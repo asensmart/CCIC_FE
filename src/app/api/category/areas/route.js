@@ -5,7 +5,7 @@ export async function POST(req) {
 
   const catAPI = await axios
     .get(
-      `${process.env.NEXT_PUBLIC_API_URL}/get/areaNamesByCategoryName?categoryName=${data?.category}`
+      `${process.env.NEXT_PUBLIC_API_URL}/get/areaNamesByCategoryName?categoryName=${data?.category}&brandName=${data?.brand}`
     )
     .then((res) => {
       return res?.data;

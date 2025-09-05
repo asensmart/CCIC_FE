@@ -55,21 +55,6 @@ const HomeCom = () => {
       {/* Banner Section */}
       <BannerContent />
 
-      {/* <div className="grid lg:grid-cols-3 md:grid-cols-1 gap-1 py-12 px-2 bg-white text-black">
-        {titleData.map((data) => (
-          <div
-            key={data?.id}
-            className="flex items-center justify-start lg:mb-0 sm:mb-4 gap-3"
-          >
-            <div className="p-3 rounded bg-mailHead">{data?.icon}</div>
-            <div className="">
-              <div className="font-bold text-xl">{data?.title}</div>
-              <div>{data?.description}</div>
-            </div>
-          </div>
-        ))}
-      </div> */}
-
       {/* About Us */}
       <HomeAbout />
 
@@ -95,7 +80,7 @@ const HomeCom = () => {
       <BookCallService />
 
       {/* Brand Service Area */}
-      <ServiceAreaBrand />
+      <ServiceAreaBrand brand={data} />
 
       <div className="px-8 pb-8">
         <iframe

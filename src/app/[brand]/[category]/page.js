@@ -51,6 +51,7 @@ const CategoryPage = async ({ params }) => {
   const getAreasByCategory = await axios
     .post(`${process.env.NEXT_PUBLIC_BASE_URL}/category/areas`, {
       category: params?.category,
+      brand: params.brand,
     })
     .then((res) => {
       return res?.data?.data?.data;
