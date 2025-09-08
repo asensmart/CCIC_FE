@@ -83,7 +83,7 @@ const BookService = () => {
             <div>
               <div className="font-semibold text-blue-800 text-lg mb-1 items-center gap-2">
                 <p className="text-blue-600 font-bold">Step {idx + 1}:</p>
-                <b>{step.title}</b>
+                <span className="font-bold lg:font-normal">{step.title}</span>
               </div>
               <div className="text-gray-800 text-base">{step.description}</div>
             </div>
