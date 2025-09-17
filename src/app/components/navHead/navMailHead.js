@@ -22,7 +22,7 @@ const NavMailHead = () => {
     {
       id: 4,
       icon: <Icons.google size={18} color="black" />,
-      link: "https://customercareinchennai.com/",
+      link: "https://www.customercareinchennai.com/",
     },
   ];
   return (

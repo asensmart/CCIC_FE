@@ -6,6 +6,6 @@ export default function robots() {
       disallow: "",
       disallow: "/cgi-bin/",
     },
-    sitemap: "https://customercareinchennai.com/sitemap.xml",
+    sitemap: "https://www.customercareinchennai.com/sitemap.xml",
   };
 }

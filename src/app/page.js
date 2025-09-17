@@ -41,8 +41,8 @@ export default async function Home() {
   const jsonLd = {
     "@context": "https://schema.org/",
     "@type": "Organization",
-    url: "https://customercareinchennai.com",
-    logo: "https://customercareinchennai.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.30572b80.png&w=1080&q=75",
+    url: "https://www.customercareinchennai.com",
+    logo: "https://www.customercareinchennai.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.30572b80.png&w=1080&q=75",
     name: "AM Service Solution",
     description:
       "Looking for TV Repair Service in Chennai? Get LCD, LED, UHD, and Smart TVs TV service in Chennai at affordable price in Chennai. Our experienced technicians will come to service your TV at your doorstep.",
