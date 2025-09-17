@@ -33,7 +33,7 @@ export const metadata = {
     "Tv uninstallation service near me",
   ],
   alternates: {
-    canonical: `https://customercareinchennai.com/`,
+    canonical: `https://www.customercareinchennai.com/`,
   },
 };
 

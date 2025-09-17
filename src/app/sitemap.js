@@ -8,22 +8,22 @@ export default async function sitemap() {
 
   const defaultData = [
     {
-      url: "https://customercareinchennai.com/",
+      url: "https://www.customercareinchennai.com/",
       lastModified: new Date(),
       priority: 0.5,
     },
     {
-      url: "https://customercareinchennai.com/aboutus",
+      url: "https://www.customercareinchennai.com/aboutus",
       lastModified: new Date(),
       priority: 0.5,
     },
     {
-      url: "https://customercareinchennai.com/contactus",
+      url: "https://www.customercareinchennai.com/contactus",
       lastModified: new Date(),
       priority: 0.5,
     },
     {
-      url: "https://customercareinchennai.com/blog",
+      url: "https://www.customercareinchennai.com/blog",
       lastModified: new Date(),
       priority: 0.5,
     },
