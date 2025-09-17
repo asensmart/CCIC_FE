@@ -1,4 +1,19 @@
 module.exports = {
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "customercareinchennai.com",
+          },
+        ],
+        destination: "https://www.customercareinchennai.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   reactStrictMode: false,
   compiler: {
     styledComponents: true,
@@ -24,7 +39,7 @@ module.exports = {
         hostname: "localhost",
         port: "8000",
         pathname: "/uploads/**",
-      }
+      },
     ],
   },
 };
