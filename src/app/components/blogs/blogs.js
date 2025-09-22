@@ -17,7 +17,6 @@ const BlogsPage = () => {
           setLoading(true);
           setData(res?.data?.data);
           setLoading(false);
-          console.log("blogs data --->" + JSON.stringify(data));
         })
         .catch((err) => console.log("Data fetching error!" + err));
     }
