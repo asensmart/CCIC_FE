@@ -12,8 +12,8 @@ const AboutUs = async () => {
 
   return (
     <>
-      <MainNavbar brandData={brandData} />
-      <AboutContent name={"customercareinchennai.com"} isHome={true} />
+      <MainNavbar brandData={brandData} isMainHome={true} />
+      <AboutContent name={"www.customercareinchennai.com"} isHome={true} />
     </>
   );
 };

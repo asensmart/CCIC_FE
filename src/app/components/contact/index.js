@@ -2,8 +2,8 @@
 import axios from "axios";
 import React, { useRef, useState } from "react";
 import Image from "next/image";
-import aboutBanner from "@/assets/images/aboutbanner.jpg";
-import aboutBannerMob from "@/assets/images/aboutbannerMob.jpg";
+import contactBanner from "@/assets/images/HomeContactBanner 22-09.jpg";
+import contactBannerMob from "@/assets/images/HomeContactBanner 22-09.jpg";
 import contactImg from "@/assets/images/contactSideImg.jpg";
 
 const ContactUsPage = () => {
@@ -48,14 +48,14 @@ const ContactUsPage = () => {
     <div className="bg-white">
       <Image
         alt="about banner image"
-        className="object-cover hidden lg:block"
-        src={aboutBanner}
+        className="hidden lg:block w-[100%]"
+        src={contactBanner}
       />
 
       <Image
         alt="about banner image"
         className="object-cover block lg:hidden w-[100%]"
-        src={aboutBannerMob}
+        src={contactBannerMob}
       />
       <div className="mt-4">
         <h1 className="text-orangeText text-4xl font-bold text-center">

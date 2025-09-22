@@ -1,11 +1,11 @@
 import Image from "next/image";
-import aboutBanner from "@/assets/images/aboutbanner.jpg";
+import aboutBanner from "@/assets/images/HomeAboutBanner 22-09.jpg";
 import aboutImg from "@/assets/images/HomeAbuotImg.jpg";
 
 const AboutContent = ({ name, isHome }) => {
   return (
     <div className="bg-white">
-      <Image alt="about banner image" src={aboutBanner} />
+      <Image alt="about banner image" className="w-[100%]" src={aboutBanner} />
       <div className="mt-4">
         <h1 className="text-orangeText text-4xl font-bold text-center">
           About Customer Care Chennai
