@@ -17,7 +17,9 @@ const BlogsPage = () => {
           setLoading(true);
           setData(res?.data?.data);
           setLoading(false);
-        });
+          console.log("blogs data --->" + JSON.stringify(data));
+        })
+        .catch((err) => console.log("Data fetching error!" + err));
     }
     fetchBlogs();
   }, []);
@@ -44,7 +46,13 @@ const BlogsPage = () => {
             {data?.map((blog) => (
               <Link
                 key={blog?._id}
-                href={`/blog/${blog?._id}?${Date.now()}`}
+                // href={`/blog/${blog?._id}?${Date.now()}`}
+                href={{
+                  pathname: "/blog/" + blog?.blogTitle,
+                  query: {
+                    blog_id: blog?._id,
+                  },
+                }}
                 className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
                 <Image

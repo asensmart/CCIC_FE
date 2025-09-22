@@ -3,10 +3,12 @@ import BlogPage from "@/app/components/blogs/blog";
 import MainNavbar from "@/app/components/shared/Nav/Navbar";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params, searchParams }) {
+  const blogId = searchParams?.blog_id;
   const blog = await axios
     .post(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs/getBlog`, {
-      id: params?.id,
+      id: blogId,
+      // id: params?.id,
     })
     .then((res) => {
       return res?.data?.data;
@@ -27,7 +29,8 @@ export async function generateMetadata({ params }) {
       },
     },
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_HYPER_TXT}/${params?.id}`,
+      canonical: `${process.env.NEXT_PUBLIC_HYPER_TXT}/${blogId}`,
+      // canonical: `${process.env.NEXT_PUBLIC_HYPER_TXT}/${params?.id}`,
     },
     openGraph: {
       images: [blog?.banner],
@@ -35,7 +38,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const BlogIndex = async ({ params }) => {
+const BlogIndex = async ({ params, searchParams }) => {
+  const blogId = searchParams?.blog_id;
+
   const brandData = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/get/brands`)
     .then((res) => res.json())
     .then((res) => {
@@ -45,7 +50,8 @@ const BlogIndex = async ({ params }) => {
 
   const getBlog = await axios
     .post(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs/getBlog`, {
-      id: params?.id,
+      id: blogId,
+      // id: params?.id,
     })
     .then((res) => {
       return res?.data?.data;
