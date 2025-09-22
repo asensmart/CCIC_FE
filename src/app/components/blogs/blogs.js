@@ -47,7 +47,7 @@ const BlogsPage = () => {
                 key={blog?._id}
                 // href={`/blog/${blog?._id}?${Date.now()}`}
                 href={{
-                  pathname: "/blog/" + blog?.blogTitle,
+                  pathname: "/blog/" + blog?.blogTitle.replace(/_/g, "-"),
                   query: {
                     blog_id: blog?._id,
                   },
