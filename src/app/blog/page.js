@@ -12,7 +12,7 @@ const Blogs = async () => {
     .catch((err) => console.log(err));
   return (
     <>
-      <MainNavbar brandData={brandData} />
+      <MainNavbar brandData={brandData} isMainHome={true} />
       <BlogPage />
     </>
   );
