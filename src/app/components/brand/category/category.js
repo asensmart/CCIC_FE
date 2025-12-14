@@ -11,7 +11,7 @@ export const Category = ({ data, paramData }) => {
   return (
     <div className="relative bg-white text-black">
       {/* Home Banner */}
-      <Image
+      {/* <Image
         src={data?.getCategory?.titleBackgroundImage}
         alt="banner"
         // className="dark:invert"
@@ -19,10 +19,10 @@ export const Category = ({ data, paramData }) => {
         width={900}
         height={0}
         priority
-      />
+      /> */}
 
       {/* Contact Form */}
-      <ContactForm />
+      <ContactForm Title={data?.getCategory?.title} />
 
       {/* Content */}
       <BrandContent data={data?.getCategory} />

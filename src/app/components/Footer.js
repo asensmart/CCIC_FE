@@ -75,37 +75,37 @@ const Footer = () => {
             </a>
             <div className="flex items-center py-1 space-x-3">
               <a
-                href="https://www.instagram.com/am_service24x7/?igsh=bmt6OGwwdDFkNjZt#/"
+                href="https://www.instagram.com/amservicesolution/"
                 target="_blank"
-                className="hover:text-blue-500 transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
+                className="size-8 rounded-full bg-gradient-to-br from-pink-500 to-yellow-500 flex items-center justify-center text-white"
               >
                 <Icons.instagram size={24} />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61582671137751&sk=about"
                 target="_blank"
                 className="hover:text-blue-500 transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
               >
                 <Icons.facebook size={24} />
               </a>
               <a
-                href="https://x.com"
+                href="https://x.com/ServicecenterC"
                 target="_blank"
                 className="font-bold text-[24px] bg-slate-500 px-2 rounded hover:text-blue-500 transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
               >
                 X
               </a>
-              <a
+              {/* <a
                 href="https://linkedin.com"
                 target="_blank"
                 className="hover:text-blue-500 transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
               >
                 <Icons.linkedin size={24} />
-              </a>
+              </a> */}
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@tvservicecenterinchennai8309"
                 target="_blank"
-                className="hover:text-blue-500 transition-all hover:transition-all ease-in-out hover:ease-in-out duration-500 hover:duration-500"
+                className="text-[#ff0000]"
               >
                 <Icons.youtube size={24} />
               </a>

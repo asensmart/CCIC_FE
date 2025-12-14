@@ -8,10 +8,12 @@ import BookService from "../../../shared/BookService";
 import BrandContent from "../../content";
 
 export const ServiceAreaPage = ({ data, paramData }) => {
+  console.log("data --->" + JSON.stringify(data.getServices.title));
+
   return (
     <div className="relative bg-white text-black">
       {/* Home Banner */}
-      <Image
+      {/* <Image
         src={data?.getServices?.titleBackgroundImage}
         alt="banner"
         // className="dark:invert"
@@ -19,10 +21,10 @@ export const ServiceAreaPage = ({ data, paramData }) => {
         width={900}
         height={0}
         priority
-      />
+      /> */}
 
       {/* Contact Form */}
-      <ContactForm />
+      <ContactForm Title={data?.getServices?.title} />
 
       {/* Content */}
       <BrandContent data={data?.getServices} serviceArea={true} />

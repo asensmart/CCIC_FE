@@ -8,7 +8,7 @@ import logo from "@/assets/images/logo.png";
 import autoprefixer from "autoprefixer";
 import { useRouter } from "next/navigation";
 
-const MainMobNav = ({ menus, data, brandName, isMainHome }) => {
+const MainMobNav = ({ menus, data, brandName, isMainHome, brandColor }) => {
 
   const router = useRouter();
 
@@ -16,10 +16,11 @@ const MainMobNav = ({ menus, data, brandName, isMainHome }) => {
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
+
   return (
     <>
       <div className="lg:hidden block sticky top-0 bg-white shadow-lg z-50">
-        <div className="grid grid-cols-[1fr_5fr] py-2">
+        <div className="grid grid-cols-[1fr_5fr]">
           <div
             onClick={toggleDrawer}
             className="text-black flex items-center p-2"
@@ -36,7 +37,8 @@ const MainMobNav = ({ menus, data, brandName, isMainHome }) => {
               }
             >
               {brandName != undefined ? (
-                <p className="font-bold text-3xl">
+                // style={{ color: brandColor }}
+                <p className="font-bold text-3xl text-black" >
                   {data[0]?.brandName?.toUpperCase()}
                 </p>
               ) : (
@@ -60,12 +62,13 @@ const MainMobNav = ({ menus, data, brandName, isMainHome }) => {
         className="bla bla bla"
       >
         <div className="text-black p-4 border-b">
-          <Image
+          {brandName == undefined ? (<Image
             src={logo}
             alt="logo"
             width={autoprefixer}
             height={autoprefixer}
-          />
+            className="w-[80%] ms-4"
+          />) : (<div className="text-3xl font-bold text-center">{data[0]?.brandName?.toUpperCase()}</div>)}
         </div>
         <div className="text-black">
           {menus?.map((menu) =>
@@ -85,16 +88,16 @@ const MainMobNav = ({ menus, data, brandName, isMainHome }) => {
                   isMainHome
                     ? menu?.slug
                     : data[0] && menu?.name === "Home"
-                    ? `/${data[0]?.brandName}`
-                    : data[0]
-                    ? `/${data[0]?.brandName}${menu?.slug}`
-                    : menu?.slug
+                      ? `/${data[0]?.brandName}`
+                      : data[0]
+                        ? `/${data[0]?.brandName}${menu?.slug}`
+                        : menu?.slug
                 }
-                // href={
-                //   brandName && menu?.name === "Home"
-                //     ? router.push(`/${brandName.brand}`)
-                //     : router.push(menu?.slug)
-                // }
+              // href={
+              //   brandName && menu?.name === "Home"
+              //     ? router.push(`/${brandName.brand}`)
+              //     : router.push(menu?.slug)
+              // }
               >
                 <div
                   href={menu?.slug}

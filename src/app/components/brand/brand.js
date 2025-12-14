@@ -11,7 +11,7 @@ export const Brand = ({ data, paramData }) => {
   return (
     <div className="relative bg-white text-black">
       {/* Home Banner */}
-      <Image
+      {/* <Image
         src={data?.getBrand?.titleBackgroundImage}
         alt={data?.getBrand?.titleImageAltName}
         title={data?.getBrand?.titleImageAltName}
@@ -20,10 +20,10 @@ export const Brand = ({ data, paramData }) => {
         width={1000}
         height={0}
         priority
-      />
+      /> */}
 
       {/* Contact Form */}
-      <ContactForm />
+      <ContactForm Title={data?.getBrand?.title} />
 
       {/* Content */}
       <BrandContent data={data?.getBrand} />

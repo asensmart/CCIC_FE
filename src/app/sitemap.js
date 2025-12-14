@@ -12,16 +12,16 @@ export default async function sitemap() {
       lastModified: new Date(),
       priority: 0.5,
     },
-    {
-      url: "https://www.customercareinchennai.com/aboutus",
-      lastModified: new Date(),
-      priority: 0.5,
-    },
-    {
-      url: "https://www.customercareinchennai.com/contactus",
-      lastModified: new Date(),
-      priority: 0.5,
-    },
+    // {
+    //   url: "https://www.customercareinchennai.com/aboutus",
+    //   lastModified: new Date(),
+    //   priority: 0.5,
+    // },
+    // {
+    //   url: "https://www.customercareinchennai.com/contactus",
+    //   lastModified: new Date(),
+    //   priority: 0.5,
+    // },
     {
       url: "https://www.customercareinchennai.com/blog",
       lastModified: new Date(),

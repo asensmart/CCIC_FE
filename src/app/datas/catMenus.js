@@ -22,11 +22,11 @@ export const menus = [
     name: "Home",
     slug: "/",
   },
-  {
-    id: 2,
-    name: "About Us",
-    slug: "/aboutus",
-  },
+  // {
+  //   id: 2,
+  //   name: "About Us",
+  //   slug: "/aboutus",
+  // },
   {
     id: 3,
     name: "Category",
@@ -37,9 +37,9 @@ export const menus = [
   //   name: "Blog",
   //   slug: "/blog",
   // },
-  {
-    id: 5,
-    name: "Contact Us",
-    slug: "/contactus",
-  },
+  // {
+  //   id: 5,
+  //   name: "Contact Us",
+  //   slug: "/contactus",
+  // },
 ];

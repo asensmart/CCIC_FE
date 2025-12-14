@@ -54,12 +54,12 @@ const BannerContent = () => {
     <>
       <div
         className="relative w-full h-[700px] lg:h-[600px] flex flex-col justify-center"
-        // style={{
-        //   backgroundImage: `url(${homeBanner.src})`,
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "center",
-        //   backgroundRepeat: "no-repeat",
-        // }}
+      // style={{
+      //   backgroundImage: `url(${homeBanner.src})`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      //   backgroundRepeat: "no-repeat",
+      // }}
       >
         <Image
           src={isMobile ? homeBannerMobile : homeBanner}
@@ -83,7 +83,7 @@ const BannerContent = () => {
         {/* Content */}
         <div className="text-white text-center pt-11 md:pt-8 px-4 z-30">
           <h1 className="text-2xl md:text-4xl font-extrabold">
-            Home Appliance Repair Service in Chennai
+            Fast, Affordable & Trusted TV Service Center in Chennai
           </h1>
           <p>
             TV, AC, Washing Machine & Refrigerator Repair - Same Day Doorstep

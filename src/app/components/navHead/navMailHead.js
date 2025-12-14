@@ -43,26 +43,26 @@ const NavMailHead = () => {
       </div> */}
       <div className="flex items-center py-1 space-x-3">
         <a
-          href="https://www.instagram.com/am_service24x7/?igsh=bmt6OGwwdDFkNjZt#/"
+          href="https://www.instagram.com/amservicesolution/"
           target="_blank"
-          className="text-black"
+          className="size-8 rounded-full bg-gradient-to-br from-pink-500 to-yellow-500 flex items-center justify-center text-white"
         >
           <Icons.instagram size={18} />
         </a>
-        <a href="https://facebook.com" target="_blank" className="text-black">
+        <a href="https://www.facebook.com/profile.php?id=61582671137751&sk=about" target="_blank" className="text-[#0000ff]">
           <Icons.facebook size={18} />
         </a>
         <a
-          href="https://x.com"
+          href="https://x.com/ServicecenterC"
           target="_blank"
           className="font-bold text-[18px] bg-slate-200 px-2 rounded text-black"
         >
           X
         </a>
-        <a href="https://linkedin.com" target="_blank" className="text-black">
+        {/* <a href="https://linkedin.com" target="_blank" className="text-black">
           <Icons.linkedin size={18} />
-        </a>
-        <a href="https://youtube.com" target="_blank" className="text-black">
+        </a> */}
+        <a href="https://www.youtube.com/@tvservicecenterinchennai8309" target="_blank" className="text-[#ff0000]">
           <Icons.youtube size={18} />
         </a>
       </div>

@@ -38,6 +38,7 @@ export default async function RootLayout({ children, params }) {
         menus={menus}
         data={getCatByBrand?.data}
         brandName={getBrand?.slug}
+        brandColor={getBrand?.color}
       />
       <div className="sticky top-0 shadow-lg bg-white z-50 lg:block hidden">
         <NavbarBrand
@@ -48,7 +49,7 @@ export default async function RootLayout({ children, params }) {
       </div>
       {children}
       {/* Whatsapp icon for mobile */}
-      <div className="lg:hidden block">
+      {/* <div className="lg:hidden block">
         <Link href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUM}`}>
           <div className="fixed bottom-24 right-3 text-white p-4 bg-blue-500 rounded-full">
             <Icons.phone size={24} />
@@ -59,7 +60,7 @@ export default async function RootLayout({ children, params }) {
             <Icons.whatsApp size={28} />
           </div>
         </Link>
-      </div>
+      </div> */}
     </>
   );
 }
