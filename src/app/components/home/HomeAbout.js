@@ -25,8 +25,7 @@ const HomeAbout = () => {
   return (
     <>
       <h1 className="mt-4 text-center md:text-3xl text-xl font-bold text-black">
-        Chennai Home Appliance Service -TV, AC, Washing Machine & Refrigerator
-        Repair
+        Best TV Service Center in Chennai | 24/7 Customer Support
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] px-2 bg-white">
         <div className="sm:flex sm:justify-center flex items-center">

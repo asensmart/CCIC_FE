@@ -3,21 +3,27 @@ import HomeCom from "./components/home/HomeCom";
 
 export const metadata = {
   applicationName: "AM Service",
-  title: "Best Home Appliance Repair in Chennai | TV Repair Service Center",
+  title: "Best TV Service Center in Chennai | 24/7 Customer Support",
   // title: "AM Service Solution - customer care in Chennai",
   description:
-    "Affordable LCD, LED, UHD & Smart TV repair in Chennai. Expert technicians provide doorstep service. Fast, reliable support for all major TV brands.",
+    "Looking for the best TV service center in Chennai? We offer same-day, doorstep TV repair services for Samsung, LG, Mi, Panasonic, Vu, and TCL TVs, with reliable 24/7 customer support. Call us today!",
   // "Looking for TV Repair Service in Chennai? Get LCD, LED, UHD, and Smart TVs TV service in Chennai at affordable price in Chennai. Our experienced technicians will come to service your TV at your doorstep.",
   keywords: [
-    "home appliance repair in chennai",
-    "tv service center in chennai",
-    "samsung tv service center in chennai",
-    "lg tv service center in chennai",
-    "mi tv service center in chennai",
-    "sony tv service center in chennai",
-    "panasonic tv service center in chennai",
-    "vu tv service center in chennai",
-    "tcl tv service center in chennai",
+    "TV service center Chennai",
+    "TV repair Chennai",
+    "best TV service center in Chennai",
+    "TV service center near me",
+    "Samsung TV service Chennai",
+    "LG TV service Chennai",
+    "Mi TV repair Chennai",
+    "Panasonic TV service Chennai",
+    "Vu TV service Chennai",
+    "TCL TV repair Chennai",
+    "doorstep TV service Chennai",
+    "same day TV repair Chennai",
+    "LED TV repair Chennai",
+    "Smart TV service Chennai",
+    "24/7 TV customer support Chennai"
   ],
   alternates: {
     canonical: `https://www.customercareinchennai.com/`,
@@ -32,7 +38,7 @@ export default async function Home() {
     logo: "https://www.customercareinchennai.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.30572b80.png&w=1080&q=75",
     name: "AM Service Solution",
     description:
-      "Looking for TV Repair Service in Chennai? Get LCD, LED, UHD, and Smart TVs TV service in Chennai at affordable price in Chennai. Our experienced technicians will come to service your TV at your doorstep.",
+      "Looking for the best TV service center in Chennai? We offer same-day, doorstep TV repair services for Samsung, LG, Mi, Panasonic, Vu, and TCL TVs, with reliable 24/7 customer support. Call us today!",
     address:
       "No. 142, Govindan St, Shanthi Nagar, Arundati Nagar, Jamalia, Chennai, Tamil Nadu 600012",
     telephone: "+91 7550052019",
