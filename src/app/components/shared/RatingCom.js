@@ -8,8 +8,9 @@ import Link from "next/link";
 
 const RatingCom = ({ data }) => {
 
-  const [rating, setRating] = useState(5); // Initial value
+  const [rating, setRating] = useState(0); // Initial value
   const [comment, setComment] = useState(""); // Initial value
+  const [commentErr, setCommentErr] = useState(""); // Initial value
   const [ratData, setRatData] = useState([]); // Initial value
   const [reFetch, setReFetch] = useState(false); // Initial value
 
@@ -32,22 +33,32 @@ const RatingCom = ({ data }) => {
   }, [data?._id, reFetch]);
 
   const ratingHandler = async (id, rating, comment) => {
-    const postData = {
-      rating: rating,
-      comment: comment,
-      brandId: id,
-    };
+    // Trim the comment to check if it's not just whitespace
+    const trimmedComment = comment.trim();
 
-    axios
-      .post(`${process.env.NEXT_PUBLIC_API_URL}/post/postRating`, postData)
-      .then((res) => {
-        setReFetch(!reFetch);
-        setComment("");
-        setRating(5);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (trimmedComment !== "") {
+      setCommentErr("");
+      const postData = {
+        rating: rating,
+        comment: trimmedComment,
+        brandId: id,
+      };
+
+      axios
+        .post(`${process.env.NEXT_PUBLIC_API_URL}/post/postRating`, postData)
+        .then((res) => {
+          setReFetch(!reFetch);
+          setComment("");
+          setRating(5);
+          setCommentErr(""); // Clear any error on success
+        })
+        .catch((err) => {
+          console.log(err);
+          setCommentErr("Failed to submit comment. Please try again.");
+        });
+    } else {
+      setCommentErr("Please enter a comment before submitting");
+    }
   };
   return (
     <div className="p-2">
@@ -65,12 +76,21 @@ const RatingCom = ({ data }) => {
             <span className="ms-3">{ratData?.length} Ratings</span>
           </div>
           <textarea
-            className="p-2 w-[100%] textAreaBox"
+            className={`p-2 w-[100%] textAreaBox ${commentErr ? 'border-2 border-red-500' : ''}`}
             rows="1"
             placeholder="Add a comment"
             value={comment}
-            onChange={(e) => setComment(e.target.value)}
+            onChange={(e) => {
+              setComment(e.target.value);
+              // Clear error when user starts typing
+              if (commentErr) {
+                setCommentErr("");
+              }
+            }}
           />
+          {commentErr && (
+            <p className="text-red-500 text-sm mt-1">{commentErr}</p>
+          )}
           <div className="flex justify-end">
             <button
               type="button"
