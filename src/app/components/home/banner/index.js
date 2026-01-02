@@ -48,7 +48,10 @@ const BannerContent = () => {
 
   useEffect(() => {
     // This runs only on the client
-    setIsMobile(window.outerWidth <= 769);
+    const handleResize = () => setIsMobile(window.outerWidth <= 769);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
     <>

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import MainMobNav from "../../home/mainMobilePage.js";
+import MainMobNav from "../../home/mainMobilePage";
 import Navbar from "../../Navbar.js";
 import { menus } from "@/app/datas/Navmenus.js";
 

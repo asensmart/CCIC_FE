@@ -1,6 +1,6 @@
 import Link from "next/link";
 import NavbarBrand from "../components/NavbarBrand";
-import BrandMobileNav from "../components/home/brandMobileNav.js";
+import BrandMobileNav from "../components/home/brandMobileNav";
 import { menus } from "../datas/catMenus";
 import { Icons } from "@/assets/icons/icons";
 import React from "react";
