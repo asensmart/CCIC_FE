@@ -38,7 +38,7 @@ const MainMobNav = ({ menus, data, brandName, isMainHome, brandColor }) => {
             >
               {brandName != undefined ? (
                 // style={{ color: brandColor }}
-                <p className="font-bold text-3xl text-black" >
+                <p className="font-bold text-3xl text-black" style={{ color: brandColor }}>
                   {data[0]?.brandName?.toUpperCase()}
                 </p>
               ) : (
