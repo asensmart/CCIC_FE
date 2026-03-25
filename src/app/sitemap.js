@@ -1,5 +1,7 @@
 import axios from "axios";
 
+export const revalidate = 3600; // 1 hour
+
 export default async function sitemap() {
   var mapData = [];
   const areas = await axios.get(
