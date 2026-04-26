@@ -3,7 +3,7 @@ import HomeCom from "./components/home/HomeCom";
 
 export const metadata = {
   applicationName: "AM Service",
-  title: "Best TV Service Center in Chennai | 24/7 Customer Support",
+  title: "TV Service Center in Chennai | 24/7 Customer Support",
   // title: "AM Service Solution - customer care in Chennai",
   description:
     "Looking for the best TV service center in Chennai? We offer same-day, doorstep TV repair services for Samsung, LG, Mi, Panasonic, Vu, and TCL TVs, with reliable 24/7 customer support. Call us today!",
@@ -134,6 +134,32 @@ export default async function Home() {
     ],
   };
 
+  const jsonLdRating = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "AM Service Solution",
+    url: "https://www.customercareinchennai.com",
+    image:
+      "https://www.customercareinchennai.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.30572b80.png&w=1080&q=75",
+    telephone: "+91 7550052019",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress:
+        "No. 142, Govindan St, Shanthi Nagar, Arundati Nagar, Jamalia",
+      addressLocality: "Chennai",
+      addressRegion: "Tamil Nadu",
+      postalCode: "600012",
+      addressCountry: "IN",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      bestRating: "5",
+      ratingCount: "245",
+      reviewCount: "245",
+    },
+  };
+
   // const brandData = await axios
   //   // .get(`${process.env.NEXT_PUBLIC_API_URL}/get/brands`)
   //   .get(`${process.env.NEXT_PUBLIC_BASE_URL}/brands`)
@@ -155,6 +181,11 @@ export default async function Home() {
         id="2"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+      <Script
+        id="rating-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdRating) }}
       />
       <HomeCom />
       {/* <HomeCom brandData={brandData} /> */}
