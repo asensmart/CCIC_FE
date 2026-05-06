@@ -22,7 +22,7 @@ export const Category = ({ data, paramData }) => {
       /> */}
 
       {/* Contact Form */}
-      <ContactForm Title={data?.getCategory?.title} />
+      <ContactForm Title={data?.getCategory?.title} BrandName={data?.getBrand?.brandName} />
 
       {/* Content */}
       <BrandContent data={data?.getCategory} />

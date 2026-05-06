@@ -29,6 +29,7 @@ const BannerContent = () => {
         email: email,
         number: number,
         message: message,
+        brand: "home",
       })
       .then(
         (result) => {

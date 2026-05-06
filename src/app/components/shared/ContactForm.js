@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useRef, useState } from "react";
 import { Icons } from "@/assets/icons/icons";
 
-const ContactForm = ({ Title }) => {
+const ContactForm = ({ Title, BrandName }) => {
   const form = useRef();
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
@@ -24,6 +24,7 @@ const ContactForm = ({ Title }) => {
         email: email,
         number: number,
         message: message,
+        brand: BrandName,
       })
       .then(
         (result) => {

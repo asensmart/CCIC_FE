@@ -8,7 +8,7 @@ import BookService from "../../../shared/BookService";
 import BrandContent from "../../content";
 
 export const ServiceAreaPage = ({ data, paramData }) => {
-  console.log("data --->" + JSON.stringify(data.getServices.title));
+  // console.log("data --->" + JSON.stringify(data.getServices.title));
 
   return (
     <div className="relative bg-white text-black">
@@ -24,7 +24,7 @@ export const ServiceAreaPage = ({ data, paramData }) => {
       /> */}
 
       {/* Contact Form */}
-      <ContactForm Title={data?.getServices?.title} />
+      <ContactForm Title={data?.getServices?.title} BrandName={data?.getBrand?.brandName} />
 
       {/* Content */}
       <BrandContent data={data?.getServices} serviceArea={true} />

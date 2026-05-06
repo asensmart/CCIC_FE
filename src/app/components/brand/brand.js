@@ -23,7 +23,7 @@ export const Brand = ({ data, paramData }) => {
       /> */}
 
       {/* Contact Form */}
-      <ContactForm Title={data?.getBrand?.title} />
+      <ContactForm Title={data?.getBrand?.title} BrandName={data?.getBrand?.brandName} />
 
       {/* Content */}
       <BrandContent data={data?.getBrand} />
