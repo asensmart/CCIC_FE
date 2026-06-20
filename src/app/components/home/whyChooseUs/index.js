@@ -7,27 +7,27 @@ import whyChooseImg from "@/assets/images/whyChooseUs.webp";
 const features = [
   {
     title: "Expert Technicians in Chennai",
-    desc: "Our certified and experienced team specializes in TV repair, AC service, washing machine repair, and refrigerator repair for top brands like Samsung, LG, Panasonic, Mi, VU, TCL, Sony, Onida, Haier, and more.",
+    desc: "Our certified and experienced technicians specialize in LED TV Repair, LCD TV Repair, Smart TV Repair, OLED TV Repair, QLED TV Repair, TV Panel Repair, TV Motherboard Repair, and TV Screen Repair for all leading brands including Samsung, LG, Sony, Mi, OnePlus, TCL, VU, Panasonic, Haier, Acer, Kodak, and more.",
   },
   {
     title: "Fast & Same-Day Appliance Repair",
-    desc: "We provide quick and dependable doorstep service in Chennai for all your TVs, ACs, refrigerators, and washing machines.",
+    desc: "Get fast and reliable same-day TV repair service in Chennai. We diagnose and fix display issues, sound problems, power failures, motherboard faults, backlight issues, and screen defects efficiently.",
   },
   {
     title: "100% Genuine Spare Parts",
-    desc: "Every repair uses original spare parts to ensure long-lasting performance and high-quality service with warranty.",
+    desc: "Every repair uses original spare parts to ensure long-lasting performance and high-quality service with a warranty.",
   },
   {
     title: "Affordable & Transparent Pricing",
-    desc: "Get reliable appliance repair in Chennai at fair prices with no hidden costs.",
+    desc: "Get reliable TV repair in Chennai at fair prices with no hidden costs.",
   },
   {
     title: "Doorstep Service",
-    desc: "Doorstep Service Across All Chennai Areas – We serve T. Nagar, Anna Nagar, Velachery, Tambaram, Adyar, Porur, and nearby areas. ",
+    desc: "Doorstep Service Across All Chennai Areas – We serve T. Nagar, Anna Nagar, Velachery, Tambaram, Adyar, Porur, and nearby areas.",
   },
   {
     title: "24/7 Customer Support",
-    desc: "Our dedicated team is available around the clock to make your appliance repair experience in Chennai smooth and hassle-free.",
+    desc: "Our dedicated team is available around the clock to make your TV repair experience in Chennai smooth and hassle-free.",
   },
 ];
 
@@ -39,7 +39,7 @@ const WhyChooseUs = () => {
           <span className="text-black">Why</span> Choose Us
         </h2>
         <p className="text-black text-center text-xl">
-          Trusted Multi-Brand Home Appliance Repair in Chennai
+          Trusted TV Repair Service Center Chennai
         </p>
       </div>
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 items-center">
@@ -65,10 +65,7 @@ const WhyChooseUs = () => {
             WHY CHOOSE US
           </a> */}
           <p className="text-gray-600 mb-6">
-            When it comes to home appliance repair in Chennai, we are a reliable
-            multi-brand service center providing professional and efficient
-            solutions. Here’s what makes us the preferred choice for our
-            customers:
+            When it comes to TV  in Chennai, we are a reliable All Brand service center providing professional and efficient solutions. Here’s what makes us the preferred choice for our customers:
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
             {features.map((feature, idx) => (

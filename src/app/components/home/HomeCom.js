@@ -14,6 +14,8 @@ import WhyChooseUs from "./whyChooseUs/index.js";
 import BookCallService from "../shared/BookService.js";
 import BrandContent from "./brandContent/index.js";
 import ServiceAreaBrand from "./homeServiceBrand/index.js";
+import ContactForm from "../shared/ContactForm.js";
+import HomeParaContent from "./HomeParaContent.js";
 
 const HomeCom = () => {
   const titleData = [
@@ -54,6 +56,7 @@ const HomeCom = () => {
       <MainNavbar brandData={data} isMainHome={true} />
       {/* Banner Section */}
       <BannerContent />
+      {/* <ContactForm Title={"Test"} BrandName={"Test Brand"} /> */}
 
       {/* About Us */}
       <HomeAbout />
@@ -72,6 +75,9 @@ const HomeCom = () => {
 
       {/* How to Book Service */}
       <BookService />
+
+      {/* Home Para Content */}
+      <HomeParaContent />
 
       {/* // Place this component here: */}
       <AccordionFAQ />
@@ -115,60 +121,67 @@ function AccordionFAQ() {
 
   const faqs = [
     {
-      question: "Which is the best home appliance service center in Chennai?",
+      question: "Which is the best TV service center in Chennai?",
       answer:
-        "We are one of the trusted and leading home appliance service centers in Chennai, specializing in repair and maintenance of TVs, washing machines, refrigerators, air conditioners, and microwave ovens. Our certified technicians handle all major brands and provide reliable doorstep service at affordable prices. Customers choose us for our quick response, genuine spare parts, and transparent service process.",
+        "AM Service Solution is a trusted TV service center in Chennai, providing professional repair services for all major TV brands. We offer doorstep service, experienced technicians, genuine spare parts, affordable pricing, and warranty-supported repairs.",
     },
     {
       question: "Where can I find doorstep TV repair service in Chennai?",
       answer:
-        "You can find professional doorstep TV repair service with us anywhere in Chennai. Our experts repair LED, LCD, Plasma, Smart TVs, and 4K Ultra HD models. Instead of carrying your TV to a shop, our technician visits your home, diagnoses the issue, and provides same-day service with original parts for long-lasting performance.",
+        "You can book a doorstep TV repair service with AM Service Solution anywhere in Chennai. Our technicians visit your home, diagnose the issue, and provide quick repair solutions without the need to transport your TV.",
     },
     {
-      question: "How do I book a home appliance repair service in Chennai?",
+      question: "How do I book a TV repair service in Chennai?",
       answer:
-        "Service booking with us takes just a few minutes. You can call our dedicated customer care number or fill out the online service request form. Once booked, our support team assigns a technician near your location who will arrive at your doorstep for a free inspection and provide a cost estimate before starting the repair.",
+        "Booking a TV repair service is simple. You can call us, send a WhatsApp message, or submit a service request through our website. Our customer support team will schedule a technician visit at your convenient time.",
     },
     {
-      question:
-        "Can I get 100% genuine spare parts for appliance and TV repairs in Chennai?",
+      question: "Do you use genuine spare parts for TV repairs?",
       answer:
-        "Yes, we always use 100% genuine spare parts for every repair. Whether it is a TV panel replacement, refrigerator compressor, washing machine motor, or AC gas refilling, we ensure original components are installed. This guarantees durability, smooth functioning, and protects your appliance warranty.",
+        "Yes. We use 100% genuine and high-quality compatible spare parts for TV repairs, including LED backlights, power boards, motherboards, display panels, speakers, and other components to ensure long-lasting performance.",
     },
     {
-      question: "Who provides multi-brand appliance repair in Chennai?",
+      question: "Do you repair all TV brands in Chennai?",
       answer:
-        "We provide expert multi-brand repair services in Chennai for all popular brands like Samsung, LG, Sony, Panasonic, Whirlpool, IFB, Haier, Godrej, TCL, VU, Mi, and OnePlus. Our technicians are trained across different models and technologies, from basic LED TVs to advanced OLEDs and inverter washing machines, ensuring complete brand-specific solutions.",
+        "Yes. We provide multi-brand TV repair services for Samsung, LG, Sony, Panasonic, Mi, OnePlus, TCL, VU, Haier, Toshiba, Onida, Philips, Acer, Motorola, Realme, Kodak, and many other TV brands.",
     },
     {
-      question: "Do appliance repair services in Chennai provide warranty?",
+      question: "Do you provide warranty on TV repairs?",
       answer:
-        "Yes, every repair service we offer comes with a service warranty. Depending on the appliance and the repair type, we provide warranty on spare parts as well as on the service work done. This ensures our customers enjoy peace of mind, knowing that their repaired TV, washing machine, or refrigerator is covered.",
+        "Yes. Most TV repair services come with a service warranty. The warranty period depends on the type of repair and spare parts replaced. Our team will provide warranty details before completing the service.",
     },
     {
-      question:
-        "How fast can I get same-day TV or appliance repair in Chennai?",
+      question: "How quickly can I get my TV repaired in Chennai?",
       answer:
-        "In most cases, we provide same-day repair service across all Chennai locations. Whether you need TV service in Porur, AC repair in Velachery, or refrigerator service in T. Nagar, our nearest technician will be dispatched to your address. Same-day repair is available for common issues like TV display problems, washing machine drum not spinning, refrigerator cooling issues, and AC water leakage.",
+        "We offer same-day TV repair service in most areas of Chennai. Depending on the issue and spare part availability, many repairs can be completed during the first visit itself.",
     },
     {
-      question: "How much does TV repair service include in Chennai?",
+      question: "How much does TV repair service cost in Chennai?",
       answer:
-        "TV repair service in Chennai includes complete inspection, diagnosis, and repair at your doorstep. Our technicians handle issues such as blank screen, no sound, poor picture quality, motherboard problems, and connectivity errors. We provide service for LED, LCD, OLED, Plasma, and Smart TVs across all major brands with original spare parts and service warranty.",
+        "The cost depends on the TV brand, screen size, and fault. Common issues such as backlight replacement, motherboard repair, power board repair, sound problems, and display issues are charged based on the diagnosis. We provide transparent pricing with no hidden charges.",
     },
     {
-      question:
-        "Do you repair all TV brands like Samsung, LG, Sony, and Panasonic in Chennai?",
+      question: "What TV problems do you repair?",
       answer:
-        "Yes, we repair all major TV brands including Samsung, LG, Sony, Panasonic, TCL, VU, Mi, Philips, OnePlus, and Haier. Whether it is a Smart TV, OLED, or 4K Ultra HD model, our technicians provide specialized repair solutions at your doorstep. We also stock brand-specific spare parts to ensure original replacements and long-lasting performance.",
+        "We repair all types of TV problems for LED, LCD, Smart TV, Android TV, OLED, and QLED televisions. Our experienced technicians can fix issues such as no power, no display, dark screen, backlight failure, vertical or horizontal lines on the screen, sound problems, motherboard faults, power board failures, HDMI port issues, Wi-Fi connectivity problems, Smart TV software errors, screen flickering, and TVs that restart automatically. We provide accurate fault diagnosis and reliable repair solutions using genuine spare parts to restore your TV's performance.",
     },
     {
-      question:
-        "Why should I choose your service center for appliance repair in Chennai?",
+      question: "Why should I choose AM Service Solution for TV repair in Chennai?",
       answer:
-        "Customers prefer our service center because we provide professional multi-brand repair at fair prices with genuine spare parts. Our technicians are experienced, our customer care is available 24/7, and we offer doorstep service across Chennai. With same-day repair options, service warranty, and transparent process, we make appliance repair simple, reliable, and hassle-free.",
+        "AM Service Solution is one of the trusted TV repair service providers in Chennai, offering professional doorstep repair services for all major TV brands. Our skilled technicians have extensive experience in diagnosing and repairing LED, LCD, Smart, Android, OLED, and QLED TVs. We focus on providing fast response times, same-day service support, genuine spare parts, transparent pricing, and warranty-backed repairs. With a commitment to quality workmanship and customer satisfaction, we ensure reliable and cost-effective TV repair solutions that help extend the life of your television.",
+    },
+    {
+      question: "Do you provide TV repair services across all areas of Chennai?",
+      answer:
+        "Yes, AM Service Solution provides doorstep TV repair services across Chennai and surrounding areas. Our service coverage includes Anna Nagar, Adyar, Alwarpet, Ambattur, Aminjikarai, Arumbakkam, Ashok Nagar, Avadi, Ayanavaram, Besant Nagar, Choolaimedu, Chromepet, Ekkaduthangal, Guindy, Injambakkam, Iyyappanthangal, Kattupakkam, Kelambakkam, Kodambakkam, Kolathur, Korattur, Kottivakkam, Kovilambakkam, Kundrathur, Madambakkam, Madhavaram, Madipakkam, Maduravoyal, Mambalam, Manali, Medavakkam, Mogappair, MRC Nagar, Mudichur, Mylapore, Nandanam, Nanganallur, Neelankarai, Nolambur, OMR, ECR, Padi, Pallavaram, Pallikaranai, Perambur, Perungalathur, Perungudi, Poonamallee, Porur, Purasawalkam, Ramapuram, Red Hills, Royapettah, Royapuram, Saidapet, Saligramam, Selaiyur, Sholinganallur, Siruseri, Sowcarpet, T Nagar, Tambaram, Teynampet, Thirumangalam, Thirumullaivoyal, Thiruvanmiyur, Thoraipakkam, Tiruvottiyur, Triplicane, Vadapalani, Valasaravakkam, Vanagaram, Velachery, Vepery, Villivakkam, Virugambakkam, West Mambalam, West Tambaram, Navalur, Semmencherry, Karapakkam, Urapakkam, Maraimalai Nagar, Puzhal, Manapakkam, Gerugambakkam, Pattabiram, Tondiarpet, Washermanpet, Ennore, Mugalivakkam, Hasthinapuram, Sembakkam, Pozhichalur, Chitlapakkam, Santhome, Foreshore Estate, Adambakkam, Taramani, Periyar Nagar, Otteri, Kellys, Shenoy Nagar, and George Town. Whether you need LED TV repair, Smart TV repair, Android TV service, backlight replacement, motherboard repair, display issue fixing, or screen-related troubleshooting, our technicians can provide fast and reliable doorstep service throughout Chennai.",
+    },
+    {
+      question: "What are the most common TV problems that require professional repair?",
+      answer:
+        "Some of the most common TV problems include a TV not turning on, no picture but sound, no sound but picture, dark or dim display, backlight failure, vertical or horizontal lines on the screen, screen flickering, color distortion, HDMI port issues, Smart TV connectivity problems, Wi-Fi not working, automatic restarting, remote control not responding, and display panel issues. These problems can occur due to faulty backlights, damaged power boards, motherboard failures, software errors, or internal component defects. Our experienced technicians can quickly diagnose the issue and provide the appropriate repair solution to restore your TV's performance and viewing quality.",
     },
   ];
+
   const toggle = (idx) => {
     setOpenIndex(openIndex === idx ? null : idx);
   };
@@ -189,11 +202,10 @@ function AccordionFAQ() {
                 <span>{openIndex === idx ? "-" : "+"}</span>
               </button>
               <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === idx
-                    ? "max-h-full opacity-100 mt-2"
-                    : "max-h-0 opacity-0"
-                } text-gray-700`}
+                className={`overflow-hidden transition-all duration-300 ${openIndex === idx
+                  ? "max-h-full opacity-100 mt-2"
+                  : "max-h-0 opacity-0"
+                  } text-gray-700`}
                 style={{
                   transitionProperty: "max-height, opacity, margin-top",
                 }}

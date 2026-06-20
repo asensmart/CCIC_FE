@@ -34,13 +34,13 @@ const steps = [
     icon: <FaCalendarAlt className="text-blue-600 text-2xl md:text-3xl" />,
     title: "Schedule a Convenient Slot",
     description:
-      "Choose your preferred time and location in Chennai. We provide same-day doorstep service for TVs, ACs, washing machines, and refrigerators.",
+      "Choose your preferred time and location in Chennai. We provide same-day doorstep service for TV Repair Service.",
   },
   {
     icon: <FaTools className="text-blue-600 text-2xl md:text-3xl" />,
     title: "Technician Visit & Diagnosis",
     description:
-      "Our certified technician visits your home, inspects the appliance, and provides a transparent cost estimate before starting the repair.",
+      "Our certified technician visits your home, inspects the TV, and provides a transparent cost estimate before starting the repair.",
   },
   {
     icon: <FaShieldAlt className="text-blue-600 text-2xl md:text-3xl" />,
@@ -64,7 +64,7 @@ const BookService = () => {
           <FaTools className="text-blue-600 mt-2" />
         </div>{" "}
         <div>
-          <span className="text-black"> How to Book </span>Our Service
+          <span className="text-black"> How to Book </span>TV Repair Service
         </div>
       </h2>
       <p className="text-gray-700 mb-6 text-lg text-center">

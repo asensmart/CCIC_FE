@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import about1 from "./../../../../assets/images/About1.jpg";
-import about2 from "./../../../../assets/images/About2.jpg";
-import about3 from "./../../../../assets/images/About3.jpg";
-import about4 from "./../../../../assets/images/About4.jpg";
+import about1 from "./../../../../assets/images/About1.png";
+import about2 from "./../../../../assets/images/About2.png";
+import about3 from "./../../../../assets/images/About3.png";
+import about4 from "./../../../../assets/images/About4.png";
 import Image from "next/image";
 
 const OurServices = () => {
@@ -18,27 +18,27 @@ const OurServices = () => {
     },
     {
       id: 2,
-      img: about4,
-      alt: "AC Repair in Chennai",
-      title: "AC Repair in Chennai",
+      img: about2,
+      alt: "All Brand LED TV Repair Service in Chennai",
+      title: "All Brand LED TV Repair Service in Chennai",
       description:
-        "Split, Window & Inverter AC repair. Cooling issues, gas filling, PCB repair & installation. Quick & affordable.",
+        "Expert LED TV Repair Service for Samsung, LG, Sony, Mi, OnePlus, TCL, Vu and more. Same-day doorstep service for display, sound, power and motherboard issues.",
     },
     {
       id: 3,
-      img: about3,
-      alt: "Washing Machine Repair in Chennai",
-      title: "Washing Machine Repair in Chennai",
+      img: about4,
+      alt: "Smart TV Repair Service Center in Chennai",
+      title: "Smart TV Repair Service Center in Chennai",
       description:
-        "Front-load, top-load & semi-automatic washing machine service. Fixing leakage, noise & error codes.",
+        "Professional Smart TV repair for Android TV, Google TV and WebOS TVs. Fix Wi-Fi connectivity, software issues, screen freezing, app errors and more.",
     },
     {
       id: 4,
-      img: about2,
-      alt: "Refrigerator Repair in Chennai",
-      title: "Refrigerator Repair in Chennai",
+      img: about3,
+      alt: "TV Panel and Motherboard TV Repair Service in Chennai",
+      title: "TV Panel and Motherboard TV Repair Service in Chennai",
       description:
-        "Single-door, double-door & inverter fridge repair. Cooling issues, compressor replacement & gas filling.",
+        "Advanced chip-level TV repair for motherboard, power supply board, T-Con board and panel issues. Genuine spare parts with warranty support.",
     },
   ];
   return (
