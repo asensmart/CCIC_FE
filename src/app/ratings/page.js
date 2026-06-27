@@ -1,22 +1,34 @@
 
+"use client";
+
 import HomeRatings from "../components/home/homeRatings";
 import axios from "axios";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const getRatingsData = async () => {
-  try {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/get/ratings`);
-    
-    return res?.data;
-  } catch (err) {
-    console.log(err);
-    return [];
+const Page = () => {
+  const [ratingsData, setRatingsData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const getRatingsData = async () => {
+      try {
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/get/ratings`);
+        setRatingsData(res?.data);
+      } catch (err) {
+        console.log(err);
+        setRatingsData([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getRatingsData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading ratings...</div>;
   }
-};
 
-const Page = async () => {
-  const ratingsData = await getRatingsData();
-  
   return (
     <HomeRatings data={ratingsData} />
   );
