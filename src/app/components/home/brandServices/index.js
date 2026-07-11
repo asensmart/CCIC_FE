@@ -43,9 +43,9 @@ const BrandServices = ({ brand }) => {
 
   return (
     <div className="bg-white">
-      <h1 className="text-center text-4xl text-blue-600 font-bold">
+      <h2 className="text-center text-4xl text-blue-600 font-bold">
         <span className="text-black">Brand </span>Service
-      </h1>
+      </h2>
       <Slider {...settings} className="text-orangeText pe-8 h-[700px]">
         {brand?.map((item) => (
           <div

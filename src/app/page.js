@@ -6,7 +6,7 @@ export const metadata = {
   title: "TV Service Center in Chennai | 24/7 Customer Support",
   // title: "AM Service Solution - customer care in Chennai",
   description:
-    "Looking for the best TV service center in Chennai? We offer same-day, doorstep TV repair services for Samsung, LG, Mi, Panasonic, Vu, and TCL TVs, with reliable 24/7 customer support. Call us today!",
+    "Best TV service center in Chennai offering same-day doorstep repairs for Samsung, LG, Mi, Panasonic, Vu & TCL TVs with expert technicians and 24/7 support. Call now!",
   // "Looking for TV Repair Service in Chennai? Get LCD, LED, UHD, and Smart TVs TV service in Chennai at affordable price in Chennai. Our experienced technicians will come to service your TV at your doorstep.",
   keywords: [
     "TV service center Chennai",

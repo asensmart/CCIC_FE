@@ -54,7 +54,7 @@ const BannerContent = () => {
   return (
     <>
       <div className=" font-bold pt-4 text-black">
-        <p className="text-black mr-5 text-right text-xl lg:text-2xl"><Link href={`/ratings`}><span className="flex justify-end items-center">(<span className="hover:underline">Ratings 4.7</span> <Icons.star className="text-yellow-400" /> )</span> </Link></p>
+        <p className="text-black mr-5 text-right text-xl lg:text-2xl"><Link href={`/ratings`}><span className="flex justify-end items-center">(<span className="hover:underline">Ratings 4.9</span> <Icons.star className="text-yellow-400" /> )</span> </Link></p>
         <p className="text-[2rem] text-center">{"TV Repair Service Center Chennai"}</p>
       </div>
 

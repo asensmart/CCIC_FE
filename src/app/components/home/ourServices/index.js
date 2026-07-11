@@ -43,9 +43,9 @@ const OurServices = () => {
   ];
   return (
     <>
-      <h1 className="text-center text-4xl text-blue-600 font-bold">
+      <h2 className="text-center text-4xl text-blue-600 font-bold">
         <span className="text-black text-center">Our</span> Services
-      </h1>
+      </h2>
       <p className="text-black text-center">What We Offer</p>
       <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 py-4 px-4 justify-items-center">
         {serviceData?.map((service, index) => (
