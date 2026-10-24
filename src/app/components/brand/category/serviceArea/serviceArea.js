@@ -26,11 +26,11 @@ export const ServiceAreaPage = ({ data, paramData }) => {
       {/* Contact Form */}
       <ContactForm Title={data?.getServices?.title} BrandName={data?.getBrand?.brandName} />
 
-      {/* Content */}
-      <BrandContent data={data?.getServices} serviceArea={true} />
-
       {/* Rating */}
       <RatingCom data={data?.getBrand} />
+
+      {/* Content */}
+      <BrandContent data={data?.getServices} serviceArea={true} />
 
       {/* FAQ */}
       {data?.getServices?.enableFaq && (

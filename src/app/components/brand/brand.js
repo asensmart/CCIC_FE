@@ -25,11 +25,11 @@ export const Brand = ({ data, paramData }) => {
       {/* Contact Form */}
       <ContactForm Title={data?.getBrand?.title} BrandName={data?.getBrand?.brandName} />
 
-      {/* Content */}
-      <BrandContent data={data?.getBrand} />
-
       {/* Rating */}
       <RatingCom data={data?.getBrand} />
+
+      {/* Content */}
+      <BrandContent data={data?.getBrand} />
 
       {/* FAQ */}
       <Accordian accData={data?.getBrand?.faqs} />

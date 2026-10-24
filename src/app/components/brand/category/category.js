@@ -24,11 +24,11 @@ export const Category = ({ data, paramData }) => {
       {/* Contact Form */}
       <ContactForm Title={data?.getCategory?.title} BrandName={data?.getBrand?.brandName} />
 
-      {/* Content */}
-      <BrandContent data={data?.getCategory} />
-
       {/* Rating */}
       <RatingCom data={data?.getBrand} />
+
+      {/* Content */}
+      <BrandContent data={data?.getCategory} />
 
       {/* FAQ */}
       <Accordian accData={data?.getCategory?.faqs} />
