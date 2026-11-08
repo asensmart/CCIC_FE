@@ -1,5 +1,6 @@
 import Script from "next/script";
 import HomeCom from "./components/home/HomeCom";
+import axios from "axios";
 
 export const metadata = {
   applicationName: "AM Service",
@@ -31,6 +32,7 @@ export const metadata = {
 };
 
 export default async function Home() {
+
   const jsonLd = {
     "@context": "https://schema.org/",
     "@type": "Organization",

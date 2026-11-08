@@ -16,6 +16,8 @@ import BrandContent from "./brandContent/index.js";
 import ServiceAreaBrand from "./homeServiceBrand/index.js";
 import ContactForm from "../shared/ContactForm.js";
 import HomeParaContent from "./HomeParaContent.js";
+import AllRatings from "../shared/rating/AllRatings.js";
+import HomeRatingCom from "../shared/HomeRatingCom.js";
 
 const HomeCom = () => {
   const titleData = [
@@ -57,6 +59,9 @@ const HomeCom = () => {
       {/* Banner Section */}
       <BannerContent />
       {/* <ContactForm Title={"Test"} BrandName={"Test Brand"} /> */}
+
+      {/* Rating */}
+      <HomeRatingCom />
 
       {/* About Us */}
       <HomeAbout />

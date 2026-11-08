@@ -1,0 +1,139 @@
+"use client";
+import { Rating } from "@smastrom/react-rating";
+import { format } from "date-fns";
+import React, { useEffect, useState } from "react";
+import axios, * as others from "axios";
+import Link from "next/link";
+
+const HomeRatingCom = () => {
+
+  const [rating, setRating] = useState(0); // Initial value
+  const [comment, setComment] = useState(""); // Initial value
+  const [commentErr, setCommentErr] = useState(""); // Initial value
+  const [ratData, setRatData] = useState([]); // Initial value
+  const [reFetch, setReFetch] = useState(false); // Initial value
+
+  useEffect(() => {
+    const ratingData = async () => {
+      // console.log("enter fun --->", data?._id);
+      await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/get/ratings`
+      )
+        .then((res) => res.json())
+        .then((res) => {
+          // console.log("res data --->", res?.data);
+          setRatData(res?.data);
+        })
+        .catch((err) => console.log(err));
+    };
+    ratingData();
+  }, [reFetch]);
+
+  const ratingHandler = async (rating, comment) => {
+    // Trim the comment to check if it's not just whitespace
+    const trimmedComment = comment.trim();
+
+    if (trimmedComment !== "") {
+      setCommentErr("");
+      const postData = {
+        rating: rating,
+        comment: trimmedComment,
+      };
+
+      axios
+        .post(`${process.env.NEXT_PUBLIC_API_URL}/post/HomePostRating`, postData)
+        .then((res) => {
+          setReFetch(!reFetch);
+          setComment("");
+          setRating(5);
+          setCommentErr(""); // Clear any error on success
+        })
+        .catch((err) => {
+          console.log(err);
+          setCommentErr("Failed to submit comment. Please try again.");
+        });
+    } else {
+      setCommentErr("Please enter a comment before submitting");
+    }
+  };
+  return (
+    <div className="p-2">
+      <section className="">
+        <h2 className="text-2xl text-center font-bold mt-3 text-black">
+          Rating and comments
+        </h2>
+        <div className="mb-3">
+          <div className="flex items-center">
+            <Rating
+              style={{ maxWidth: 200 }}
+              value={rating}
+              onChange={setRating}
+            />
+            <span className="ms-3 text-black">{ratData?.length} Ratings</span>
+          </div>
+          <textarea
+            className={`p-2 w-[100%] textAreaBox text-black ${commentErr ? 'border-2 border-red-500' : ''}`}
+            rows="1"
+            placeholder="Add a comment"
+            value={comment}
+            onChange={(e) => {
+              setComment(e.target.value);
+              // Clear error when user starts typing
+              if (commentErr) {
+                setCommentErr("");
+              }
+            }}
+          />
+          {commentErr && (
+            <p className="text-red-500 text-sm mt-1">{commentErr}</p>
+          )}
+          <div className="flex justify-end">
+            <button
+              type="button"
+              className="p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-xl"
+              onClick={() => ratingHandler(rating, comment)}
+            >
+              Add comment
+            </button>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="">
+          {ratData?.slice(0, 3)?.map((item, index) => (
+            <div className="p-2 border-b  text-black" key={index}>
+              <p className="flex items-center">
+                <Rating
+                  style={{ maxWidth: 250, width: 120 }}
+                  value={item?.rating}
+                  readOnly
+                />{" "}
+                <span className="ms-2" style={{ fontSize: 12 }}>
+                  {format(new Date(item?.createdAt), "hh:mma dd-MM-yyyy")}
+                </span>
+              </p>
+              <p>{item?.comment}</p>
+            </div>
+          ))}
+
+          <Link
+            href={`${process.env.NEXT_PUBLIC_HYPER_TXT}/ratings`}
+            className="flex justify-center m-3"
+            style={{
+              visibility: ratData?.length < 3 ? "hidden" : "visible",
+            }}
+          >
+            <button
+              type="button"
+              className="py-3 px-10 bg-blue-500 hover:bg-blue-600 text-white rounded-xl"
+            >
+              See All Review
+            </button>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default HomeRatingCom;
